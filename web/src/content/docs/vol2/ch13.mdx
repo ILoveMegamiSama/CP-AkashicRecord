@@ -1,0 +1,87 @@
+---
+title: "Chương 13: Đệ Quy Sơ Cấp & Cây Gọi Đệ Quy"
+description: "Điểm dừng cơ sở (Base Case), bước đệ quy, phân tích Call Stack phần cứng và vẽ cây gọi đệ quy trên giấy."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh13 from './tests/ch13.json';
+
+# Chương 13: Đệ Quy Sơ Cấp & Cây Gọi Đệ Quy
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Đệ Quy & Cây Gọi Đệ Quy (Recursion Tree)**  
+> *Mô hình trực giác:* Giải một bài toán bằng cách phân rã thành các bài toán con cùng cấu trúc, cho tới khi chạm điểm dừng cơ sở (Base Case). Khi mô phỏng trên giấy, toàn bộ tiến trình này hình thành nên một Cây gọi đệ quy phân nhánh.
+
+---
+
+### 1.1 Hai Trụ Cột Của Hàm Đệ Quy
+
+1. **Điểm dừng cơ sở (Base Case):** Điều kiện dừng bài toán con nhỏ nhất để trả về kết quả ngay lập tức mà không gọi thêm hàm đệ quy nào khác.
+2. **Bước đệ quy (Recursive Step):** Lời gọi hàm chính nó với tham số tiến dần về điểm dừng.
+
+> [!CAUTION] Nguy cơ tràn ngăn xếp (Stack Overflow)
+> Thiếu điểm dừng hoặc tham số không tiến về base case sẽ làm cạn kiệt bộ nhớ ngăn xếp Call Stack ($\approx 8$MB), gây lỗi Crash / RTE.
+
+---
+
+### 1.2 Mổ Xẻ Hàm Đệ Quy Phân Hoạch
+
+Hàm $f(n) = f(n - 1) + f(n / 2) + n$ với $f(n) = 1$ khi $n \le 1$:
+
+```cpp
+long long solve_f(int n) {
+    if (n <= 1) return 1; // Điểm dừng cơ sở
+    return solve_f(n - 1) + solve_f(n / 2) + n; // Bước đệ quy
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Cây Đệ Quy Cho $N = 3$
+
+Lời gọi gốc $f(3)$:
+- $f(3)$ gọi $f(2)$ và $f(1)$
+  - $f(2)$ gọi $f(1)$ và $f(1)$
+    - $f(1) = 1$ (base case, độ sâu 2)
+    - $f(1) = 1$ (base case, độ sâu 2)
+    - $f(2) = 1 + 1 + 2 = 4$
+  - $f(1) = 1$ (base case, độ sâu 1)
+- $f(3) = 4 + 1 + 3 = 8$.
+
+| Lời gọi | Hàm $f(n)$ | Độ sâu | Hành động | Giá trị trả về |
+| :---: | :---: | :---: | :--- | :---: |
+| 1 | $f(3)$ | 0 | Gọi $f(2)$ và $f(1)$ | Chờ con |
+| 2 | $f(2)$ | 1 | Gọi $f(1)$ và $f(1)$ | Chờ con |
+| 3 | $f(1)$ | 2 | Base case | 1 |
+| 4 | $f(1)$ | 2 | Base case | 1 |
+| - | $f(2)$ | 1 | $1 + 1 + 2$ | 4 |
+| 5 | $f(1)$ | 1 | Base case | 1 |
+| **Thu nhận** | $f(3)$ | 0 | $4 + 1 + 3$ | **8** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Cây Gọi Đệ Quy: Phân Hoạch & Đếm Nút
+
+**Đề bài:** Cho hàm đệ quy $f(n) = f(n - 1) + f(n / 2) + n$ ($n > 1$) và $f(n) = 1$ ($n \le 1$).
+Cho số nguyên $N$ ($0 \le N \le 15$). Hãy tính:
+1. Giá trị $f(N)$.
+2. Tổng số lời gọi hàm đệ quy `total_calls`.
+3. Chiều sâu tối đa của cây đệ quy `max_depth` (gốc có độ sâu 0).
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+
+Output:
+8 5 2
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh13} title="Chương 13: 10 Test Bàn Tay - Cây Gọi Đệ Quy" />

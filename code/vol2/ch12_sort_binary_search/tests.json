@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "5 3\n2 4 7 1 6\n",
+    "expected": "7 3\n",
+    "desc": "Chia 5 việc cho 3 người với tải trọng cực tiểu 7"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "4 2\n10 20 30 40\n",
+    "expected": "60 6\n",
+    "desc": "Chia 4 việc cho 2 người, tối ưu là [10, 20, 30] và [40]"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "3 3\n5 10 15\n",
+    "expected": "15 4\n",
+    "desc": "Số người bằng số việc, tải trọng bằng max phần tử"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 1\n42\n",
+    "expected": "42 1\n",
+    "desc": "Duy nhất một phần tử"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "5 1\n1 2 3 4 5\n",
+    "expected": "15 4\n",
+    "desc": "Chỉ có 1 người làm toàn bộ công việc"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "4 4\n7 7 7 7\n",
+    "expected": "7 4\n",
+    "desc": "Các công việc có độ dài bằng nhau hoàn toàn"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "5 2\n100 1 1 1 1\n",
+    "expected": "100 2\n",
+    "desc": "Một phần tử lấn át toàn bộ mảng"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "6 3\n1 1 1 1 1 1\n",
+    "expected": "2 3\n",
+    "desc": "Mảng toàn số 1 chia làm 3 đoạn bằng 2"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5 2\n3 2 4 1 5\n",
+    "expected": "9 4\n",
+    "desc": "Tính nhẩm chia [3, 2, 4] và [1, 5] trên giấy"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "6 2\n1 2 3 4 5 6\n",
+    "expected": "11 4\n",
+    "desc": "Chia dãy tăng dần 1..6 thành 2 đoạn tối ưu"
+  }
+]

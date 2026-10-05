@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4\n",
+    "expected": "2 2 4 1 3\n",
+    "desc": "Bàn cờ 4x4 với đúng 2 nghiệm đối xứng"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "1\n",
+    "expected": "1 1\n",
+    "desc": "Bàn cờ 1x1 duy nhất 1 ô đặt hậu"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "5\n",
+    "expected": "10 1 3 5 2 4\n",
+    "desc": "Bàn cờ 5x5 có 10 cấu hình nghiệm"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "2\n",
+    "expected": "0 NONE\n",
+    "desc": "Bàn cờ 2x2 vô nghiệm"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "3\n",
+    "expected": "0 NONE\n",
+    "desc": "Bàn cờ 3x3 vô nghiệm"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "6\n",
+    "expected": "4 2 4 6 1 3 5\n",
+    "desc": "Bàn cờ 6x6 có 4 cấu hình nghiệm"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "7\n",
+    "expected": "40 1 3 5 7 2 4 6\n",
+    "desc": "Bàn cờ 7x7 có 40 cấu hình nghiệm"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "8\n",
+    "expected": "92 1 5 8 6 3 7 2 4\n",
+    "desc": "Bàn cờ chuẩn 8x8 có 92 cấu hình nghiệm kinh điển"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "4\n",
+    "expected": "2 2 4 1 3\n",
+    "desc": "Chạy bàn quay lui từng nước đặt hậu trên bàn cờ 4x4"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "5\n",
+    "expected": "10 1 3 5 2 4\n",
+    "desc": "Chạy bàn nhánh cận tìm nghiệm đầu tiên của bàn cờ 5x5"
+  }
+]

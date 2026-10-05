@@ -1,0 +1,113 @@
+---
+title: "Chương 9: Số Học Cơ Bản Cho CP"
+description: "Ước chung lớn nhất Euclid, phép toán modulo an toàn, lũy thừa nhị phân O(log N) và sàng số nguyên tố Eratosthenes."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh09 from './tests/ch09.json';
+
+# Chương 9: Số Học Cơ Bản Cho CP
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Số Học Đồng Dư & Phân Rã Nhị Phân**  
+> *Từ nguyên học:* Các định lý số học kinh điển bắt nguồn từ Euclid (khoảng 300 TCN) và Carl Friedrich Gauss (1801, Disquisitiones Arithmeticae).  
+> *Mô hình trực giác:* Khi giải bài toán số học lớn trong CP, ta không thể lưu trữ các con số hàng triệu chữ số trong biến thông thường. Số học đồng dư biến không gian số vô hạn thành chiếc đồng hồ hữu hạn tuần hoàn, và phân rã nhị phân chia nhỏ số mũ khổng lồ thành $O(\log N)$ bước nhân.
+
+---
+
+### 1.1 Phép Toán Đồng Dư (Modulo) & Chống Tràn Số
+
+Các tính chất đồng dư căn bản:
+- $(A + B) \pmod M = ((A \bmod M) + (B \bmod M)) \bmod M$
+- $(A - B) \pmod M = ((A \bmod M) - (B \bmod M) + M) \bmod M$
+- $(A \times B) \pmod M = ((A \bmod M) \times (B \bmod M)) \bmod M$
+
+> [!CAUTION] Cảnh báo tràn số khi nhân hai số 32-bit
+> Nếu $A, B < 10^9+7$, tích $A \times B \approx 10^{18}$, tràn kiểu `int` 32-bit. Bắt buộc phải ép kiểu 64-bit:
+> ```cpp
+> long long prod = (1LL * a * b) % m;
+> ```
+
+---
+
+### 1.2 Thuật Toán Euclid Tìm GCD & LCM
+
+Định lý Euclid:
+$$\gcd(a, b) = \gcd(b, a \bmod b) \quad (b > 0), \quad \gcd(a, 0) = a$$
+
+Bội chung nhỏ nhất (LCM):
+$$\text{lcm}(a, b) = \frac{a \times b}{\gcd(a, b)} = \left(\frac{a}{\gcd(a, b)}\right) \times b$$
+
+Luôn thực hiện phép chia trước để chống tràn số.
+
+---
+
+### 1.3 Lũy Thừa Nhị Phân (Binary Exponentiation)
+
+Tính $A^B \bmod M$ trong $O(\log B)$ bằng cách phân tích $B$ thành tổng các lũy thừa của 2:
+$$A^B = \prod_{b_i = 1} A^{2^i}$$
+
+```cpp
+long long power_mod(long long base, long long exp, long long mod) {
+    long long res = 1;
+    base %= mod;
+    while (exp > 0) {
+        if (exp & 1) res = (1LL * res * base) % mod;
+        base = (1LL * base * base) % mod;
+        exp >>= 1;
+    }
+    return res;
+}
+```
+
+---
+
+### 1.4 Sàng Số Nguyên Tố Eratosthenes
+
+Khởi tạo mảng đánh dấu `is_prime` với giá trị `true`. Với mỗi số nguyên tố $p$, loại bỏ các bội số từ $p^2$ đến $N$.
+Độ phức tạp: $O(N \log \log N)$.
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Tính $3^5 \bmod 7$
+
+| Bước | Số mũ $b$ | Bit lẻ? | Cơ số $a$ | Biến tích lũy `res` |
+| :---: | :---: | :---: | :---: | :---: |
+| Khởi tạo | 5 ($101_2$) | - | 3 | 1 |
+| 1 | 5 | Lẻ | 3 | $\text{res} = (1 \times 3) \bmod 7 = 3$ |
+| Bình phương | 2 | - | $a = (3 \times 3) \bmod 7 = 2$ | 3 |
+| 2 | 2 | Chẵn | 2 | Giữ nguyên 3 |
+| Bình phương | 1 | - | $a = (2 \times 2) \bmod 7 = 4$ | 3 |
+| 3 | 1 | Lẻ | 4 | $\text{res} = (3 \times 4) \bmod 7 = 5$ |
+| **Kết quả** | 0 | - | - | **5** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Số Học Cơ Bản Cho CP
+
+**Đề bài:** Cho ba số nguyên dương $A, B, M$ ($1 \le A, B \le 10^9, 2 \le M \le 10^9+7$) và số nguyên $K$ ($1 \le K \le 100$).
+Hãy tính:
+1. Ước chung lớn nhất $G = \gcd(A, B)$.
+2. Lũy thừa nhị phân $P = A^B \bmod M$.
+3. Đếm số lượng các số nguyên tố $S \le K$ bằng sàng Eratosthenes.
+
+- **Input:** Bốn số nguyên $A, B, M, K$ trên cùng một dòng.
+- **Output:** In ra 3 số nguyên $G, P, S$ cách nhau một khoảng trắng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3 5 7 10
+
+Output:
+1 5 4
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh09} title="Chương 9: 10 Test Bàn Tay - Số Học Cơ Bản Cho CP" />

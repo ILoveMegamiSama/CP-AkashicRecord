@@ -1,0 +1,2000 @@
+[
+  {
+    "id": 1,
+    "input": "5 7\n2 1 3 4 1\n",
+    "expected": "3 10\n",
+    "actual": "3 10\n",
+    "status": "AC",
+    "execution_time_ms": 2.93,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 7
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          2,
+          1,
+          3,
+          4,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 10
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "4 5\n1 2 1 1\n",
+    "expected": "4 10\n",
+    "actual": "4 10\n",
+    "status": "AC",
+    "execution_time_ms": 2.67,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 5
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 10
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "4 3\n1 1 1 1\n",
+    "expected": "3 9\n",
+    "actual": "3 9\n",
+    "status": "AC",
+    "execution_time_ms": 2.89,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 3
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 9
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 10\n5\n",
+    "expected": "1 1\n",
+    "actual": "1 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.29,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 10
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          5
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "1 5\n10\n",
+    "expected": "0 0\n",
+    "actual": "0 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.8,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 5
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          10
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "3 2\n5 7 9\n",
+    "expected": "0 0\n",
+    "actual": "0 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.41,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          5,
+          7,
+          9
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "5 4\n2 10 3 1 10\n",
+    "expected": "2 4\n",
+    "actual": "2 4\n",
+    "status": "AC",
+    "execution_time_ms": 3.23,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 4
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          2,
+          10,
+          3,
+          1,
+          10
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 12
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 14
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 11
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "3 6\n1 2 3\n",
+    "expected": "3 6\n",
+    "actual": "3 6\n",
+    "status": "AC",
+    "execution_time_ms": 2.35,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 6
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "6 6\n3 2 1 4 2 1\n",
+    "expected": "3 12\n",
+    "actual": "3 12\n",
+    "status": "AC",
+    "execution_time_ms": 2.91,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 6
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          3,
+          2,
+          1,
+          4,
+          2,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 12
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "6 5\n2 2 2 2 2 2\n",
+    "expected": "2 11\n",
+    "actual": "2 11\n",
+    "status": "AC",
+    "execution_time_ms": 3.03,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s and array a"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 5
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Expand right boundary"
+      },
+      {
+        "type": "var",
+        "name": "right",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "a[right]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Shrink left boundary"
+      },
+      {
+        "type": "var",
+        "name": "left_removed",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "new_left",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_sum",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "valid_window_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "subarrays_ending_at_right",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Finished sliding window"
+      },
+      {
+        "type": "var",
+        "name": "max_len",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "total_count",
+        "val": 11
+      }
+    ]
+  }
+]

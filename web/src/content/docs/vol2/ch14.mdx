@@ -1,0 +1,82 @@
+---
+title: "Chương 14: Thuật Toán Quay Lui & Nhánh Cận"
+description: "Duyệt không gian trạng thái theo chiều sâu DFS, bộ ba Thử - Nạp - Đệ quy - Hoàn tác, bài toán N-Queens và tỉa nhánh O(1)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh14 from './tests/ch14.json';
+
+# Chương 14: Thuật Toán Quay Lui & Nhánh Cận
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Quay Lui & Nhánh Cận (Backtracking & Branch-and-Bound)**  
+> *Mô hình trực giác:* Giống như thám hiểm mê cung: ta đi theo một lối; nếu gặp ngõ cụt hoặc biển báo 'đường cụt chắc chắn' (tỉa nhánh cận), ta quay lui lại ngã ba gần nhất và thử lối đi tiếp theo. Thuật toán quay lui duyệt toàn bộ cây không gian trạng thái theo chiều sâu nhưng dừng lại kịp thời để không lãng phí thời gian vào những nhánh vô vọng.
+
+---
+
+### 1.1 Chu Trình 4 Pha Của Thuật Toán Quay Lui
+
+1. **Kiểm tra hoàn tất:** Nếu đã chọn đủ $N$ thành phần nghiệm, ghi nhận lời giải.
+2. **Thử các khả năng:** Duyệt qua các ứng viên hợp lệ cho bước hiện tại.
+3. **Đánh dấu & Đệ quy:** Ghi nhận ứng viên đã dùng (nạp trạng thái), rồi gọi đệ quy bước $i + 1$.
+4. **Hoàn tác (Backtrack):** Khi nhánh đệ quy con kết thúc, hủy bỏ đánh dấu (trả trạng thái ban đầu) để các nhánh sau sử dụng lại.
+
+---
+
+### 1.2 Tỉa Nhánh $O(1)$ Trong Bài Toán Xếp Hậu (N-Queens)
+
+- **Cùng cột:** `used_col[c]`
+- **Đường chéo chính (hướng $\searrow$):** Các ô cùng $(r - c)$. Đánh số mảng `diag2[r - c + n]`.
+- **Đường chéo phụ (hướng $\swarrow$):** Các ô cùng tổng $(r + c)$. Đánh số mảng `diag1[r + c]`.
+
+```cpp
+for (int c = 0; c < n; ++c) {
+    int d1 = r + c, d2 = r - c + n;
+    if (!used[c] && !diag1[d1] && !diag2[d2]) {
+        used[c] = diag1[d1] = diag2[d2] = true;
+        backtrack(r + 1);
+        used[c] = diag1[d1] = diag2[d2] = false; // Hoàn tác
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Tìm Nghiệm Bàn Cờ $4 \times 4$
+
+| Hàng $r$ | Cột $c$ thử | Kiểm tra | Hành động | Trạng thái cột |
+| :---: | :---: | :---: | :--- | :---: |
+| Hàng 0 | $c = 0$ | Hợp lệ | Đặt hậu tại $(0, 0)$ | $[0, -, -, -]$ |
+| Hàng 1 | $c = 0, 1$ | Bị chiếu | Bỏ qua | - |
+| Hàng 1 | $c = 2$ | Hợp lệ | Đặt hậu tại $(1, 2)$ | $[0, 2, -, -]$ |
+| Hàng 2 | $c = 0, 1, 2, 3$ | Mọi ô bị chiếu! | Ngõ cụt! Quay lui | - |
+| Hàng 0 | $c = 1$ | Hợp lệ | Đặt hậu tại $(0, 1)$ | $[1, -, -, -]$ |
+| Hàng 1 | $c = 3$ | Hợp lệ | Đặt hậu tại $(1, 3)$ | $[1, 3, -, -]$ |
+| Hàng 2 | $c = 0$ | Hợp lệ | Đặt hậu tại $(2, 0)$ | $[1, 3, 0, -]$ |
+| Hàng 3 | $c = 2$ | Hợp lệ | Đặt hậu tại $(3, 2)$ $\to$ **Hoàn tất!** | **Nghiệm: 2 4 1 3** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Bài Toán Xếp Hậu Trên Bàn Cờ N x N
+
+**Đề bài:** Cho số nguyên $N$ ($1 \le N \le 8$).
+Tìm số cách đặt $N$ quân hậu trên bàn cờ $N \times N$ sao cho không có hai quân hậu nào ăn nhau.
+Đồng thời, in ra cấu hình nghiệm đầu tiên (theo thứ tự cột từ hàng 1 đến hàng $N$, chỉ số 1-based). Nếu vô nghiệm in `0 NONE`.
+
+### Ví Dụ Mẫu
+```text
+Input:
+4
+
+Output:
+2 2 4 1 3
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh14} title="Chương 14: 10 Test Bàn Tay - Quay Lui & Nhánh Cận" />

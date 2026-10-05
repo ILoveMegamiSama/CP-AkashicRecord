@@ -1,0 +1,1557 @@
+[
+  {
+    "id": 1,
+    "input": "4\n1 2\n3 4\n-5 -2\n2 1\n",
+    "expected": "2 1 2\n",
+    "actual": "2 1 2\n",
+    "status": "AC",
+    "execution_time_ms": 2.95,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -5
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -7
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "3\n5 5\n2 8\n-1 4\n",
+    "expected": "3 -1 8\n",
+    "actual": "3 -1 8\n",
+    "status": "AC",
+    "execution_time_ms": 2.56,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "2\n0 0\n4 -2\n",
+    "expected": "2 0 0\n",
+    "actual": "2 0 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.97,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1\n-3 5\n",
+    "expected": "1 -3 5\n",
+    "actual": "1 -3 5\n",
+    "status": "AC",
+    "execution_time_ms": 1.9,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 5
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "1\n-2 -3\n",
+    "expected": "0 0 0\n",
+    "actual": "0 0 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.02,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -5
+      },
+      {
+        "type": "step",
+        "step": 300,
+        "msg": "Vector already empty, ignore pop"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Vector is empty"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "4\n1 1\n2 2\n-3 -1\n-4 -4\n",
+    "expected": "0 0 0\n",
+    "actual": "0 0 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.09,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -4
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -4
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -4
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -8
+      },
+      {
+        "type": "step",
+        "step": 203,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Vector is empty"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "4\n-1 -1\n-2 -2\n3 3\n4 4\n",
+    "expected": "2 3 4\n",
+    "actual": "2 3 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.06,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -2
+      },
+      {
+        "type": "step",
+        "step": 300,
+        "msg": "Vector already empty, ignore pop"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -4
+      },
+      {
+        "type": "step",
+        "step": 301,
+        "msg": "Vector already empty, ignore pop"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "5\n1 0\n-1 -2\n2 0\n-3 -3\n5 5\n",
+    "expected": "1 5 5\n",
+    "actual": "1 5 5\n",
+    "status": "AC",
+    "execution_time_ms": 3.79,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -3
+      },
+      {
+        "type": "step",
+        "step": 201,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -3
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -6
+      },
+      {
+        "type": "step",
+        "step": 203,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 5
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "6\n2 3\n1 5\n-4 -1\n3 1\n0 2\n-5 -2\n",
+    "expected": "2 2 3\n",
+    "actual": "2 2 3\n",
+    "status": "AC",
+    "execution_time_ms": 2.66,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -4
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -5
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -5
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -7
+      },
+      {
+        "type": "step",
+        "step": 205,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "5\n-2 2\n4 -1\n-1 7\n-6 2\n3 0\n",
+    "expected": "3 -2 2\n",
+    "actual": "3 -2 2\n",
+    "status": "AC",
+    "execution_time_ms": 2.42,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Initialize empty vector of pairs"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -1
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -6
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": -4
+      },
+      {
+        "type": "step",
+        "step": 203,
+        "msg": "Pop back last pair from vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Process input pair (x, y)"
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "y",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "sum",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "Push back pair into vector"
+      },
+      {
+        "type": "var",
+        "name": "current_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_capacity",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Calculated min_x and max_y"
+      },
+      {
+        "type": "var",
+        "name": "min_x",
+        "val": -2
+      },
+      {
+        "type": "var",
+        "name": "max_y",
+        "val": 2
+      }
+    ]
+  }
+]

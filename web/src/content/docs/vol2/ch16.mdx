@@ -1,0 +1,82 @@
+---
+title: "Chương 16: Ngăn Xếp & Hàng Đợi STL"
+description: "Cơ chế LIFO, FIFO, priority_queue nhị phân heap, kỹ thuật Monotonic Stack và bài toán Next Greater Element."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh16 from './tests/ch16.json';
+
+# Chương 16: Ngăn Xếp & Hàng Đợi STL
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Cấu Trúc LIFO, FIFO & Ngăn Xếp Đơn Điệu (Monotonic Stack)**  
+> *Mô hình trực giác:* Ngăn xếp (Stack) giống chồng đĩa: chiếc đĩa vào sau cùng lấy ra đầu tiên (LIFO - Last In First Out). Ngăn xếp Đơn điệu duy trì các phần tử luôn tăng dần hoặc giảm dần bằng cách loại bỏ các phần tử vi phạm, giải quyết bài toán tìm cực trị kế cận trong $O(N)$ tuyến tính.
+
+---
+
+### 1.1 Toàn Cảnh Các Container STL
+
+| Container | Cơ chế | Thao tác chính | Đặc tính CP |
+| :--- | :---: | :--- | :--- |
+| `std::stack` | LIFO | `push()`, `pop()`, `top()` | $O(1)$ mọi thao tác, dùng trong DFS/khử đệ quy |
+| `std::queue` | FIFO | `push()`, `pop()`, `front()` | Vào trước ra trước, dùng trong BFS đồ thị |
+| `std::deque` | Hai đầu | `push_front()`, `push_back()` | Chèn/xóa cả hai đầu $O(1)$, sliding window max |
+| `std::priority_queue` | Max-Heap | `push()`, `pop()`, `top()` | Cây vun đống, lấy max $O(1)$, chèn/xóa $O(\log N)$ |
+
+---
+
+### 1.2 Kỹ Thuật Ngăn Xếp Đơn Điệu (Next Greater Element)
+
+Duyệt mảng từ phải qua trái ($i = N - 1 \to 0$):
+1. Chừng nào stack không rỗng và `st.top() <= a[i]`: loại bỏ đỉnh (`st.pop()`).
+2. Nếu stack còn phần tử: `nge[i] = st.top()`. Ngược lại: `nge[i] = -1`.
+3. Đẩy `a[i]` vào stack.
+
+```cpp
+for (int i = n - 1; i >= 0; --i) {
+    while (!st.empty() && st.top() <= a[i]) {
+        st.pop();
+    }
+    nge[i] = st.empty() ? -1 : st.top();
+    st.push(a[i]);
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Mảng $[4, 5, 2, 25]$
+
+| Bước $i$ | Giá trị $a[i]$ | Thao tác Stack | Stack sau bước | Kết quả `nge[i]` |
+| :---: | :---: | :--- | :---: | :---: |
+| Khởi tạo | - | Stack rỗng | `[]` | - |
+| $i = 3$ | $a[3] = 25$ | Stack rỗng $\to$ không pop | `[25]` | -1 |
+| $i = 2$ | $a[2] = 2$ | $\text{top} = 25 > 2 \to$ giữ nguyên | `[25, 2]` | 25 |
+| $i = 1$ | $a[1] = 5$ | $\text{top} = 2 \le 5 \to \text{pop}(2)$; $\text{top} = 25 > 5$ | `[25, 5]` | 25 |
+| $i = 0$ | $a[0] = 4$ | $\text{top} = 5 > 4 \to$ giữ nguyên | `[25, 5, 4]` | 5 |
+| **Kết quả** | - | - | - | **5 25 25 -1** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Phần Tử Lớn Hơn Đầu Tiên Bên Phải
+
+**Đề bài:** Cho dãy $N$ số nguyên dương $A_1, A_2, \dots, A_N$ ($1 \le N \le 15$).
+Với mỗi vị trí $i$, hãy tìm phần tử đầu tiên bên phải có giá trị lớn hơn $A[i]$. Nếu không có, in `-1`.
+
+### Ví Dụ Mẫu
+```text
+Input:
+4
+4 5 2 25
+
+Output:
+5 25 25 -1
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh16} title="Chương 16: 10 Test Bàn Tay - Ngăn Xếp Đơn Điệu" />

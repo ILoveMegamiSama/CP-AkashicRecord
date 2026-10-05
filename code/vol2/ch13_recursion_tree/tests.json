@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "2\n",
+    "expected": "4 3 1\n",
+    "desc": "Cây đệ quy nhỏ 3 nút với N=2"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3\n",
+    "expected": "8 5 2\n",
+    "desc": "Cây đệ quy 5 nút với N=3"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4\n",
+    "expected": "16 9 3\n",
+    "desc": "Cây đệ quy 9 nút với N=4"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "0\n",
+    "expected": "1 1 0\n",
+    "desc": "Điểm dừng cơ sở N=0 không phân nhánh"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "1\n",
+    "expected": "1 1 0\n",
+    "desc": "Điểm dừng cơ sở N=1 không phân nhánh"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "5\n",
+    "expected": "25 13 4\n",
+    "desc": "N=5 với chiều sâu cực đại bằng 4"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "6\n",
+    "expected": "39 19 5\n",
+    "desc": "N=6 chia đôi thành 3, sinh 19 lời gọi hàm"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "7\n",
+    "expected": "54 25 6\n",
+    "desc": "N=7 sinh 25 lời gọi hàm và chiều sâu 6"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "8\n",
+    "expected": "78 35 7\n",
+    "desc": "Tính nhẩm và vẽ cây đệ quy N=8 với 35 nút"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "3\n",
+    "expected": "8 5 2\n",
+    "desc": "Vẽ tay toàn bộ 5 nút và đối chiếu giá trị trả về"
+  }
+]

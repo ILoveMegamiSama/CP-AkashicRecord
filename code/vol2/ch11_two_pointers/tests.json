@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "5 7\n2 1 3 4 1\n",
+    "expected": "3 10\n",
+    "desc": "Cửa sổ trượt cơ bản với mảng 5 phần tử"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "4 5\n1 2 1 1\n",
+    "expected": "4 10\n",
+    "desc": "Toàn bộ mảng có tổng <= S"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4 3\n1 1 1 1\n",
+    "expected": "3 9\n",
+    "desc": "Mảng các số 1 với giới hạn S=3"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 10\n5\n",
+    "expected": "1 1\n",
+    "desc": "Mảng 1 phần tử nhỏ hơn S"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "1 5\n10\n",
+    "expected": "0 0\n",
+    "desc": "Mảng 1 phần tử lớn hơn S"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3 2\n5 7 9\n",
+    "expected": "0 0\n",
+    "desc": "Mọi phần tử đều vượt quá ngưỡng S"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "5 4\n2 10 3 1 10\n",
+    "expected": "2 4\n",
+    "desc": "Phần tử cực lớn ngắt quãng cửa sổ"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "3 6\n1 2 3\n",
+    "expected": "3 6\n",
+    "desc": "Tổng toàn mảng đúng bằng S"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "6 6\n3 2 1 4 2 1\n",
+    "expected": "3 12\n",
+    "desc": "Theo dõi hai con trỏ co giãn qua 6 bước"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "6 5\n2 2 2 2 2 2\n",
+    "expected": "2 11\n",
+    "desc": "Mảng đồng nhất với cửa sổ cực đại độ dài 2"
+  }
+]

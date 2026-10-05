@@ -1,0 +1,3252 @@
+[
+  {
+    "id": 1,
+    "input": "2\n",
+    "expected": "4 3 1\n",
+    "actual": "4 3 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.32,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 1002,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 1003,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2003,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "3\n",
+    "expected": "8 5 2\n",
+    "actual": "8 5 2\n",
+    "status": "AC",
+    "execution_time_ms": 2.13,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1003,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1004,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2004,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 1005,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2005,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "4\n",
+    "expected": "16 9 3\n",
+    "actual": "16 9 3\n",
+    "status": "AC",
+    "execution_time_ms": 2.47,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1004,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1005,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2005,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1006,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2006,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1008,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1009,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2009,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2009,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "0\n",
+    "expected": "1 1 0\n",
+    "actual": "1 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.8,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 1001,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "1\n",
+    "expected": "1 1 0\n",
+    "actual": "1 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.87,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 1001,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "5\n",
+    "expected": "25 13 4\n",
+    "actual": "25 13 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.39,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1005,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1006,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2006,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1007,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2007,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1009,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1010,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2010,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2010,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1012,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1013,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2013,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2013,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "6\n",
+    "expected": "39 19 5\n",
+    "actual": "39 19 5\n",
+    "status": "AC",
+    "execution_time_ms": 2.64,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1006,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1007,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2007,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1008,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2008,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1010,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1011,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2011,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2011,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1013,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1014,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2014,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2014,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 17,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1017,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 18,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1018,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2018,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 19,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1019,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2019,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2019,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 39
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 39
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 19
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 5
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "7\n",
+    "expected": "54 25 6\n",
+    "actual": "54 25 6\n",
+    "status": "AC",
+    "execution_time_ms": 3.28,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1007,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1008,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2008,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1009,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2009,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1011,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1012,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2012,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2012,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1014,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1015,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2015,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2015,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 17,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 18,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1018,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 19,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1019,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2019,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 20,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1020,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2020,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2020,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 39
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1023,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 24,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1024,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2024,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 25,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1025,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2025,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2025,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 54
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 54
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "8\n",
+    "expected": "78 35 7\n",
+    "actual": "78 35 7\n",
+    "status": "AC",
+    "execution_time_ms": 3.45,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 1008,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 1009,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2009,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1010,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2010,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1012,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1013,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2013,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2013,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1015,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1016,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2016,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2016,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 17,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 18,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 19,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1019,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 20,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1020,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2020,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1021,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2021,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2021,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 39
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 24,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1024,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 25,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1025,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2025,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 26,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1026,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2026,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2026,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 54
+      },
+      {
+        "type": "step",
+        "step": 27,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 28,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 29,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 30,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1030,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1031,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2031,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1032,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2032,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 34,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1034,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 35,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1035,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2035,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2035,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 2035,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 78
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 78
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 35
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 7
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "3\n",
+    "expected": "8 5 2\n",
+    "actual": "8 5 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.58,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read input n"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1003,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1004,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2004,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Enter recursive call"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "depth",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 1005,
+        "msg": "Base case reached: n <= 1"
+      },
+      {
+        "type": "step",
+        "step": 2005,
+        "msg": "Return from recursive step"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Recursion completed"
+      },
+      {
+        "type": "var",
+        "name": "val",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "total_calls",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_depth",
+        "val": 2
+      }
+    ]
+  }
+]

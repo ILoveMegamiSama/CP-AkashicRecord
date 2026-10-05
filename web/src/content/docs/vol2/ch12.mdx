@@ -1,0 +1,92 @@
+---
+title: "Chương 12: Sắp Xếp & Tìm Kiếm Nhị Phân, Chặt Nhị Phân Kết Quả"
+description: "std::sort, C++14 Generic Lambdas, Strict Weak Ordering, lower_bound, và chặt nhị phân kết quả check(mid)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh12 from './tests/ch12.json';
+
+# Chương 12: Sắp Xếp & Tìm Kiếm Nhị Phân, Chặt Nhị Phân Kết Quả
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Không Gian Nghiệm Đơn Điệu & Chặt Nhị Phân Kết Quả**  
+> *Mô hình trực giác:* Khi gặp bài toán tìm giá trị tối ưu nhỏ nhất thỏa mãn điều kiện $X$ mà giải trực tiếp quá khó, nhưng nếu cho một giá trị thử nghiệm `mid` cụ thể thì kiểm tra tính khả thi lại rất dễ dàng trong $O(N)$. Nếu hàm kiểm tra đơn điệu (False False ... True True), ta có thể chặt đôi không gian nghiệm qua mỗi bước $\log_2(\text{Range})$, biến bài toán tối ưu thành bài toán kiểm tra tính khả thi.
+
+---
+
+### 1.1 `std::sort` & Tiên Đề Strict Weak Ordering
+
+`std::sort` trong C++ STL sử dụng thuật toán Introsort ($O(N \log N)$ trong mọi trường hợp).
+
+> [!CAUTION] Cạm bẫy sống còn: Strict Weak Ordering
+> Khi hai phần tử bằng nhau ($a == b$), hàm so sánh **bắt buộc phải trả về false**!  
+> Nếu viết `return a <= b;`, `std::sort` có thể rơi vào vòng lặp vô tận hoặc truy xuất vượt biên bộ nhớ (Segmentation Fault).
+
+---
+
+### 1.2 `std::lower_bound` vs `std::upper_bound`
+
+Trên mảng sắp xếp tăng dần:
+- `lower_bound`: Trả về con trỏ tới phần tử đầu tiên $\ge x$.
+- `upper_bound`: Trả về con trỏ tới phần tử đầu tiên $> x$.
+- Số phần tử bằng $x$ chính là `upper_bound - lower_bound`.
+
+---
+
+### 1.3 Chặt Nhị Phân Kết Quả (Binary Search on Answer)
+
+Thuật toán chuẩn chống tràn số:
+```cpp
+long long low = max_val, high = sum_val, ans = high;
+while (low <= high) {
+    long long mid = low + (high - low) / 2;
+    if (check(mid)) {
+        ans = mid;
+        high = mid - 1; // Tìm kiếm kết quả nhỏ hơn ở nửa trái
+    } else {
+        low = mid + 1;  // Tăng ngưỡng ở nửa phải
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Mảng $[2, 4, 7, 1, 6]$ Với $K = 3$
+
+Khoảng tìm kiếm ban đầu: $low = \max(A) = 7, high = \sum A = 20$.
+
+| Lần lặp | `low` | `high` | `mid` | `check(mid)` | Hành động |
+| :---: | :---: | :---: | :---: | :---: | :--- |
+| 1 | 7 | 20 | 13 | True (2 đoạn $\le 3$) | `ans = 13, high = 12` |
+| 2 | 7 | 12 | 9 | True (3 đoạn $\le 3$) | `ans = 9, high = 8` |
+| 3 | 7 | 8 | 7 | True (3 đoạn $\le 3$) | `ans = 7, high = 6` |
+| **Kết thúc** | 7 | 6 | - | - | **Đáp án = 7, Số lần gọi check = 3** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Chặt Nhị Phân Phân Đoạn Công Việc
+
+**Đề bài:** Cho dãy $N$ công việc với thời gian $A_1, A_2, \dots, A_N$ và $K$ công nhân.
+Cần phân chia dãy liên tiếp cho $K$ công nhân sao cho thời gian làm việc của công nhân làm nhiều nhất là nhỏ nhất có thể.
+Hãy tìm:
+1. Giá trị tải trọng tối thiểu khả thi `ans`.
+2. Số lần hàm `check(mid)` được gọi `check_count`.
+
+### Ví Dụ Mẫu
+```text
+Input:
+5 3
+2 4 7 1 6
+
+Output:
+7 3
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh12} title="Chương 12: 10 Test Bàn Tay - Sắp Xếp & Chặt Nhị Phân" />

@@ -1,0 +1,101 @@
+---
+title: "Chương 15: Thuật Toán Tham Lam & Phương Pháp Chứng Minh Trên Giấy"
+description: "Lựa chọn tham lam, cấu trúc con tối ưu, phương pháp Luận điểm Đổi chỗ (Exchange Argument) và bài toán Interval Scheduling."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh15 from './tests/ch15.json';
+
+# Chương 15: Thuật Toán Tham Lam & Phương Pháp Chứng Minh Trên Giấy
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Thuật Toán Tham Lam & Luận Điểm Đổi Chỗ (Exchange Argument)**  
+> *Mô hình trực giác:* Một thuật toán tham lam luôn đưa ra lựa chọn có vẻ tốt nhất ở thời điểm hiện tại. Tuy nhiên, sự khác biệt giữa thuật toán tham lam đúng đắn và sai lầm nằm ở chứng minh toán học: ta phải chứng minh được rằng việc chọn phần tử tham lam không bao giờ ngăn cản ta đạt được kết quả tối ưu.
+
+---
+
+### 1.1 Hai Trụ Cột Toán Học
+
+1. **Tính chất lựa chọn tham lam (Greedy-choice Property):** Nghiệm tối ưu toàn cục có thể được xây dựng bằng cách đưa ra các lựa chọn tối ưu cục bộ tuần tự mà không cần quay lui.
+2. **Cấu trúc con tối ưu (Optimal Substructure):** Nghiệm tối ưu bài toán con kết hợp với lựa chọn tham lam tạo thành nghiệm tối ưu bài toán ban đầu.
+
+---
+
+### 1.2 Luận Điểm Đổi Chỗ (Exchange Argument)
+
+1. Giả sử tồn tại nghiệm tối ưu $OPT \ne S$ (với $S$ là nghiệm tham lam).
+2. Tìm vị trí đầu tiên $i$ mà $s_i \ne o_i$.
+3. Thay thế $o_i$ bằng $s_i$ trong $OPT$ để tạo ra $OPT'$.
+4. Chứng minh $OPT'$ vẫn hợp lệ và $|OPT'| \ge |OPT|$.
+5. Quy nạp chứng minh $S$ cũng là nghiệm tối ưu toàn cục.
+
+---
+
+### 1.3 Bài Toán Lựa Chọn Hoạt Động (Interval Scheduling)
+
+Cho $N$ cuộc họp $[S_i, E_i]$. Tìm số cuộc họp tối đa không chồng chéo nhau.
+*Chiến lược tham lam:* Luôn chọn cuộc họp kết thúc sớm nhất ($E_i$ nhỏ nhất).
+
+```cpp
+std::sort(intervals.begin(), intervals.end(), [](const auto& a, const auto& b) {
+    if (a.e != b.e) return a.e < b.e;
+    return a.s < b.s;
+});
+for (const auto& item : intervals) {
+    if (item.s >= last_end) {
+        max_meetings++;
+        total_duration += (item.e - item.s);
+        last_end = item.e;
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: 4 Cuộc Họp $[(1, 3), (2, 5), (3, 9), (6, 8)]$
+
+Sắp xếp theo thời gian kết thúc:
+1. $[1, 3]$ (kết thúc 3)
+2. $[2, 5]$ (kết thúc 5)
+3. $[6, 8]$ (kết thúc 8)
+4. $[3, 9]$ (kết thúc 9)
+
+| Cuộc họp | Khung giờ $[S, E]$ | `last_end` | Xung đột? | Quyết định |
+| :---: | :---: | :---: | :---: | :--- |
+| 1 | $[1, 3]$ | -1 | Không ($1 \ge -1$) | **CHỌN** (`last_end = 3`, `dur = 2`) |
+| 2 | $[2, 5]$ | 3 | Có ($2 < 3$) | **LOẠI** (trùng giờ) |
+| 3 | $[6, 8]$ | 3 | Không ($6 \ge 3$) | **CHỌN** (`last_end = 8`, `dur = 4`) |
+| 4 | $[3, 9]$ | 8 | Có ($3 < 8$) | **LOẠI** (trùng giờ) |
+| **Kết quả** | - | - | - | **Chọn 2 cuộc họp, Tổng thời gian = 4** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Lựa Chọn Hoạt Động Tối Đa
+
+**Đề bài:** Cho $N$ cuộc họp với thời gian bắt đầu $S_i$ và kết thúc $E_i$.
+Phòng họp chỉ phục vụ 1 cuộc họp tại một thời điểm ($E_i \le S_j$).
+Hãy tìm:
+1. Số lượng cuộc họp tối đa `max_meetings`.
+2. Tổng thời gian hoạt động `total_duration` của các cuộc họp được chọn.
+
+### Ví Dụ Mẫu
+```text
+Input:
+4
+1 3
+2 5
+3 9
+6 8
+
+Output:
+2 4
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh15} title="Chương 15: 10 Test Bàn Tay - Thuật Toán Tham Lam" />

@@ -1,0 +1,86 @@
+---
+title: "Chương 10: Cấu Trúc Dữ Liệu Tuần Tự STL"
+description: "std::vector, std::pair, std::tuple, cơ chế nhân đôi dung lượng và phân tích chi phí khấu hao Amortized O(1)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh10 from './tests/ch10.json';
+
+# Chương 10: Cấu Trúc Dữ Liệu Tuần Tự STL
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Chi Phí Khấu Hao (Amortized Complexity) & Vector Bộ Nhớ Động**  
+> *Từ nguyên học:* Được Robert Tarjan giới thiệu năm 1985 trong phân tích cấu trúc dữ liệu.  
+> *Mô hình trực giác:* Khi viết nhật ký vào một cuốn sổ, mỗi dòng bạn viết mất 1 giây ($O(1)$). Khi hết trang, bạn phải mua cuốn sổ to gấp đôi và chép lại toàn bộ ($O(N)$). Mặc dù có những lần tốn kém, nhưng trung bình mỗi dòng được viết vẫn chỉ tốn chi phí hằng số $O(1)$. Đó là bản chất Amortized $O(1)$ của `std::vector`.
+
+---
+
+### 1.1 Bản Chất Phần Cứng Của `std::vector`
+
+Trên kiến trúc 64-bit, đối tượng `std::vector` thực chất gồm 3 con trỏ:
+- `_M_start`: Trỏ tới phần tử đầu tiên.
+- `_M_finish`: Trỏ tới vị trí sau phần tử cuối cùng hiện hữu (`size() = _M_finish - _M_start`).
+- `_M_end_of_storage`: Trỏ tới giới hạn ô nhớ đã cấp phát (`capacity() = _M_end_of_storage - _M_start`).
+
+---
+
+### 1.2 Chứng Minh Chi Phí Khấu Hao $O(1)$ Bằng Phương Pháp Thế Năng
+
+Đặt hàm thế năng $\Phi = 2 \times \text{size} - \text{capacity}$.
+- Khi vector vừa nhân đôi: $\text{capacity} = 2N, \text{size} = N \implies \Phi = 0$.
+- Khi vector đầy: $\text{size} = 2N, \text{capacity} = 2N \implies \Phi = 2N$.
+- Thao tác thứ $2N+1$ gây tái cấp phát: chi phí thực tế $c = 2N + 1$. Dung lượng mới $4N$, kích thước mới $2N + 1$.
+  Thế năng mới $\Phi' = 2(2N + 1) - 4N = 2$.
+  Biến thiên thế năng: $\Delta \Phi = 2 - 2N$.
+  Chi phí khấu hao: $c' = c + \Delta \Phi = (2N + 1) + (2 - 2N) = 3 = O(1)$.
+
+---
+
+### 1.3 `std::pair` & `std::tuple`
+
+- `std::pair<T1, T2>`: Lưu cặp hai giá trị, truy xuất bằng `.first`, `.second`.
+- `std::tuple<T1, T2, T3>`: Lưu bộ nhiều giá trị, truy xuất bằng `std::get<index>(t)` và giải nén bằng `std::tie`.
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Bộ Đệm Vector Nhân Đôi
+
+| Bước | Thao tác | Phần tử lưu giữ | Size | Capacity |
+| :---: | :--- | :---: | :---: | :---: |
+| 0 | Khởi tạo | `[]` | 0 | 0 |
+| 1 | `push_back({1, 2})` | `[{1, 2}]` | 1 | 1 |
+| 2 | `push_back({3, 4})` | `[{1, 2}, {3, 4}]` | 2 | 2 |
+| 3 | `pop_back()` | `[{1, 2}]` | 1 | 2 (giữ nguyên dung lượng) |
+| 4 | `push_back({2, 1})` | `[{1, 2}, {2, 1}]` | 2 | 2 |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Điểm Tọa Độ Vector & Chi Phí Khấu Hao
+
+**Đề bài:** Một hệ thống quản lý danh sách các điểm 2D lưu trong `std::vector<std::pair<int, int>>`. Ban đầu vector rỗng.
+Cho số nguyên $N$ ($1 \le N \le 20$) và $N$ điểm $(x_i, y_i)$.
+- Nếu $x_i + y_i \ge 0$, thực hiện `push_back(make_pair(x_i, y_i))`.
+- Nếu $x_i + y_i < 0$, thực hiện `pop_back()` nếu vector không rỗng.
+In ra: số phần tử còn lại `size`, hoành độ nhỏ nhất `min_x` và tung độ lớn nhất `max_y` trong các điểm còn lại. (Nếu rỗng in `0 0 0`).
+
+### Ví Dụ Mẫu
+```text
+Input:
+4
+1 2
+3 4
+-5 -2
+2 1
+
+Output:
+2 1 2
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh10} title="Chương 10: 10 Test Bàn Tay - Cấu Trúc Tuần Tự STL" />

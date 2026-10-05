@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4\n1 3\n2 5\n3 9\n6 8\n",
+    "expected": "2 4\n",
+    "desc": "Bốn cuộc họp mẫu kinh điển"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3\n1 2\n2 3\n3 4\n",
+    "expected": "3 3\n",
+    "desc": "Các cuộc họp nối tiếp nhau liên tục"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4\n1 10\n2 3\n4 5\n6 7\n",
+    "expected": "3 3\n",
+    "desc": "Một cuộc họp dài bao phủ 3 cuộc họp ngắn"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1\n5 10\n",
+    "expected": "1 5\n",
+    "desc": "Một cuộc họp duy nhất"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "3\n1 4\n5 8\n9 12\n",
+    "expected": "3 9\n",
+    "desc": "Các cuộc họp hoàn toàn cách xa nhau"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3\n2 6\n2 6\n2 6\n",
+    "expected": "1 4\n",
+    "desc": "Tất cả cuộc họp có cùng khung giờ"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "5\n1 10\n2 9\n3 8\n4 7\n5 6\n",
+    "expected": "1 1\n",
+    "desc": "Các khoảng thời gian lồng nhau, chọn khoảng trong cùng"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "3\n0 5\n5 10\n10 15\n",
+    "expected": "3 15\n",
+    "desc": "Biên điểm mút chạm nhau S_j = E_i vẫn tương thích"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "8\n1 4\n3 5\n0 6\n5 7\n3 8\n5 9\n6 10\n8 11\n",
+    "expected": "3 8\n",
+    "desc": "Tập 8 khoảng thời gian tính nhẩm bằng Exchange Argument"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "5\n2 5\n1 3\n4 7\n6 9\n8 10\n",
+    "expected": "3 7\n",
+    "desc": "Sắp xếp 5 khoảng thời gian không theo thứ tự ban đầu"
+  }
+]

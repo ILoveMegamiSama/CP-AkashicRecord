@@ -1,0 +1,1951 @@
+[
+  {
+    "id": 1,
+    "input": "5 3\n2 4 7 1 6\n",
+    "expected": "7 3\n",
+    "actual": "7 3\n",
+    "status": "AC",
+    "execution_time_ms": 2.78,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 3
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          2,
+          4,
+          7,
+          1,
+          6
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 20
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 13
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "4 2\n10 20 30 40\n",
+    "expected": "60 6\n",
+    "actual": "60 6\n",
+    "status": "AC",
+    "execution_time_ms": 3.15,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          10,
+          20,
+          30,
+          40
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 100
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 70
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 69
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 70
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 69
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 54
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 55
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 55
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 69
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 62
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 61
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 62
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 55
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 61
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 58
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 204,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 59
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 59
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 61
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 60
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 105,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 59
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 60
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 59
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 59
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 59
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 206,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 60
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 60
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "3 3\n5 10 15\n",
+    "expected": "15 4\n",
+    "actual": "15 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.83,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 3
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          5,
+          10,
+          15
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 30
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 30
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 22
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 21
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 22
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 21
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 18
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 17
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 18
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 17
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 14
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 1\n42\n",
+    "expected": "42 1\n",
+    "actual": "42 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.92,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          42
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 42
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 42
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 42
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 42
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 42
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 41
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 42
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 42
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "5 1\n1 2 3 4 5\n",
+    "expected": "15 4\n",
+    "actual": "15 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.57,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 201,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 11
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 14
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 14
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 14
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 203,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 14
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "4 4\n7 7 7 7\n",
+    "expected": "7 4\n",
+    "actual": "7 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.49,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 4
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          7,
+          7,
+          7,
+          7
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 28
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 17
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 17
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 11
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "5 2\n100 1 1 1 1\n",
+    "expected": "100 2\n",
+    "actual": "100 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.9,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          100,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 104
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 104
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 102
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 101
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 102
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 101
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 102,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 99
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 100
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "6 3\n1 1 1 1 1 1\n",
+    "expected": "2 3\n",
+    "actual": "2 3\n",
+    "status": "AC",
+    "execution_time_ms": 3.05,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 3
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "5 2\n3 2 4 1 5\n",
+    "expected": "9 4\n",
+    "actual": "9 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.33,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          3,
+          2,
+          4,
+          1,
+          5
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 203,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 104,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "6 2\n1 2 3 4 5 6\n",
+    "expected": "11 4\n",
+    "actual": "11 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.16,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and compute search bounds"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "a",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "type": "var",
+        "name": "low_initial",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "high_initial",
+        "val": 21
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 21
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 101,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 13
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 202,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": true
+      },
+      {
+        "type": "step",
+        "step": 103,
+        "msg": "mid feasible, search lower half"
+      },
+      {
+        "type": "var",
+        "name": "new_high",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "best_ans",
+        "val": 11
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Binary search iteration"
+      },
+      {
+        "type": "var",
+        "name": "low",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "high",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "check_ok",
+        "val": false
+      },
+      {
+        "type": "step",
+        "step": 204,
+        "msg": "mid infeasible, search upper half"
+      },
+      {
+        "type": "var",
+        "name": "new_low",
+        "val": 11
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Binary search finished"
+      },
+      {
+        "type": "var",
+        "name": "ans",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "check_count",
+        "val": 4
+      }
+    ]
+  }
+]

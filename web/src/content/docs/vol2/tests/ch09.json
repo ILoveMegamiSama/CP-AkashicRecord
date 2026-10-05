@@ -1,0 +1,1697 @@
+[
+  {
+    "id": 1,
+    "input": "3 5 7 10\n",
+    "expected": "1 5 4\n",
+    "actual": "1 5 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.43,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "12 18 100 20\n",
+    "expected": "6 4 8\n",
+    "actual": "6 4 8\n",
+    "status": "AC",
+    "execution_time_ms": 1.92,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 18
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 20
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 18
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 12
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 18
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 44
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 44
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 36
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 96
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 34,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 25,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 35,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 56
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "4 6 10 5\n",
+    "expected": "2 6 3\n",
+    "actual": "2 6 3\n",
+    "status": "AC",
+    "execution_time_ms": 2.56,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 1 13 1\n",
+    "expected": "1 1 0\n",
+    "actual": "1 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.8,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "7 7 7 2\n",
+    "expected": "7 0 1\n",
+    "actual": "7 0 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.89,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "15 1 1000 1\n",
+    "expected": "1 15 0\n",
+    "actual": "1 15 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.97,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 1000
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 225
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "10 3 5 15\n",
+    "expected": "1 0 6\n",
+    "actual": "1 0 6\n",
+    "status": "AC",
+    "execution_time_ms": 1.93,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 15
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 21,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "2 10 1000000007 25\n",
+    "expected": "2 1024 9\n",
+    "actual": "2 1024 9\n",
+    "status": "AC",
+    "execution_time_ms": 1.6,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 1000000007
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 22,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 256
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 24,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 1024
+      },
+      {
+        "type": "step",
+        "step": 34,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 65536
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 1024
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 9
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "6 8 11 8\n",
+    "expected": "2 4 4\n",
+    "actual": "2 4 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.33,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 24,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 34,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "5 4 13 7\n",
+    "expected": "1 1 4\n",
+    "actual": "1 1 4\n",
+    "status": "AC",
+    "execution_time_ms": 2.08,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Euclid step: a % b"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "r",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "GCD calculated"
+      },
+      {
+        "type": "var",
+        "name": "gcd",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 31,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 32,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 23,
+        "msg": "Exp odd: multiply res with base"
+      },
+      {
+        "type": "var",
+        "name": "res",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 33,
+        "msg": "Square base and shift exp"
+      },
+      {
+        "type": "var",
+        "name": "base",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "exp",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Power Mod calculated"
+      },
+      {
+        "type": "var",
+        "name": "pow_mod",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Primes counted"
+      },
+      {
+        "type": "var",
+        "name": "primes_count",
+        "val": 4
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "6\n1 10\n1 20\n1 10\n2 15\n2 25\n1 30\n",
+    "expected": "20\n-1\n3 10\n",
+    "desc": "Truy vấn chèn và tìm lower_bound cơ bản"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "4\n1 5\n1 15\n2 5\n2 6\n",
+    "expected": "5\n15\n2 5\n",
+    "desc": "Tìm đúng phần tử bằng và phần tử lớn hơn kế tiếp"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4\n1 100\n2 50\n2 100\n2 150\n",
+    "expected": "100\n100\n-1\n1 100\n",
+    "desc": "Một phần tử duy nhất được truy vấn nhiều ngưỡng"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "2\n2 10\n2 20\n",
+    "expected": "-1\n-1\n0 0\n",
+    "desc": "Tập hợp rỗng khi chỉ nhận truy vấn tìm kiếm"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "3\n1 7\n1 7\n1 7\n",
+    "expected": "1 7\n",
+    "desc": "Chèn cùng một giá trị nhiều lần chỉ có 1 phần tử duy nhất"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "4\n1 3\n1 8\n2 3\n2 8\n",
+    "expected": "3\n8\n2 3\n",
+    "desc": "Các truy vấn khớp đúng các giá trị trong tập hợp"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "3\n1 20\n1 10\n2 15\n",
+    "expected": "20\n2 10\n",
+    "desc": "Hòa tần suất chọn phần tử có giá trị nhỏ hơn"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "4\n1 -10\n1 -5\n2 -8\n2 0\n",
+    "expected": "-5\n-1\n2 -10\n",
+    "desc": "Tập hợp chứa các số nguyên âm"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "7\n1 4\n1 2\n1 6\n2 3\n1 2\n2 5\n2 7\n",
+    "expected": "4\n6\n-1\n3 2\n",
+    "desc": "Theo dõi trạng thái Cây Đỏ-Đen qua 7 thao tác"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "7\n1 1\n1 5\n1 3\n1 5\n2 2\n2 4\n1 3\n",
+    "expected": "3\n5\n3 3\n",
+    "desc": "Cân bằng tần suất giữa 3 và 5, chọn số 3 nhỏ hơn"
+  }
+]
