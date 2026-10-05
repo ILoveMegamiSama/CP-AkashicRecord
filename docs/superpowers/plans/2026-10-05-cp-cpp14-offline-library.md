@@ -41,7 +41,7 @@ Mô hình đơn nguồn kiểm chứng (Single Source of Truth with Verification
 
 ---
 
-### Nhiệm Vụ 1: Xây Dựng Bộ Công Cụ Kiểm Chứng & Thư Viện Ghi Vết Trace (`tools/verifier/`)
+### Task 1: Xây Dựng Bộ Công Cụ Kiểm Chứng & Thư Viện Ghi Vết Trace (`tools/verifier/`)
 
 **Tệp tin:**
 - Tạo mới: `tools/verifier/trace_logger.hpp`
@@ -130,7 +130,7 @@ git commit -m "feat(verifier): add C++14 trace logger and python automated verif
 
 ---
 
-### Nhiệm Vụ 2: Xây Dựng Theme Xuất Bản Sách In Typst Khổ A4 Đơn Sắc (`typst/templates/`)
+### Task 2: Xây Dựng Theme Xuất Bản Sách In Typst Khổ A4 Đơn Sắc (`typst/templates/`)
 
 **Tệp tin:**
 - Tạo mới: `typst/templates/book_theme.typ`
@@ -199,7 +199,7 @@ git commit -m "feat(typst): add A4 monochrome print book template, callout compo
 
 ---
 
-### Nhiệm Vụ 3: Khởi Tạo Web Portal Astro Starlight & Component Kiểm Tra Test Tương Tác (`web/`)
+### Task 3: Khởi Tạo Web Portal Astro Starlight & Component Kiểm Tra Test Tương Tác (`web/`)
 
 **Tệp tin:**
 - Tạo mới: `web/package.json`
@@ -247,7 +247,7 @@ git commit -m "feat(web): initialize Astro Starlight documentation portal with I
 
 ---
 
-### Nhiệm Vụ 4: Biên Soạn Trọn Vẹn Tập 1 - C++14 & Tư Duy Thuật Toán Cơ Bản (Chương 1 - 8 & Bài Tập Tích Hợp)
+### Task 4: Biên Soạn Trọn Vẹn Tập 1 - C++14 & Tư Duy Thuật Toán Cơ Bản (Chương 1 - 8 & Bài Tập Tích Hợp)
 
 **Tệp tin:**
 - Mã nguồn C++ & Tests: `code/vol1/` (Chương 1 đến 8 và Bài tập tích hợp)
@@ -278,7 +278,7 @@ git commit -m "feat(vol1): complete Volume 1 C++14 fundamentals book, problems, 
 
 ---
 
-### Nhiệm Vụ 5: Biên Soạn Trọn Vẹn Tập 2 - Cấu Trúc Dữ Liệu STL & Kỹ Thuật Cốt Lõi (Chương 9 - 17 & Bài Tập Tích Hợp)
+### Task 5: Biên Soạn Trọn Vẹn Tập 2 - Cấu Trúc Dữ Liệu STL & Kỹ Thuật Cốt Lõi (Chương 9 - 17 & Bài Tập Tích Hợp)
 
 **Tệp tin:**
 - Mã nguồn C++ & Tests: `code/vol2/` (Chương 9 đến 17 và Bài tập tích hợp)
@@ -310,7 +310,7 @@ git commit -m "feat(vol2): complete Volume 2 STL and core algorithmic techniques
 
 ---
 
-### Nhiệm Vụ 6: Biên Soạn Trọn Vẹn Tập 3 - Quy Hoạch Động Nền Tảng & Đồ Thị Cơ Bản (Chương 18 - 24 & Bài Tập Tích Hợp)
+### Task 6: Biên Soạn Trọn Vẹn Tập 3 - Quy Hoạch Động Nền Tảng & Đồ Thị Cơ Bản (Chương 18 - 24 & Bài Tập Tích Hợp)
 
 **Tệp tin:**
 - Mã nguồn C++ & Tests: `code/vol3/` (Chương 18 đến 24 và Bài tập tích hợp)
@@ -340,7 +340,7 @@ git commit -m "feat(vol3): complete Volume 3 Dynamic Programming and Graph found
 
 ---
 
-### Nhiệm Vụ 7: Biên Soạn Trọn Vẹn Tập 4 - Cấu Trúc Dữ Liệu & Thuật Toán Nâng Cao V1 (Chương 25 - 30 & Bài Tập Tích Hợp)
+### Task 7: Biên Soạn Trọn Vẹn Tập 4 - Cấu Trúc Dữ Liệu & Thuật Toán Nâng Cao V1 (Chương 25 - 30 & Bài Tập Tích Hợp)
 
 **Tệp tin:**
 - Mã nguồn C++ & Tests: `code/vol4/` (Chương 25 đến 30 và Bài tập tích hợp)
@@ -369,7 +369,7 @@ git commit -m "feat(vol4): complete Volume 4 advanced data structures and algori
 
 ---
 
-### Nhiệm Vụ 8: Tự Động Hóa Build Hệ Thống & Kiểm Tra Toàn Diện (CI & End-to-End Build)
+### Task 8: Tự Động Hóa Build Hệ Thống & Kiểm Tra Toàn Diện (CI & End-to-End Build)
 
 **Tệp tin:**
 - Tạo mới: `Makefile`
