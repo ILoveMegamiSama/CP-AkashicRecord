@@ -209,7 +209,7 @@ run_clean() {
 
     rm -rf web/dist web/.astro .pytest_cache
     find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
-    rm -f -- -.o *.o *.out 2>/dev/null || true
+    rm -f -- *.o *.out 2>/dev/null || true
 
     log_pass "Đã xóa sạch web/dist/, web/.astro/, .pytest_cache/ và các file nhị phân tạm thời."
 }
