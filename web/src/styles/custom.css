@@ -1,0 +1,372 @@
+/* ==========================================================================
+   Akashic Record - High-Contrast Monochrome Aesthetic
+   Matching Typst Book Print Styling (Black & White Technical Publishing)
+   ========================================================================== */
+
+:root {
+  /* High contrast monochrome dark/light base tokens */
+  --sl-font-system-serif: "DejaVu Serif", "STIX Two Text", "Times New Roman", "Cambria", Georgia, serif;
+  --sl-font-system-mono: "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Consolas, monospace;
+
+  --sl-font-family-body: var(--sl-font-system-serif);
+  --sl-font-family-headings: var(--sl-font-system-serif);
+  --sl-font-family-code: var(--sl-font-system-mono);
+
+  --ar-border-color: #111111;
+  --ar-bg-subtle: #f8f8f8;
+  --ar-bg-accent: #000000;
+  --ar-text-accent: #ffffff;
+  --ar-correct-bg: #000000;
+  --ar-correct-text: #ffffff;
+  --ar-wrong-bg: #ffffff;
+  --ar-wrong-text: #000000;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #eaeaea;
+  --sl-color-accent: #111111;
+  --sl-color-accent-high: #000000;
+  --sl-color-white: #050505;
+  --sl-color-gray-1: #1a1a1a;
+  --sl-color-gray-2: #333333;
+  --sl-color-gray-3: #555555;
+  --sl-color-gray-4: #888888;
+  --sl-color-gray-5: #cccccc;
+  --sl-color-gray-6: #e5e5e5;
+  --sl-color-black: #ffffff;
+
+  --ar-border-color: #000000;
+  --ar-bg-subtle: #f4f4f4;
+  --ar-bg-accent: #000000;
+  --ar-text-accent: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #222222;
+  --sl-color-accent: #ffffff;
+  --sl-color-accent-high: #f0f0f0;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eeeeee;
+  --sl-color-gray-2: #cccccc;
+  --sl-color-gray-3: #999999;
+  --sl-color-gray-4: #666666;
+  --sl-color-gray-5: #333333;
+  --sl-color-gray-6: #1a1a1a;
+  --sl-color-black: #0c0c0c;
+
+  --ar-border-color: #ffffff;
+  --ar-bg-subtle: #161616;
+  --ar-bg-accent: #ffffff;
+  --ar-text-accent: #000000;
+}
+
+/* Typography Enhancements */
+body {
+  letter-spacing: -0.01em;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* KaTeX formula rendering adjustments */
+.katex-display {
+  padding: 0.75rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* ==========================================================================
+   InteractiveChecker Component Styling (Monochrome High-Contrast)
+   ========================================================================== */
+
+.checker-container {
+  margin: 2rem 0;
+  border: 2px solid var(--ar-border-color);
+  background-color: var(--ar-bg-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: var(--sl-font-family-body);
+}
+
+.checker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--ar-bg-accent);
+  color: var(--ar-text-accent);
+}
+
+.checker-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.checker-summary-stats {
+  font-family: var(--sl-font-family-code);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--ar-text-accent);
+  border-radius: 3px;
+}
+
+.checker-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  background: var(--sl-color-black);
+}
+
+.btn-primary, .btn-secondary {
+  font-family: var(--sl-font-family-code);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.btn-primary {
+  background-color: var(--ar-bg-accent);
+  color: var(--ar-text-accent);
+  border: 2px solid var(--ar-bg-accent);
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--sl-color-white);
+  border: 2px solid var(--sl-color-gray-4);
+}
+
+.btn-secondary:hover {
+  border-color: var(--ar-border-color);
+  background-color: var(--ar-bg-subtle);
+}
+
+/* Test Cases Table */
+.checker-table-wrapper {
+  overflow-x: auto;
+}
+
+.checker-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.checker-table th {
+  background-color: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border-bottom: 2px solid var(--ar-border-color);
+  font-weight: 700;
+  font-family: var(--sl-font-family-code);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.checker-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--sl-color-gray-5);
+  vertical-align: middle;
+}
+
+.checker-table tr:hover {
+  background-color: var(--sl-color-gray-6);
+}
+
+.col-id {
+  width: 4rem;
+  text-align: center !important;
+  font-family: var(--sl-font-family-code);
+  font-weight: 700;
+}
+
+.col-input {
+  width: 30%;
+}
+
+.code-snippet {
+  font-family: var(--sl-font-family-code);
+  font-size: 0.82rem;
+  background-color: var(--sl-color-black);
+  border: 1px solid var(--sl-color-gray-5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 5.5rem;
+  overflow-y: auto;
+  margin: 0;
+}
+
+.col-answer {
+  width: 30%;
+}
+
+.answer-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--sl-font-family-code);
+  font-size: 0.875rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--sl-color-gray-4);
+  background-color: var(--sl-color-black);
+  color: var(--sl-color-white);
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.answer-input:focus {
+  border: 2px solid var(--ar-border-color);
+}
+
+/* Status Badges */
+.col-status {
+  width: 7.5rem;
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-family: var(--sl-font-family-code);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.status-pending {
+  background-color: var(--sl-color-gray-5);
+  color: var(--sl-color-gray-2);
+  border-color: var(--sl-color-gray-4);
+}
+
+.status-correct {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+:root[data-theme='dark'] .status-correct {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.status-wrong {
+  background-color: transparent;
+  color: var(--sl-color-white);
+  border: 1.5px dashed var(--ar-border-color);
+  text-decoration: underline;
+}
+
+/* Trace Action & Accordion */
+.col-action {
+  width: 7.5rem;
+  text-align: center;
+}
+
+.btn-trace {
+  font-family: var(--sl-font-family-code);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.65rem;
+  background-color: transparent;
+  color: var(--sl-color-white);
+  border: 1px solid var(--sl-color-gray-4);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-trace:hover {
+  border-color: var(--ar-border-color);
+  background-color: var(--sl-color-gray-5);
+}
+
+.trace-row {
+  background-color: var(--sl-color-black);
+}
+
+.trace-panel {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--ar-border-color);
+  margin: 0.5rem 0;
+  background-color: var(--sl-color-gray-6);
+}
+
+.trace-panel-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--sl-font-family-code);
+  letter-spacing: 0.04em;
+}
+
+.trace-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.trace-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-family-code);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--sl-color-gray-4);
+}
+
+.trace-table th {
+  background-color: var(--sl-color-gray-5);
+  border: 1px solid var(--sl-color-gray-4);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+
+.trace-table td {
+  border: 1px solid var(--sl-color-gray-4);
+  padding: 0.4rem 0.6rem;
+  background-color: var(--sl-color-black);
+}
+
+.expected-box {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--sl-color-black);
+  border: 1px solid var(--sl-color-gray-4);
+  font-family: var(--sl-font-family-code);
+  font-size: 0.85rem;
+}
+
+.expected-label {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}

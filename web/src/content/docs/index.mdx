@@ -1,0 +1,103 @@
+---
+title: Akashic Record - CP C++14
+description: Thư Viện Kiến Thức & Luyện Tập Chạy Bàn Lập Trình Thi Đấu C++14 Chuẩn Mực
+template: splash
+hero:
+  tagline: Bộ giáo trình chuyên khảo 4 tập từ kiến trúc bộ nhớ RAM, cú pháp C++14 đến giải thuật đỉnh cao. Phương pháp học qua Vết Chạy Bàn (Hand-Trace) và Kiểm Thử Tương Tác Offline.
+  actions:
+    - text: Bắt đầu học (Tập 1)
+      link: /vol1/
+      icon: right-arrow
+      variant: primary
+    - text: Tải PDF Bản In A4
+      link: "#tai-ban-in-a4-monochrome"
+      icon: document
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import InteractiveChecker from '../../components/InteractiveChecker.astro';
+
+export const sampleTests = [
+  {
+    id: 1,
+    input: "5\n1 2 3 4 5",
+    expected: "15",
+    traces: [
+      { step: 1, line: 12, vars: { i: 0, sum: 0 }, stack: "main()", cond: "i < 5" },
+      { step: 2, line: 13, vars: { i: 1, sum: 1 }, stack: "main()", cond: "i < 5" },
+      { step: 3, line: 13, vars: { i: 2, sum: 3 }, stack: "main()", cond: "i < 5" },
+      { step: 4, line: 13, vars: { i: 3, sum: 6 }, stack: "main()", cond: "i < 5" },
+      { step: 5, line: 13, vars: { i: 4, sum: 10 }, stack: "main()", cond: "i < 5" },
+      { step: 6, line: 14, vars: { sum: 15 }, stack: "main()", cond: "i == 5 (exit loop)" }
+    ]
+  },
+  {
+    id: 2,
+    input: "3\n10 20 30",
+    expected: "60",
+    traces: [
+      { step: 1, line: 12, vars: { i: 0, sum: 0 }, stack: "main()", cond: "i < 3" },
+      { step: 2, line: 13, vars: { sum: 60 }, stack: "main()", cond: "loop finished" }
+    ]
+  },
+  { id: 3, input: "1\n42", expected: "42", traces: [] },
+  { id: 4, input: "4\n-1 -2 -3 -4", expected: "-10", traces: [] },
+  { id: 5, input: "2\n0 0", expected: "0", traces: [] },
+  { id: 6, input: "3\n100 -50 25", expected: "75", traces: [] },
+  { id: 7, input: "5\n1 -1 1 -1 1", expected: "1", traces: [] },
+  { id: 8, input: "2\n2147483647 1", expected: "2147483648", traces: [] },
+  { id: 9, input: "4\n10 0 0 10", expected: "20", traces: [] },
+  { id: 10, input: "3\n999 1 0", expected: "1000", traces: [] }
+];
+
+## Cấu Trúc 4 Tập Giáo Trình
+
+<CardGrid stagger>
+  <Card title="Tập 1: Nền Tảng C++14 & Tư Duy Bộ Nhớ" icon="open-book">
+    Đi từ mô hình phần cứng máy tính, bộ nhớ RAM, con trỏ & địa chỉ ô nhớ, đến hàm tham chiếu call-stack và giải phẫu cú pháp `operator<`.
+    
+    [Khám phá Tập 1 &rarr;](/vol1/)
+  </Card>
+  <Card title="Tập 2: Cấu Trúc Dữ Liệu STL & Kỹ Thuật Cốt Lõi" icon="document">
+    Cấu trúc dữ liệu STL (`vector`, `stack`, `queue`, `set`, `map`), Hai con trỏ, Tìm kiếm nhị phân, Đệ quy cây trạng thái và Quy nạp tham lam.
+    
+    [Khám phá Tập 2 &rarr;](/vol2/)
+  </Card>
+  <Card title="Tập 3: Giải Thuật Đồ Thị & Quy Hoạch Động" icon="laptop">
+    Đồ thị (DFS/BFS, Dijkstra, Kruskal, DSU), Quy hoạch động 1D/2D, Knapsack, LIS, LCS và DP trên cây (Tree DP).
+    
+    [Khám phá Tập 3 &rarr;](/vol3/)
+  </Card>
+  <Card title="Tập 4: Cấu Trúc Dữ Liệu Nâng Cao & Hình Học" icon="star">
+    Cây chỉ số nhị phân Fenwick (BIT), Cây phân đoạn Segment Tree (Lazy propagation), Hình học tính toán và Bài tập tuyển chọn đỉnh cao.
+    
+    [Khám phá Tập 4 &rarr;](/vol4/)
+  </Card>
+</CardGrid>
+
+---
+
+## Tải Bản In A4 Monochrome
+
+Toàn bộ 4 tập giáo trình được dàn trang bằng mã nguồn Typst chuẩn xác, độ phân giải cao và hoàn toàn đơn sắc (Monochrome) tối ưu cho việc in ấn vật lý 2 mặt và học tập truyền thống trên giấy với bút chì.
+
+| Tập Sách | Tên Chuyên Khảo | Trạng Thái Bản In | Tải Tài Liệu |
+| :--- | :--- | :--- | :--- |
+| **Tập 1** | C++14 & Tư Duy Bộ Nhớ Máy Tính | Hoàn thiện định dạng A4 | [Tải `vol1.pdf`](#) |
+| **Tập 2** | Cấu Trúc Dữ Liệu STL & Kỹ Thuật | Định dạng bản in chuẩn | [Tải `vol2.pdf`](#) |
+| **Tập 3** | Giải Thuật Đồ Thị & Quy Hoạch Động | Định dạng bản in chuẩn | [Tải `vol3.pdf`](#) |
+| **Tập 4** | Chuyên Đề Cấp Cao & Hình Học | Định dạng bản in chuẩn | [Tải `vol4.pdf`](#) |
+
+> **Lưu ý in ấn:** Hãy chọn chế độ in hai mặt (duplex) lề đối xứng, giấy khổ A4 định lượng $80\text{ gsm}$ trở lên để đạt trải nghiệm đọc và ghi chú lề tốt nhất.
+
+---
+
+## Trải Nghiệm Kiểm Thử Tương Tác & Chạy Bàn
+
+Bạn hãy thử nghiệm cơ chế giải bài tập bằng giấy bút: tính toán nhẩm hoặc vẽ bảng biến thiên ra nháp, nhập đáp án cho 10 test case bên dưới, sau đó bấm nút **Kiểm tra kết quả** hoặc bấm **Xem Trace** để đối chiếu từng bước thực thi trong bộ nhớ!
+
+<InteractiveChecker
+  tests={sampleTests}
+  title="Thử Nghiệm Mẫu: Tính Tổng Dãy Số Nguyên (10 Test Cases)"
+/>

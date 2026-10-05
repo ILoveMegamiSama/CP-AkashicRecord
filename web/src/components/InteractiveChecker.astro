@@ -1,0 +1,302 @@
+---
+export interface TraceEntry {
+  step: number;
+  line: number;
+  vars: Record<string, any> | string;
+  stack?: string;
+  cond?: string;
+}
+
+export interface TestCase {
+  id?: number | string;
+  input: string;
+  expected: string;
+  actual?: string;
+  status?: string;
+  execution_time_ms?: number;
+  traces?: TraceEntry[];
+  explanation?: string;
+}
+
+export interface Props {
+  tests: TestCase[];
+  title?: string;
+}
+
+const { tests = [], title = "Bộ Kiểm Thử 10 Test & Bảng Vết Thực Thi (Hand-Trace)" } = Astro.props;
+const checkerId = "checker-" + Math.random().toString(36).substring(2, 9);
+---
+
+<div class="checker-container" id={checkerId}>
+  <!-- JSON Data for client-side evaluation -->
+  <script type="application/json" class="tests-data" set:html={JSON.stringify(tests)} />
+
+  <div class="checker-header">
+    <div class="checker-title">{title}</div>
+    <div class="checker-summary-stats">
+      <span class="score-text">Đúng: <strong class="correct-count">0</strong>/{tests.length}</span>
+    </div>
+  </div>
+
+  <div class="checker-actions">
+    <button type="button" class="btn-primary btn-check">Kiểm tra kết quả</button>
+    <button type="button" class="btn-secondary btn-reset">Xóa làm lại</button>
+    <button type="button" class="btn-secondary btn-toggle-all">Mở / Đóng tất cả Trace</button>
+  </div>
+
+  <div class="checker-table-wrapper">
+    <table class="checker-table">
+      <thead>
+        <tr>
+          <th class="col-id">STT</th>
+          <th class="col-input">Dữ liệu vào (Input)</th>
+          <th class="col-answer">Câu trả lời của bạn</th>
+          <th class="col-status">Trạng thái</th>
+          <th class="col-action">Trace Chi Tiết</th>
+        </tr>
+      </thead>
+      <tbody>
+        {tests.map((test, index) => {
+          const testId = test.id ?? index + 1;
+          const traceId = `${checkerId}-trace-${index}`;
+          const hasTraces = (test.traces && test.traces.length > 0) || Boolean(test.expected);
+          
+          return (
+            <>
+              <tr class="test-row" data-test-index={index}>
+                <td class="col-id">#{testId}</td>
+                <td class="col-input">
+                  <pre class="code-snippet">{test.input.trim() || "(trống)"}</pre>
+                </td>
+                <td class="col-answer">
+                  <input
+                    type="text"
+                    class="answer-input"
+                    data-test-index={index}
+                    placeholder="Nhập kết quả ra giấy/bàn..."
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                </td>
+                <td class="col-status">
+                  <span class="status-badge status-pending" data-test-index={index}>
+                    Trống
+                  </span>
+                </td>
+                <td class="col-action">
+                  <button
+                    type="button"
+                    class="btn-trace"
+                    data-trace-target={traceId}
+                    aria-expanded="false"
+                  >
+                    Xem Trace
+                  </button>
+                </td>
+              </tr>
+              <tr id={traceId} class="trace-row" style="display: none;">
+                <td colspan="5">
+                  <div class="trace-panel">
+                    <div class="trace-panel-title">
+                      Vết Thực Thi Chi Tiết (Test #{testId})
+                    </div>
+                    
+                    <div class="expected-box">
+                      <span class="expected-label">Đáp án chuẩn (Expected):</span>
+                      <code>{test.expected.trim() || "(trống)"}</code>
+                      {test.execution_time_ms !== undefined && (
+                        <span style="margin-left: 1rem; color: var(--sl-color-gray-3);">
+                          Thời gian chạy: {test.execution_time_ms} ms
+                        </span>
+                      )}
+                    </div>
+
+                    {test.traces && test.traces.length > 0 ? (
+                      <table class="trace-table">
+                        <thead>
+                          <tr>
+                            <th style="width: 4rem;">Bước</th>
+                            <th style="width: 5rem;">Dòng Code</th>
+                            <th>Biến số (Variables)</th>
+                            <th style="width: 10rem;">Ngăn Xếp (Stack)</th>
+                            <th>Điều kiện / Ghi chú</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {test.traces.map((step) => {
+                            let formattedVars = "";
+                            if (typeof step.vars === "object" && step.vars !== null) {
+                              formattedVars = Object.entries(step.vars)
+                                .map(([k, v]) => `${k} = ${v}`)
+                                .join(", ");
+                            } else {
+                              formattedVars = String(step.vars || "");
+                            }
+
+                            return (
+                              <tr>
+                                <td>{step.step}</td>
+                                <td><code>L{step.line}</code></td>
+                                <td><code>{formattedVars || "-"}</code></td>
+                                <td><code>{step.stack || "main()"}</code></td>
+                                <td>{step.cond || "-"}</td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <p style="font-size: 0.85rem; color: var(--sl-color-gray-3); margin-top: 0.5rem;">
+                        (Không có bước chạy trung gian hoặc chương trình kết thúc tức thì)
+                      </p>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            </>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function setupInteractiveCheckers() {
+    const containers = document.querySelectorAll<HTMLElement>('.checker-container');
+
+    containers.forEach((container) => {
+      // Avoid re-initializing if already attached
+      if (container.dataset.initialized === 'true') return;
+      container.dataset.initialized = 'true';
+
+      const dataEl = container.querySelector<HTMLScriptElement>('.tests-data');
+      if (!dataEl) return;
+
+      let tests: any[] = [];
+      try {
+        tests = JSON.parse(dataEl.textContent || '[]');
+      } catch (e) {
+        console.error('Failed to parse tests data JSON:', e);
+        return;
+      }
+
+      const checkBtn = container.querySelector<HTMLButtonElement>('.btn-check');
+      const resetBtn = container.querySelector<HTMLButtonElement>('.btn-reset');
+      const toggleAllBtn = container.querySelector<HTMLButtonElement>('.btn-toggle-all');
+      const correctCountEl = container.querySelector<HTMLElement>('.correct-count');
+      const inputs = container.querySelectorAll<HTMLInputElement>('.answer-input');
+      const badges = container.querySelectorAll<HTMLElement>('.status-badge');
+      const traceBtns = container.querySelectorAll<HTMLButtonElement>('.btn-trace');
+      const traceRows = container.querySelectorAll<HTMLElement>('.trace-row');
+
+      function normalizeStr(str: string): string {
+        return (str || '')
+          .replace(/\r\n/g, '\n')
+          .split('\n')
+          .map((line) => line.trim())
+          .join('\n')
+          .trim();
+      }
+
+      function evaluateAnswers() {
+        let correctCount = 0;
+
+        inputs.forEach((input) => {
+          const idx = Number(input.dataset.testIndex);
+          const badge = container.querySelector<HTMLElement>(`.status-badge[data-test-index="${idx}"]`);
+          if (!badge) return;
+
+          const test = tests[idx];
+          if (!test) return;
+
+          const userVal = normalizeStr(input.value);
+          const expectedVal = normalizeStr(String(test.expected ?? ''));
+
+          badge.className = 'status-badge';
+
+          if (userVal === '') {
+            badge.classList.add('status-pending');
+            badge.textContent = 'Trống';
+          } else if (userVal === expectedVal) {
+            badge.classList.add('status-correct');
+            badge.textContent = 'Đúng ✓';
+            correctCount++;
+          } else {
+            badge.classList.add('status-wrong');
+            badge.textContent = 'Sai ✗';
+          }
+        });
+
+        if (correctCountEl) {
+          correctCountEl.textContent = String(correctCount);
+        }
+      }
+
+      function resetAll() {
+        inputs.forEach((input) => {
+          input.value = '';
+        });
+        badges.forEach((badge) => {
+          badge.className = 'status-badge status-pending';
+          badge.textContent = 'Trống';
+        });
+        if (correctCountEl) {
+          correctCountEl.textContent = '0';
+        }
+      }
+
+      let allExpanded = false;
+      function toggleAllTraces() {
+        allExpanded = !allExpanded;
+        traceRows.forEach((row) => {
+          row.style.display = allExpanded ? 'table-row' : 'none';
+        });
+        traceBtns.forEach((btn) => {
+          btn.setAttribute('aria-expanded', String(allExpanded));
+          btn.textContent = allExpanded ? 'Đóng Trace' : 'Xem Trace';
+        });
+      }
+
+      // Hook events
+      checkBtn?.addEventListener('click', evaluateAnswers);
+      resetBtn?.addEventListener('click', resetAll);
+      toggleAllBtn?.addEventListener('click', toggleAllTraces);
+
+      inputs.forEach((input, index) => {
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            evaluateAnswers();
+            // Focus next input if available
+            if (index + 1 < inputs.length) {
+              inputs[index + 1].focus();
+            }
+          }
+        });
+      });
+
+      traceBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.dataset.traceTarget;
+          if (!targetId) return;
+          const targetRow = document.getElementById(targetId);
+          if (!targetRow) return;
+
+          const isHidden = targetRow.style.display === 'none';
+          targetRow.style.display = isHidden ? 'table-row' : 'none';
+          btn.setAttribute('aria-expanded', String(isHidden));
+          btn.textContent = isHidden ? 'Đóng Trace' : 'Xem Trace';
+        });
+      });
+    });
+  }
+
+  // Support both normal load and client side navigation (View Transitions)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupInteractiveCheckers);
+  } else {
+    setupInteractiveCheckers();
+  }
+  document.addEventListener('astro:page-load', setupInteractiveCheckers);
+</script>
