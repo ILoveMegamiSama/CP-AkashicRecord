@@ -33,12 +33,16 @@ int main() {
     std::vector<int> topo_order;
     std::vector<int> dp(n + 1, 0);
 
+#ifdef ENABLE_TRACE
     int step_cnt = 0;
+#endif
     while (!pq.empty()) {
         int u = pq.top();
         pq.pop();
         topo_order.push_back(u);
+#ifdef ENABLE_TRACE
         step_cnt++;
+#endif
 
         TRACE_STEP(10 + step_cnt, "Pop vertex in Kahn algorithm");
         TRACE_VAR("popped_vertex", u);

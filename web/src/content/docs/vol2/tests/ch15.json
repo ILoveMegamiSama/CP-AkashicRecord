@@ -5,7 +5,6 @@
     "expected": "2 4\n",
     "actual": "2 4\n",
     "status": "AC",
-    "execution_time_ms": 2.09,
     "traces": [
       {
         "type": "step",
@@ -195,7 +194,6 @@
     "expected": "3 3\n",
     "actual": "3 3\n",
     "status": "AC",
-    "execution_time_ms": 1.76,
     "traces": [
       {
         "type": "step",
@@ -370,7 +368,6 @@
     "expected": "3 3\n",
     "actual": "3 3\n",
     "status": "AC",
-    "execution_time_ms": 2.12,
     "traces": [
       {
         "type": "step",
@@ -575,7 +572,6 @@
     "expected": "1 5\n",
     "actual": "1 5\n",
     "status": "AC",
-    "execution_time_ms": 2.04,
     "traces": [
       {
         "type": "step",
@@ -660,7 +656,6 @@
     "expected": "3 9\n",
     "actual": "3 9\n",
     "status": "AC",
-    "execution_time_ms": 2.39,
     "traces": [
       {
         "type": "step",
@@ -835,7 +830,6 @@
     "expected": "1 4\n",
     "actual": "1 4\n",
     "status": "AC",
-    "execution_time_ms": 1.61,
     "traces": [
       {
         "type": "step",
@@ -980,7 +974,6 @@
     "expected": "1 1\n",
     "actual": "1 1\n",
     "status": "AC",
-    "execution_time_ms": 1.43,
     "traces": [
       {
         "type": "step",
@@ -1185,7 +1178,6 @@
     "expected": "3 15\n",
     "actual": "3 15\n",
     "status": "AC",
-    "execution_time_ms": 1.58,
     "traces": [
       {
         "type": "step",
@@ -1360,7 +1352,6 @@
     "expected": "3 8\n",
     "actual": "3 8\n",
     "status": "AC",
-    "execution_time_ms": 2.25,
     "traces": [
       {
         "type": "step",
@@ -1685,7 +1676,6 @@
     "expected": "3 7\n",
     "actual": "3 7\n",
     "status": "AC",
-    "execution_time_ms": 1.76,
     "traces": [
       {
         "type": "step",

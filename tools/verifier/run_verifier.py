@@ -11,7 +11,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import time
 from pathlib import Path
 
 
@@ -205,7 +204,6 @@ def main():
             test_input = unescape_string(raw_input)
             expected_output = unescape_string(raw_expected)
 
-            start_t = time.perf_counter()
             try:
                 proc = subprocess.run(
                     [str(bin_path)],
@@ -214,7 +212,6 @@ def main():
                     text=True,
                     timeout=args.timeout,
                 )
-                elapsed_ms = round((time.perf_counter() - start_t) * 1000, 2)
                 stdout = proc.stdout
                 stderr = proc.stderr
 
@@ -233,7 +230,6 @@ def main():
                         all_passed = False
 
             except subprocess.TimeoutExpired:
-                elapsed_ms = round(args.timeout * 1000, 2)
                 stdout = ""
                 stderr = ""
                 traces = []
@@ -246,7 +242,6 @@ def main():
                 "expected": expected_output,
                 "actual": stdout,
                 "status": status,
-                "execution_time_ms": elapsed_ms,
                 "traces": traces,
             })
 

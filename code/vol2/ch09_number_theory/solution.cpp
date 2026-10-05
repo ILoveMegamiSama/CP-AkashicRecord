@@ -3,7 +3,9 @@
 #include "trace_logger.hpp"
 
 long long compute_gcd(long long a, long long b) {
+#ifdef ENABLE_TRACE
     long long step = 1;
+#endif
     while (b != 0) {
         long long r = a % b;
         TRACE_STEP(10 + step, "Euclid step: a % b");
@@ -12,7 +14,9 @@ long long compute_gcd(long long a, long long b) {
         TRACE_VAR("r", r);
         a = b;
         b = r;
+#ifdef ENABLE_TRACE
         step++;
+#endif
     }
     return a;
 }
@@ -20,7 +24,9 @@ long long compute_gcd(long long a, long long b) {
 long long power_mod(long long base, long long exp, long long mod) {
     long long res = 1;
     base %= mod;
+#ifdef ENABLE_TRACE
     long long step = 1;
+#endif
     while (exp > 0) {
         if (exp & 1) {
             res = (1LL * res * base) % mod;
@@ -32,7 +38,9 @@ long long power_mod(long long base, long long exp, long long mod) {
         TRACE_STEP(30 + step, "Square base and shift exp");
         TRACE_VAR("base", base);
         TRACE_VAR("exp", exp);
+#ifdef ENABLE_TRACE
         step++;
+#endif
     }
     return res;
 }

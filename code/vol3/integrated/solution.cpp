@@ -84,9 +84,13 @@ int main() {
     min_edges[1] = 0;
     max_edges[1] = 0;
 
+#ifdef ENABLE_TRACE
     int topo_step = 0;
+#endif
     for (int u : reachable_nodes) {
+#ifdef ENABLE_TRACE
         topo_step++;
+#endif
         TRACE_STEP(10 + topo_step, "Process node u in DAG DP");
         TRACE_VAR("u", u);
         TRACE_VAR("dist_u", dist[u]);

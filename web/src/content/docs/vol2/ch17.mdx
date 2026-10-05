@@ -49,6 +49,8 @@ Luôn gọi phương thức thành viên `s.lower_bound(x)` ($O(\log N)$). Tuy�
 
 ## 2. Chạy Bàn Trên Giấy: Chuỗi Truy Vấn Trên Cây Đỏ-Đen
 
+Chuỗi thao tác: Chèn 10, Chèn 20, Chèn 10, Hỏi lower_bound(15), Hỏi lower_bound(25), Chèn 30.
+
 | Truy vấn | Loại | Set | Map (Tần suất) | Kết quả in ra |
 | :---: | :--- | :---: | :---: | :---: |
 | `1 10` | Chèn 10 | `{10}` | `{10: 1}` | - |
@@ -56,6 +58,7 @@ Luôn gọi phương thức thành viên `s.lower_bound(x)` ($O(\log N)$). Tuy�
 | `1 10` | Chèn 10 | `{10, 20}` | `{10: 2, 20: 1}` | - |
 | `2 15` | `lower_bound(15)` | `{10, 20}` | - | 20 |
 | `2 25` | `lower_bound(25)` | `{10, 20}` | - | -1 |
+| `1 30` | Chèn 30 | `{10, 20, 30}` | `{10: 2, 20: 1, 30: 1}` | - |
 | **Thống kê** | Cuối stream | 3 phần tử | Max freq: 10 (2 lần) | **Set size = 3, Max freq = 10** |
 
 ---

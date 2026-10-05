@@ -43,12 +43,16 @@ int main() {
     long long high = sum_val;
     long long ans = sum_val;
     int check_count = 0;
+#ifdef ENABLE_TRACE
     int iter = 0;
+#endif
 
     while (low <= high) {
         long long mid = low + (high - low) / 2;
         check_count++;
+#ifdef ENABLE_TRACE
         iter++;
+#endif
         bool ok = check(mid, a, k);
 
         TRACE_STEP(10 + iter, "Binary search iteration");

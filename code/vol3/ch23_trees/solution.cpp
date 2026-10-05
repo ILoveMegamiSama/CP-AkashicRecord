@@ -69,9 +69,8 @@ int main() {
     max_dist = -1;
     dfs_farthest(node_a, 0, 0);
     int diameter = max_dist;
-    int node_b = farthest_node;
     TRACE_STEP(3, "Second DFS finished");
-    TRACE_VAR("node_b", node_b);
+    TRACE_VAR("node_b", farthest_node);
     TRACE_VAR("diameter", diameter);
 
     // 2. Rooted DFS from node 1

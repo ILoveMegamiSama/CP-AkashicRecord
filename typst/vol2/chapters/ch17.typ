@@ -49,7 +49,7 @@
 
 == 17.4 Bảng Chạy Bàn Trên Giấy: Chuỗi Truy Vấn Trên Cây Đỏ-Đen
 
-Chuỗi thao tác: Chèn 10, Chèn 20, Chèn 10, Hỏi lower_bound(15), Hỏi lower_bound(25).
+Chuỗi thao tác: Chèn 10, Chèn 20, Chèn 10, Hỏi lower_bound(15), Hỏi lower_bound(25), Chèn 30.
 
 #trace-matrix(
   headers: ("Truy vấn", "Loại", "Tập hợp Set", "Bảng đếm Map", "Kết quả in ra"),
@@ -59,6 +59,7 @@ Chuỗi thao tác: Chèn 10, Chèn 20, Chèn 10, Hỏi lower_bound(15), Hỏi lo
     ("1 10", "Chèn 10", "{10, 20}", "{10: 2, 20: 1}", "-"),
     ("2 15", "lower_bound(15)", "{10, 20}", "-", "20 (phần tử nhỏ nhất >= 15)"),
     ("2 25", "lower_bound(25)", "{10, 20}", "-", "-1 (không có phần tử >= 25)"),
+    ("1 30", "Chèn 30", "{10, 20, 30}", "{10: 2, 20: 1, 30: 1}", "-"),
     ("Thống kê cuối", "-", "3 phần tử", "Max freq: 10 (2 lần)", "*Set size = 3, Max freq = 10*")
   )
 )

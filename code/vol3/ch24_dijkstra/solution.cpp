@@ -39,7 +39,9 @@ int main() {
     dist[1] = 0;
     pq.push({0, 1});
 
+#ifdef ENABLE_TRACE
     int step_num = 0;
+#endif
     while (!pq.empty()) {
         auto top = pq.top();
         pq.pop();
@@ -48,7 +50,9 @@ int main() {
 
         if (d > dist[u]) continue;
 
+#ifdef ENABLE_TRACE
         step_num++;
+#endif
         TRACE_STEP(10 + step_num, "Extract min vertex u");
         TRACE_VAR("u", u);
         TRACE_VAR("d", d);

@@ -92,11 +92,15 @@ int main() {
     long long low = max_elem;
     long long high = sum_elem;
     long long min_max_workload = sum_elem;
+#ifdef ENABLE_TRACE
     int bs_step = 0;
+#endif
 
     while (low <= high) {
         long long mid = low + (high - low) / 2;
+#ifdef ENABLE_TRACE
         bs_step++;
+#endif
         bool ok = check_partition(mid, a, k);
         TRACE_STEP(300 + bs_step, "Phase 3 BS: check(mid)");
         TRACE_VAR("mid", mid);
