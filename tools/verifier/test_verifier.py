@@ -1,4 +1,5 @@
 import os
+import shutil
 import subprocess
 import json
 import pytest
@@ -46,6 +47,16 @@ int main() {
     typst_content = out_typst.read_text()
     assert "#trace-table" in typst_content
 
+    if shutil.which("typst"):
+        dummy_pdf = tmp_path / "table.pdf"
+        typst_res = subprocess.run(
+            ["typst", "compile", str(out_typst), str(dummy_pdf)],
+            capture_output=True,
+            text=True,
+        )
+        assert typst_res.returncode == 0, f"Typst compile error: {typst_res.stderr}"
+        assert dummy_pdf.exists()
+
 def test_verifier_wa_detection(tmp_path):
     # Verifier should detect Wrong Answer and exit non-zero
     src_cpp = tmp_path / "buggy.cpp"
@@ -77,10 +88,11 @@ int main() {
     assert web_data[0]["status"] == "WA"
 
 def test_trace_logger_array_and_vars(tmp_path):
-    # Verifier with TRACE_ARRAY and TRACE_VAR
+    # Verifier with TRACE_ARRAY and TRACE_VAR (including arrays, strings, booleans, and pairs)
     src_cpp = tmp_path / "array_trace.cpp"
     src_cpp.write_text("""#include <iostream>
 #include <vector>
+#include <utility>
 #include "trace_logger.hpp"
 int main() {
     int arr[] = {10, 20, 30};
@@ -88,6 +100,7 @@ int main() {
     TRACE_ARRAY("arr", arr, 3);
     TRACE_VAR("desc", std::string("test string"));
     TRACE_VAR("flag", true);
+    TRACE_VAR("pair", std::make_pair(1, 2));
     std::cout << "done\\n";
     return 0;
 }
@@ -114,3 +127,13 @@ int main() {
     assert "step" in types
     assert "array" in types
     assert "var" in types
+
+    if shutil.which("typst"):
+        dummy_pdf = tmp_path / "table.pdf"
+        typst_res = subprocess.run(
+            ["typst", "compile", str(out_typst), str(dummy_pdf)],
+            capture_output=True,
+            text=True,
+        )
+        assert typst_res.returncode == 0, f"Typst compilation failed: {typst_res.stderr}"
+        assert dummy_pdf.exists()
