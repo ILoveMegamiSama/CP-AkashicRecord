@@ -1,11 +1,32 @@
 ---
-export interface TraceEntry {
+export interface StepTraceEvent {
+  type: "step";
   step: number;
-  line: number;
-  vars: Record<string, any> | string;
+  msg: string;
+}
+
+export interface VarTraceEvent {
+  type: "var";
+  name: string;
+  val: any;
+}
+
+export interface ArrayTraceEvent {
+  type: "array";
+  name: string;
+  values: any[];
+}
+
+export interface LegacyTraceEntry {
+  step?: number;
+  line?: number;
+  vars?: Record<string, any> | string;
   stack?: string;
   cond?: string;
+  [key: string]: any;
 }
+
+export type TraceEntry = StepTraceEvent | VarTraceEvent | ArrayTraceEvent | LegacyTraceEntry | Record<string, any>;
 
 export interface TestCase {
   id?: number | string;
@@ -25,6 +46,45 @@ export interface Props {
 
 const { tests = [], title = "Bộ Kiểm Thử 10 Test & Bảng Vết Thực Thi (Hand-Trace)" } = Astro.props;
 const checkerId = "checker-" + Math.random().toString(36).substring(2, 9);
+
+function isLegacyTraceList(traces?: TraceEntry[]): boolean {
+  if (!traces || traces.length === 0) return false;
+  const hasEventStream = traces.some((t) => t && typeof (t as any).type === "string");
+  if (hasEventStream) return false;
+  return traces.some(
+    (t) =>
+      t &&
+      ((t as any).line !== undefined ||
+        (t as any).vars !== undefined ||
+        (t as any).stack !== undefined ||
+        (t as any).cond !== undefined)
+  );
+}
+
+function formatTraceVal(val: any): string {
+  if (val === undefined || val === null) return "-";
+  if (val === "") return '""';
+  if (Array.isArray(val)) {
+    return `[${val.map((x) => (typeof x === "object" && x !== null ? JSON.stringify(x) : String(x))).join(", ")}]`;
+  }
+  if (typeof val === "object") {
+    try {
+      return JSON.stringify(val);
+    } catch {
+      return String(val);
+    }
+  }
+  return String(val);
+}
+
+function formatLegacyVars(vars: any): string {
+  if (typeof vars === "object" && vars !== null) {
+    return Object.entries(vars)
+      .map(([k, v]) => `${k} = ${v}`)
+      .join(", ");
+  }
+  return String(vars || "");
+}
 ---
 
 <div class="checker-container" id={checkerId}>
@@ -112,39 +172,89 @@ const checkerId = "checker-" + Math.random().toString(36).substring(2, 9);
                     </div>
 
                     {test.traces && test.traces.length > 0 ? (
-                      <table class="trace-table">
-                        <thead>
-                          <tr>
-                            <th style="width: 4rem;">Bước</th>
-                            <th style="width: 5rem;">Dòng Code</th>
-                            <th>Biến số (Variables)</th>
-                            <th style="width: 10rem;">Ngăn Xếp (Stack)</th>
-                            <th>Điều kiện / Ghi chú</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {test.traces.map((step) => {
-                            let formattedVars = "";
-                            if (typeof step.vars === "object" && step.vars !== null) {
-                              formattedVars = Object.entries(step.vars)
-                                .map(([k, v]) => `${k} = ${v}`)
-                                .join(", ");
-                            } else {
-                              formattedVars = String(step.vars || "");
-                            }
-
-                            return (
-                              <tr>
-                                <td>{step.step}</td>
-                                <td><code>L{step.line}</code></td>
-                                <td><code>{formattedVars || "-"}</code></td>
-                                <td><code>{step.stack || "main()"}</code></td>
-                                <td>{step.cond || "-"}</td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
+                      isLegacyTraceList(test.traces) ? (
+                        <table class="trace-table">
+                          <thead>
+                            <tr>
+                              <th style="width: 4rem; text-align: center;">Bước</th>
+                              <th style="width: 5rem;">Dòng Code</th>
+                              <th>Biến số (Variables)</th>
+                              <th style="width: 10rem;">Ngăn Xếp (Stack)</th>
+                              <th>Điều kiện / Ghi chú</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {test.traces.map((step: any) => {
+                              const formattedVars = formatLegacyVars(step.vars);
+                              return (
+                                <tr>
+                                  <td style="text-align: center;">{step.step ?? "-"}</td>
+                                  <td><code>{step.line ? `L${step.line}` : "-"}</code></td>
+                                  <td><code>{formattedVars || "-"}</code></td>
+                                  <td><code>{step.stack || "main()"}</code></td>
+                                  <td>{step.cond || "-"}</td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      ) : (
+                        <table class="trace-table">
+                          <thead>
+                            <tr>
+                              <th style="width: 4.5rem; text-align: center;">Bước</th>
+                              <th>Loại / Tên biến / Mô tả</th>
+                              <th>Giá trị / Dữ liệu</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {test.traces.map((entry: any) => {
+                              if (entry.type === "step") {
+                                return (
+                                  <tr class="trace-row-step">
+                                    <td style="text-align: center;"><strong>{entry.step ?? "-"}</strong></td>
+                                    <td>{entry.msg || `Bước ${entry.step}`}</td>
+                                    <td style="color: var(--sl-color-gray-3);">-</td>
+                                  </tr>
+                                );
+                              }
+                              if (entry.type === "var") {
+                                return (
+                                  <tr class="trace-row-var">
+                                    <td style="text-align: center; color: var(--sl-color-gray-3);">-</td>
+                                    <td><code>{entry.name}</code></td>
+                                    <td><code>{formatTraceVal(entry.val)}</code></td>
+                                  </tr>
+                                );
+                              }
+                              if (entry.type === "array") {
+                                return (
+                                  <tr class="trace-row-array">
+                                    <td style="text-align: center; color: var(--sl-color-gray-3);">-</td>
+                                    <td><code>{entry.name}</code></td>
+                                    <td><code>{formatTraceVal(entry.values)}</code></td>
+                                  </tr>
+                                );
+                              }
+                              // Fallback for unexpected or mixed legacy entry
+                              const formattedVars = formatLegacyVars(entry.vars);
+                              const desc = [
+                                entry.line ? `L${entry.line}` : "",
+                                entry.cond ? entry.cond : "",
+                                entry.stack ? entry.stack : "",
+                                entry.msg ? entry.msg : "",
+                              ].filter(Boolean).join(" | ");
+                              return (
+                                <tr class="trace-row-custom">
+                                  <td style="text-align: center;">{entry.step ?? "-"}</td>
+                                  <td>{desc || "-"}</td>
+                                  <td><code>{formattedVars || formatTraceVal(entry.val ?? entry.values)}</code></td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      )
                     ) : (
                       <p style="font-size: 0.85rem; color: var(--sl-color-gray-3); margin-top: 0.5rem;">
                         (Không có bước chạy trung gian hoặc chương trình kết thúc tức thì)
