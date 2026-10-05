@@ -1,0 +1,84 @@
+---
+title: "Chương 20: Lý Thuyết Đồ Thị & Cách Biểu Diễn"
+description: "Ma trận kề, danh sách cạnh, danh sách kề vector<int> adj[], bổ đề bắt tay và phân tích bậc đỉnh."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh20 from './tests/ch20.json';
+
+# Chương 20: Lý Thuyết Đồ Thị & Cách Biểu Diễn
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Cấu Trúc Đồ Thị & Biểu Diễn Danh Sách Kề**  
+> *Từ nguyên học:* Lý thuyết đồ thị ra đời năm 1736 khi Leonhard Euler giải quyết bài toán nổi tiếng 7 cây cầu ở Königsberg, khởi đầu cho ngành topo học và mạng lưới rời rạc.  
+> *Mô hình trực giác:* Đồ thị $G = (V, E)$ là mô hình trừu tượng hóa mối quan hệ giữa các thực thể: mỗi thực thể là một đỉnh (Vertex), và mỗi quan hệ/kết nối là một cạnh (Edge). Lựa chọn cấu trúc dữ liệu để biểu diễn đồ thị trong bộ nhớ máy tính quyết định trực tiếp đến tính khả thi về thời gian và không gian của mọi thuật toán tìm kiếm đường đi.
+
+---
+
+### 1.1 Khái Niệm Cơ Bản & Bổ Đề Bắt Tay
+
+- **Đỉnh ($V$) và Cạnh ($E$):** Đồ thị gồm tập đỉnh $V$ và tập cạnh $E$.
+- **Bậc của đỉnh ($\text{deg}(v)$):** Số lượng cạnh gắn vào đỉnh $v$.
+- **Bổ đề bắt tay (Handshaking Lemma):** Tổng bậc của tất cả các đỉnh bằng hai lần số cạnh:
+$$\sum_{v \in V} \text{deg}(v) = 2 |E|$$
+Hệ quả: Số lượng đỉnh có bậc lẻ luôn là một số chẵn!
+
+---
+
+### 1.2 So Sánh 3 Phương Pháp Biểu Diễn Đồ Thị Trong C++14
+
+1. **Ma Trận Kề `matrix[u][v]`:** Bộ nhớ $O(V^2)$, kiểm tra cạnh $O(1)$. Chỉ phù hợp khi $V \le 1000$. Nếu $V = 10^5$, ma trận đòi hỏi tới 10 GB RAM dẫn tới Memory Limit Exceeded.
+2. **Danh Sách Cạnh `vector<pair<int, int>>`:** Bộ nhớ $O(E)$, phù hợp cho thuật toán Kruskal (MST) và Bellman-Ford.
+3. **Danh Sách Kề `vector<int> adj[N]`:** Bộ nhớ $O(V + E)$, chuẩn mực cho hầu hết giải thuật CP (BFS, DFS, Dijkstra, TopoSort).
+
+```cpp
+std::vector<std::vector<int>> adj(n + 1);
+adj[u].push_back(v);
+adj[v].push_back(u); // Với đồ thị vô hướng
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đồ Thị 4 Đỉnh Với Các Cạnh $(1, 2), (2, 3), (3, 4)$
+
+| Đỉnh $v$ | Danh sách kề `adj[v]` | Bậc $\text{deg}(v)$ | Phân loại đỉnh | Kiểm tra đơn đồ thị |
+| :---: | :--- | :---: | :--- | :--- |
+| 1 | `[2]` | 1 | Đỉnh lá (treo) | Không có khuyên |
+| 2 | `[1, 3]` | 2 | Đỉnh trung gian | Không có cạnh lặp |
+| 3 | `[2, 4]` | 2 | Đỉnh trung gian | Không có cạnh lặp |
+| 4 | `[3]` | 1 | Đỉnh lá (treo) | Không có khuyên |
+| **Tổng kết** | - | **$\text{max\_deg} = 2$ (Đỉnh 2)** | **0 đỉnh cô lập** | **Đơn đồ thị: 1** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Biểu Diễn Đồ Thị & Phân Tích Bậc Đỉnh
+
+**Đề bài:** Cho một đồ thị vô hướng gồm $N$ đỉnh (được đánh số từ $1$ đến $N$) và $M$ cạnh ($1 \le N \le 30, 0 \le M \le 100$).
+Các cạnh được cho dưới dạng danh sách cặp đỉnh $(u_i, v_i)$.
+
+Em hãy xây dựng biểu diễn đồ thị bằng danh sách kề và tính toán:
+1. Bậc lớn nhất của một đỉnh trong đồ thị (`max_deg`).
+2. Đỉnh có bậc lớn nhất (`best_vertex`). Nếu có nhiều đỉnh cùng đạt bậc lớn nhất, chọn đỉnh có chỉ số nhỏ nhất.
+3. Số lượng đỉnh cô lập trong đồ thị (`isolated_count`), tức các đỉnh có bậc bằng 0.
+4. Kiểm tra xem đồ thị có phải là đơn đồ thị (Simple Graph) hay không (`is_simple`: in ra 1 nếu là đơn đồ thị, 0 nếu chứa cạnh khuyên hoặc đa cạnh song song).
+
+### Ví Dụ Mẫu
+```text
+Input:
+4 3
+1 2
+2 3
+3 4
+
+Output:
+2 2 0 1
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh20} title="Chương 20: 10 Test Bàn Tay - Lý Thuyết Đồ Thị & Biểu Diễn" />

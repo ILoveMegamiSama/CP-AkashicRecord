@@ -1,26 +1,37 @@
 ---
 title: "Tập 3: Giải Thuật Đồ Thị & Quy Hoạch Động"
-description: "Biểu diễn đồ thị, duyệt DFS/BFS, đường đi ngắn nhất, cây khung nhỏ nhất và quy hoạch động nhiều chiều."
+description: "Biểu diễn đồ thị, duyệt DFS/BFS, sắp xếp tô-pô trên DAG, cây và thuật toán Dijkstra kết hợp quy hoạch động."
 ---
 
 # Tập 3: Giải Thuật Đồ Thị & Quy Hoạch Động
 
 Chào mừng bạn đến với Tập 3 của bộ chuyên khảo **Akashic Record - Lập Trình Thi Đấu C++14**.
 
+[Tải Sách Bản In A4 Hoàn Chỉnh (PDF)](/pdf/vol3.pdf)
+
+---
+
 ## Mục Tiêu Chuyên Khảo
 
-Tập 3 đi sâu vào hai trụ cột quan trọng nhất của Lập trình thi đấu:
-- Biểu diễn đồ thị: Ma trận kề, Danh sách cạnh, Danh sách kề `vector<vector<int>>`.
-- Duyệt đồ thị cơ bản: DFS, BFS, Tìm thành phần liên thông, Đồ thị hai phía.
-- Cấu trúc các tập hợp rời nhau DSU (Disjoint Set Union) & Nén đường đi / Hợp nhất theo hạng.
-- Cây khung nhỏ nhất (MST): Thuật toán Kruskal và Prim.
-- Đường đi ngắn nhất: Dijkstra hàng đợi ưu tiên, Bellman-Ford, Floyd-Warshall.
-- Đồ thị có hướng không chu trình (DAG) & Sắp xếp Tô-pô (Topological Sort).
-- Bản chất Quy hoạch Động (DP): Không gian trạng thái và công thức truy hồi.
-- Các bài toán DP kinh điển: Knapsack 0/1 & Không giới hạn, Dãy con tăng dài nhất (LIS), Chuỗi con chung dài nhất (LCS).
-- Quy hoạch động trên cây (Tree DP) & DP bitmask cơ bản.
+Tập 3 tập trung vào hai trụ cột quan trọng nhất của Lập trình thi đấu:
+- **Bản chất Quy hoạch Động (DP):** Từ đệ quy có nhớ (Memoization Top-down) đến lập bảng quy hoạch (Tabulation Bottom-up), thiết kế không gian trạng thái.
+- **Các bài toán DP kinh điển:** Dãy con tăng dài nhất (LIS), Chuỗi con chung dài nhất (LCS), Bài toán Cái túi (Knapsack 0/1 & Unbounded), Quy hoạch động trên lưới 2D (Grid DP).
+- **Lý thuyết Đồ thị & Biểu diễn:** Ma trận kề, Danh sách cạnh, Danh sách kề `vector<int> adj[]`, phân tích bậc đỉnh và kiểm tra đơn đồ thị.
+- **Duyệt Đồ thị cơ bản:** DFS ngăn xếp đệ quy, BFS hàng đợi theo mức, tìm thành phần liên thông và kiểm tra đồ thị hai phía (Bipartite).
+- **Đồ thị không chu trình (DAG) & Sắp xếp Tô-pô:** Thuật toán Kahn, phát hiện chu trình có hướng, Quy hoạch động trên DAG (đường đi dài nhất).
+- **Cây (Trees) & Các thuộc tính đặc biệt:** Chiều sâu, kích thước cây con, số lá, và thuật toán 2 lần DFS tìm đường kính cây.
+- **Đường đi ngắn nhất với Dijkstra:** Cài đặt chuẩn mực C++14 với `std::priority_queue`, kỹ thuật lazy deletion và truy vết đường đi.
+- **Bài toán tích hợp:** Phối hợp Đồ thị + Dijkstra + Quy hoạch động trên Shortest Path DAG.
+
+---
 
 ## Danh Mục Chương
 
-- **Chương 18 - 26:** Đồ thị và Quy hoạch Động.
-- **Bài Tập Tích Hợp Tập 3:** Hệ thống bài tập đồ thị kết hợp quy hoạch động.
+1. [**Chương 18:** Bản Chất Quy Hoạch Động (Từ Memoization Sang Tabulation, Bảng Trạng Thái)](./ch18/)
+2. [**Chương 19:** Các Bài Toán DP Kinh Điển (LIS, LCS, Knapsack 0/1 & Grid DP)](./ch19/)
+3. [**Chương 20:** Lý Thuyết Đồ Thị & Cách Biểu Diễn (Ma Trận Kề, Danh Sách Cạnh, Danh Sách Kề)](./ch20/)
+4. [**Chương 21:** Duyệt Đồ Thị Cơ Bản BFS & DFS (Thành Phần Liên Thông & Đồ Thị Hai Phía)](./ch21/)
+5. [**Chương 22:** Đồ Thị Không Chu Trình (DAG) & Sắp Xếp Tô-pô (Thuật Toán Kahn & DP Trên DAG)](./ch22/)
+6. [**Chương 23:** Cây (Trees) & Các Thuộc Tính Đặc Biệt (Subtree Size, Chiều Cao & Đường Kính 2 Lần DFS)](./ch23/)
+7. [**Chương 24:** Đường Đi Ngắn Nhất Với Thuật Toán Dijkstra (`priority_queue` & Truy Vết)](./ch24/)
+8. [**Bài Tập Tích Hợp Tập 3:** Lộ Trình Tối Ưu: Dijkstra & Quy Hoạch Động Trên Shortest Path DAG](./integrated/)

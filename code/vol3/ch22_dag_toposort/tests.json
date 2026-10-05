@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4 4\n1 2\n1 3\n2 4\n3 4\n",
+    "expected": "2 1 2 3 4\n",
+    "desc": "Đồ thị kim cương 4 đỉnh không chu trình"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3 2\n1 2\n2 3\n",
+    "expected": "2 1 2 3\n",
+    "desc": "Đoạn đường thẳng có hướng 3 đỉnh"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4 3\n4 3\n3 2\n2 1\n",
+    "expected": "3 4 3 2 1\n",
+    "desc": "Đoạn đường thẳng thứ tự ngược 4->3->2->1"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 0\n",
+    "expected": "0 1\n",
+    "desc": "Đồ thị 1 đỉnh không có cạnh"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "3 0\n",
+    "expected": "0 1 2 3\n",
+    "desc": "3 đỉnh rời nhau không có cạnh"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "2 1\n1 2\n",
+    "expected": "1 1 2\n",
+    "desc": "Một cung đơn từ 1 sang 2"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "3 3\n1 2\n2 3\n3 1\n",
+    "expected": "-1\n",
+    "desc": "Đồ thị có chu trình có hướng 3 đỉnh"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "4 4\n1 2\n2 3\n3 2\n3 4\n",
+    "expected": "-1\n",
+    "desc": "Đồ thị có chu trình cục bộ giữa hai đỉnh 2 và 3"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5 5\n1 4\n2 4\n3 5\n4 5\n1 2\n",
+    "expected": "3 1 2 3 4 5\n",
+    "desc": "Thử thách tính nhẩm thứ tự tô-pô 5 đỉnh và đường đi dài nhất"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "6 7\n1 2\n1 3\n2 4\n3 4\n4 5\n4 6\n5 6\n",
+    "expected": "4 1 2 3 4 5 6\n",
+    "desc": "Thử thách tính nhẩm DAG 6 đỉnh đường đi dài nhất 4 cạnh"
+  }
+]

@@ -1,0 +1,98 @@
+---
+title: "Chương 24: Đường Đi Ngắn Nhất Với Thuật Toán Dijkstra"
+description: "Thuật toán Dijkstra, cài đặt chuẩn với priority_queue min-heap, lazy deletion và phục hồi đường đi."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh24 from './tests/ch24.json';
+
+# Chương 24: Đường Đi Ngắn Nhất Với Thuật Toán Dijkstra
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Thuật Toán Dijkstra & Hàng Đợi Ưu Tiên Min-Heap**  
+> *Từ nguyên học:* Được nhà khoa học máy tính người Hà Lan Edsger W. Dijkstra phát minh năm 1956 chỉ trong 20 phút khi uống cà phê cùng vị hôn thê, và công bố năm 1959.  
+> *Mô hình trực giác:* Dijkstra là sự kết hợp hoàn hảo giữa Thuật toán Tham lam (Greedy) và Quy hoạch động. Xuất phát từ đỉnh nguồn, tại mỗi bước thuật toán luôn "chốt hạ" khoảng cách ngắn nhất của đỉnh chưa thăm có nhãn khoảng cách nhỏ nhất. Sau đó, nó dùng đỉnh này để thư giãn (Relaxation) khoảng cách tới các đỉnh kề. Bằng cách sử dụng Min-Heap (`std::priority_queue`), thời gian trích xuất đỉnh tối ưu giảm từ $O(V)$ xuống $O(\log V)$.
+
+---
+
+### 1.1 Điều Kiện Tiên Quyết: Trọng Số Không Âm
+
+Thuật toán Dijkstra yêu cầu mọi trọng số cạnh phải không âm ($w(e) \ge 0$).
+Nếu đồ thị có cạnh âm ($w(e) < 0$), Dijkstra sẽ chốt hạ sai nhãn khoảng cách do tính chất tham lam giả định rằng đi tiếp chỉ có thể làm tăng khoảng cách. Để giải bài toán có cạnh âm, bắt buộc phải dùng Bellman-Ford hoặc SPFA.
+
+---
+
+### 1.2 Cài Đặt Chuẩn C++14 Với `std::priority_queue`
+
+```cpp
+std::priority_queue<std::pair<long long, int>, 
+                    std::vector<std::pair<long long, int>>, 
+                    std::greater<std::pair<long long, int>>> pq;
+dist[1] = 0;
+pq.push({0, 1});
+
+while (!pq.empty()) {
+    auto top = pq.top(); pq.pop();
+    long long d = top.first; int u = top.second;
+    if (d > dist[u]) continue; // Lazy deletion
+
+    for (const auto& edge : adj[u]) {
+        int v = edge.to; long long w = edge.weight;
+        if (dist[u] + w < dist[v]) {
+            dist[v] = dist[u] + w;
+            parent[v] = u;
+            pq.push({dist[v], v});
+        }
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đồ Thị 4 Đỉnh Với $S = 1, T = 4$
+
+Các cạnh: $(1 \to 2, 2), (1 \to 3, 5), (2 \to 4, 4), (3 \to 4, 1)$.
+
+| Bước | Pop $(d, u)$ | Mảng `dist[]` | Thư giãn các cạnh | Nội dung Min-Heap |
+| :---: | :---: | :--- | :--- | :--- |
+| Khởi tạo | - | `[0, INF, INF, INF]` | `dist[1] = 0` | `[(0, 1)]` |
+| 1 | `(0, 1)` | `[0, 2, 5, INF]` | $1 \to 2: 2; 1 \to 3: 5$ | `[(2, 2), (5, 3)]` |
+| 2 | `(2, 2)` | `[0, 2, 5, 6]` | $2 \to 4: 2 + 4 = 6$ | `[(5, 3), (6, 4)]` |
+| 3 | `(5, 3)` | `[0, 2, 5, 6]` | $3 \to 4: 5 + 1 = 6$ (Không $< 6$) | `[(6, 4)]` |
+| 4 | `(6, 4)` | `[0, 2, 5, 6]` | Đích 4 được chốt | rỗng |
+| **Kết thúc** | - | **`dist[4] = 6`** | **`parent[4] = 2`** | **Đường đi: $1 \to 2 \to 4$** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Dijkstra Chuẩn Mực & Phục Hồi Đường Đi
+
+**Đề bài:** Cho một đồ thị có hướng gồm $N$ đỉnh (được đánh số từ $1$ đến $N$) và $M$ cung có trọng số không âm ($1 \le N \le 30, 1 \le M \le 100$).
+Em hãy tìm đường đi ngắn nhất từ đỉnh nguồn $S = 1$ đến đỉnh đích $T = N$.
+
+Nếu không tồn tại đường đi từ 1 đến $N$, in ra `-1`.
+Nếu tồn tại đường đi:
+1. In ra độ dài đường đi ngắn nhất `dist[N]`.
+2. In ra số lượng cạnh trên đường đi ngắn nhất đó `edge_count`.
+3. In ra đỉnh trung gian nằm ngay trước đỉnh $N$ trên đường đi ngắn nhất (`parent[N]`).
+
+### Ví Dụ Mẫu
+```text
+Input:
+4 4
+1 2 2
+1 3 5
+2 4 4
+3 4 1
+
+Output:
+6 2 2
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh24} title="Chương 24: 10 Test Bàn Tay - Thuật Toán Dijkstra" />

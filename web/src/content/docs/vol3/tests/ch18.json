@@ -1,0 +1,1494 @@
+[
+  {
+    "id": 1,
+    "input": "4\n10 15 20 10\n",
+    "expected": "25 1\n",
+    "actual": "25 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.88,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          10,
+          15,
+          20,
+          10
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 30
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 30
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "5\n1 2 1 1 3\n",
+    "expected": "5 1\n",
+    "actual": "5 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.19,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          1,
+          2,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "3\n5 10 20\n",
+    "expected": "25 1\n",
+    "actual": "25 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.32,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          5,
+          10,
+          20
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1\n50\n",
+    "expected": "50 1\n",
+    "actual": "50 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.08,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          50
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Base case n = 1"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 50
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "2\n100 200\n",
+    "expected": "200 1\n",
+    "actual": "200 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.32,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          100,
+          200
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 200
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 200
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "2\n500 500\n",
+    "expected": "500 1\n",
+    "actual": "500 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.94,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          500,
+          500
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 500
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 500
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 500
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "6\n2 2 2 2 2 2\n",
+    "expected": "6 1\n",
+    "actual": "6 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.83,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "6\n1 1 1 1 1 1\n",
+    "expected": "3 1\n",
+    "actual": "3 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.21,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "7\n3 2 4 1 5 2 6\n",
+    "expected": "11 1\n",
+    "actual": "11 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.74,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          3,
+          2,
+          4,
+          1,
+          5,
+          2,
+          6
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 17,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "6\n3 3 1 1 3 3\n",
+    "expected": "7 1\n",
+    "actual": "7 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.58,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n and cost array c"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "array",
+        "name": "c",
+        "values": [
+          0,
+          3,
+          3,
+          1,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Initialize base cases dp[1] and dp[2]"
+      },
+      {
+        "type": "var",
+        "name": "dp[1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[1]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[2]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "ways[2]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Transition for step i"
+      },
+      {
+        "type": "var",
+        "name": "i",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "c[i]",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dp[i-1]",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "dp[i-2]",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dp[i]",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "ways[i]",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 99,
+        "msg": "Optimal answer reached"
+      },
+      {
+        "type": "var",
+        "name": "min_cost",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "ways",
+        "val": 1
+      }
+    ]
+  }
+]

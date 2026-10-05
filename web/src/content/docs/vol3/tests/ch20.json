@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "input": "4 3\n1 2\n2 3\n3 4\n",
+    "expected": "2 2 0 1\n",
+    "actual": "2 2 0 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.92,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "5 4\n1 2\n1 3\n1 4\n1 5\n",
+    "expected": "4 1 0 1\n",
+    "actual": "4 1 0 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.71,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "3 3\n1 2\n2 3\n3 1\n",
+    "expected": "2 1 0 1\n",
+    "actual": "2 1 0 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.83,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 0\n",
+    "expected": "0 1 1 1\n",
+    "actual": "0 1 1 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.54,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "4 0\n",
+    "expected": "0 1 4 1\n",
+    "actual": "0 1 4 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.16,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "2 1\n1 1\n",
+    "expected": "2 1 1 0\n",
+    "actual": "2 1 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.84,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "3 2\n1 2\n1 2\n",
+    "expected": "2 1 1 0\n",
+    "actual": "2 1 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.7,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "5 4\n1 2\n2 1\n3 3\n4 5\n",
+    "expected": "2 1 0 0\n",
+    "actual": "2 1 0 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.86,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "6 5\n1 2\n2 3\n4 5\n5 6\n4 6\n",
+    "expected": "2 2 0 1\n",
+    "actual": "2 2 0 1\n",
+    "status": "AC",
+    "execution_time_ms": 3.39,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "7 6\n1 2\n1 3\n1 4\n2 3\n5 6\n7 7\n",
+    "expected": "3 1 0 0\n",
+    "actual": "3 1 0 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.22,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Degrees analyzed"
+      },
+      {
+        "type": "var",
+        "name": "max_deg",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "best_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "isolated_count",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "is_simple",
+        "val": 0
+      }
+    ]
+  }
+]

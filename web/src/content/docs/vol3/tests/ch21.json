@@ -1,0 +1,1107 @@
+[
+  {
+    "id": 1,
+    "input": "6 5\n1 2\n2 3\n3 1\n4 5\n5 6\n",
+    "expected": "2 3 0\n",
+    "actual": "2 3 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.24,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "4 3\n1 2\n2 3\n3 4\n",
+    "expected": "1 4 1\n",
+    "actual": "1 4 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.85,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "4 4\n1 2\n2 3\n3 4\n4 1\n",
+    "expected": "1 4 1\n",
+    "actual": "1 4 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.87,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 0\n",
+    "expected": "1 1 1\n",
+    "actual": "1 1 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.88,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "5 0\n",
+    "expected": "5 1 1\n",
+    "actual": "5 1 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.85,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "2 1\n1 2\n",
+    "expected": "1 2 1\n",
+    "actual": "1 2 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.86,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "3 3\n1 2\n2 3\n3 1\n",
+    "expected": "1 3 0\n",
+    "actual": "1 3 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.64,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "5 5\n1 2\n2 3\n3 4\n4 5\n5 1\n",
+    "expected": "1 5 0\n",
+    "actual": "1 5 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.03,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "7 6\n1 2\n2 3\n3 4\n5 6\n6 7\n5 7\n",
+    "expected": "2 4 0\n",
+    "actual": "2 4 0\n",
+    "status": "AC",
+    "execution_time_ms": 2.24,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 999,
+        "msg": "Conflict found: odd cycle detected"
+      },
+      {
+        "type": "var",
+        "name": "conflict_u",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "conflict_v",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "8 6\n1 2\n3 4\n5 6\n7 8\n1 3\n5 7\n",
+    "expected": "2 4 1\n",
+    "actual": "2 4 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.34,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, m and adjacency list"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "m",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Start new component BFS"
+      },
+      {
+        "type": "var",
+        "name": "start_vertex",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "colored_vertex",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "assigned_color",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "current_component_size",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 100,
+        "msg": "Graph analysis complete"
+      },
+      {
+        "type": "var",
+        "name": "comp_count",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_comp_size",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "is_bipartite",
+        "val": 1
+      }
+    ]
+  }
+]

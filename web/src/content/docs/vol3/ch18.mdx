@@ -1,0 +1,83 @@
+---
+title: "Chương 18: Bản Chất Quy Hoạch Động"
+description: "Từ đệ quy có nhớ Top-down sang lập bảng quy hoạch Bottom-up, bảng trạng thái và đếm phương án tối ưu."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh18 from './tests/ch18.json';
+
+# Chương 18: Bản Chất Quy Hoạch Động
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Quy Hoạch Động & Không Gian Trạng Thái**  
+> *Từ nguyên học:* Thuật ngữ Dynamic Programming được nhà toán học Richard Bellman đặt ra vào thập niên 1950 để mô tả quá trình ra quyết định đa giai đoạn tối ưu tuần tự.  
+> *Mô hình trực giác:* Quy hoạch động bản chất là phép đệ quy có ghi nhớ và triệt tiêu tính dư thừa. Khi một bài toán lớn có thể phân rã thành các bài toán con trùng lặp (Overlapping Subproblems) và nghiệm tối ưu của bài toán lớn được kiến tạo từ nghiệm tối ưu của các bài toán con (Optimal Substructure), ta lưu nghiệm của bài toán con vào một mảng trạng thái (State Table) để không bao giờ phải tính lại lần thứ hai.
+
+---
+
+### 1.1 Hai Điều Kiện Cốt Lõi Của Quy Hoạch Động
+
+Một bài toán chỉ có thể giải bằng Quy hoạch động khi thỏa mãn đồng thời hai thuộc tính toán học:
+1. **Cấu trúc con tối ưu (Optimal Substructure):** Lời giải tối ưu của bài toán kích thước $N$ chứa bên trong nó lời giải tối ưu của các bài toán con kích thước $k < N$.
+2. **Các bài toán con gối nhau (Overlapping Subproblems):** Cây gọi đệ quy thuần túy sẽ lặp đi lặp lại việc tính toán cùng một trạng thái nhiều lần (dẫn tới độ phức tạp hàm mũ $O(2^N)$ nếu không ghi nhớ).
+
+---
+
+### 1.2 Top-Down (Memoization) Đối Đầu Bottom-Up (Tabulation)
+
+- **Top-Down (Đệ Quy Nhớ - Memoization):** Đi từ bài toán lớn $N$ xuống các bài toán con nhỏ hơn $0, 1$. Sử dụng mảng nhớ `memo[]` khởi tạo giá trị $-1$.
+- **Bottom-Up (Lập Bảng - Tabulation):** Đi từ bài toán con cơ sở ($0, 1$) tính dần lên bài toán lớn $N$ bằng vòng lặp tuần tự (`for i = 3 .. N`). Loại bỏ hoàn toàn nguy cơ tràn ngăn xếp (Stack Overflow) và tối ưu hóa bộ nhớ đệm CPU Cache.
+
+Công thức chuyển trạng thái cho bài toán leo thang:
+$$dp[i] = C[i] + \min(dp[i-1], dp[i-2])$$
+
+```cpp
+for (int i = 3; i <= n; ++i) {
+    dp[i] = c[i] + std::min(dp[i - 1], dp[i - 2]);
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Mảng Chi Phí $C = [10, 15, 20, 10]$
+
+| Bước | Bậc $i$ | Chi phí $C[i]$ | Lựa chọn trước đó | $dp[i]$ (Chi phí min) | $ways[i]$ |
+| :---: | :---: | :---: | :--- | :---: | :---: |
+| Cơ sở | 1 | 10 | Khởi điểm tại 1 | 10 | 1 |
+| Cơ sở | 2 | 15 | Khởi điểm tại 2 | 15 | 1 |
+| 3 | 3 | 20 | $\min(dp[1]=10, dp[2]=15) \implies$ chọn 1 | $20 + 10 = 30$ | $ways[1] = 1$ |
+| 4 | 4 | 10 | $\min(dp[2]=15, dp[3]=30) \implies$ chọn 2 | $10 + 15 = 25$ | $ways[2] = 1$ |
+| **Kết thúc** | 4 | - | - | **Chi phí = 25** | **Số cách = 1** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Bậc Thang Chi Phí Tối Thiểu & Đếm Phương Án
+
+**Đề bài:** Có một cầu thang gồm $N$ bậc ($1 \le N \le 30$). Chi phí khi dẫm lên bậc $i$ là $C_i$ ($1 \le C_i \le 1000$).
+Quy tắc di chuyển:
+- Em có thể chọn bắt đầu dẫm lên bậc 1 (chi phí khởi điểm $C_1$) hoặc bậc 2 (chi phí $C_2$).
+- Từ bậc $i$, mỗi bước có thể nhảy lên bậc $i+1$ hoặc bậc $i+2$.
+- Đích đến là phải kết thúc chính xác tại bậc $N$.
+
+Em hãy tính:
+1. Tổng chi phí nhỏ nhất để đạt tới bậc $N$ (`min_cost`).
+2. Số lượng phương án di chuyển khác nhau đạt được đúng chi phí nhỏ nhất đó (`ways`).
+
+### Ví Dụ Mẫu
+```text
+Input:
+4
+10 15 20 10
+
+Output:
+25 1
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh18} title="Chương 18: 10 Test Bàn Tay - Bản Chất Quy Hoạch Động" />

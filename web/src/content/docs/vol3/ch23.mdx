@@ -1,0 +1,96 @@
+---
+title: "Chương 23: Cây (Trees) & Các Thuộc Tính Đặc Biệt"
+description: "Cấu trúc cây, chiều sâu, kích thước cây con, số lá và thuật toán 2 lần DFS tìm đường kính cây."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh23 from './tests/ch23.json';
+
+# Chương 23: Cây (Trees) & Các Thuộc Tính Đặc Biệt
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Cấu Trúc Cây & Thuật Toán 2 Lần DFS Tìm Đường Kính**  
+> *Từ nguyên học:* Khái niệm cây được Arthur Cayley đưa ra năm 1857 khi nghiên cứu các đồng phân hóa học hữu cơ phân nhánh, trở thành cấu trúc dữ liệu nền tảng nhất của khoa học máy tính.  
+> *Mô hình trực giác:* Một cái cây là một đồ thị liên thông nhưng tối giản đến mức thanh khiết: nó có $N$ đỉnh và đúng $N - 1$ cạnh, không có chu trình. Giữa hai đỉnh bất kỳ trên cây chỉ tồn tại duy nhất một đường đi đơn. Mọi nhánh cây khi cắt bỏ một cạnh lập tức bị chia tách thành hai thành phần độc lập, mở ra các tính chất quy nạp tuyệt đẹp về kích thước cây con và đường kính cực đại.
+
+---
+
+### 1.1 Cây Có Gốc (Rooted Tree) & Kích Thước Cây Con
+
+Khi chọn đỉnh 1 làm gốc:
+- Chiều sâu (Depth): $\text{depth}[1] = 0$, $\text{depth}[v] = \text{depth}[u] + 1$.
+- Nút lá (Leaves): Đỉnh không có con nào (bậc bằng 1 khi khác gốc).
+- Kích thước cây con (Subtree Size):
+$$\text{subtree\_size}[u] = 1 + \sum_{v \in \text{children}(u)} \text{subtree\_size}[v]$$
+
+---
+
+### 1.2 Thuật Toán 2 Lần DFS Tìm Đường Kính Cây
+
+Đường kính cây $D$ là khoảng cách lớn nhất giữa hai đỉnh bất kỳ trên cây:
+$$D = \max_{u, v \in V} \text{dist}(u, v)$$
+
+Quy trình 2 lần DFS:
+1. **DFS lần 1:** Xuất phát từ đỉnh 1 bất kỳ, tìm đỉnh $A$ xa nhất.
+2. **DFS lần 2:** Xuất phát từ đỉnh $A$, tìm đỉnh $B$ xa nhất.
+3. **Kết luận:** Khoảng cách $\text{dist}(A, B)$ chính là đường kính của cây!
+
+```cpp
+void dfs_farthest(int u, int p, int d) {
+    if (d > max_dist) {
+        max_dist = d;
+        farthest_node = u;
+    }
+    for (int v : adj[u]) {
+        if (v != p) dfs_farthest(v, u, d + 1);
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Cây 5 Đỉnh Gốc 1
+
+Cạnh: $(1, 2), (1, 3), (2, 4), (2, 5)$.
+
+| Lần DFS | Đỉnh xuất phát | Đỉnh xa nhất tìm được | Khoảng cách max | Ý nghĩa hình học |
+| :---: | :---: | :---: | :---: | :--- |
+| DFS 1 | 1 | 4 (hoặc 5) | 2 | Đầu mút đường kính $A = 4$ |
+| DFS 2 | 4 | 3 (qua $4 \to 2 \to 1 \to 3$) | 3 | **Đầu mút đối diện $B = 3$** |
+| Gốc 1 | Duyệt cây con | $\text{size}[2] = 3$ | $\text{size}[3] = 1$ | $\text{max\_child\_subtree\_size} = 3$ |
+| **Tổng kết** | - | **$\text{max\_depth} = 2$** | **Số lá: 3** | **Đường kính $D = 3$** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Cây & Thuộc Tính Cốt Lõi
+
+**Đề bài:** Cho một cây gồm $N$ đỉnh ($1 \le N \le 30$) và $N - 1$ cạnh, các đỉnh được đánh số từ $1$ đến $N$.
+Cây được coi là có gốc tại đỉnh 1.
+
+Em hãy tính toán:
+1. Đường kính của cây (`diameter`): Khoảng cách lớn nhất giữa hai đỉnh bất kỳ trên cây (sử dụng thuật toán 2 lần DFS).
+2. Chiều cao lớn nhất của cây (`max_depth`): Khoảng cách lớn nhất từ đỉnh gốc 1 đến một đỉnh bất kỳ trên cây ($\text{depth}[1] = 0$).
+3. Số lượng nút lá của cây (`leaf_count`): Số lượng nút trong cây không có con nào khi coi 1 là gốc.
+4. Kích thước cây con lớn nhất trong số các cây con của các con trực tiếp của gốc 1 (`max_child_subtree_size`). Nếu $N = 1$, giá trị này là 0.
+
+### Ví Dụ Mẫu
+```text
+Input:
+5
+1 2
+1 3
+2 4
+2 5
+
+Output:
+3 2 3 3
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh23} title="Chương 23: 10 Test Bàn Tay - Cây & Thuộc Tính Cốt Lõi" />

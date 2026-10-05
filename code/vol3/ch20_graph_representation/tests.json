@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4 3\n1 2\n2 3\n3 4\n",
+    "expected": "2 2 0 1\n",
+    "desc": "Đường đi 4 đỉnh 3 cạnh"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "5 4\n1 2\n1 3\n1 4\n1 5\n",
+    "expected": "4 1 0 1\n",
+    "desc": "Đồ thị hình sao tâm tại đỉnh 1"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "3 3\n1 2\n2 3\n3 1\n",
+    "expected": "2 1 0 1\n",
+    "desc": "Đồ thị tam giác chu trình 3 đỉnh"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 0\n",
+    "expected": "0 1 1 1\n",
+    "desc": "Đồ thị chỉ gồm 1 đỉnh cô lập không cạnh"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "4 0\n",
+    "expected": "0 1 4 1\n",
+    "desc": "Đồ thị không có cạnh nào gồm 4 đỉnh cô lập"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "2 1\n1 1\n",
+    "expected": "2 1 1 0\n",
+    "desc": "Đồ thị có cạnh khuyên tại đỉnh 1"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "3 2\n1 2\n1 2\n",
+    "expected": "2 1 1 0\n",
+    "desc": "Đa cạnh song song nối đỉnh 1 và đỉnh 2"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "5 4\n1 2\n2 1\n3 3\n4 5\n",
+    "expected": "2 1 0 0\n",
+    "desc": "Đồ thị hỗn hợp vừa chứa đa cạnh vừa chứa cạnh khuyên"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "6 5\n1 2\n2 3\n4 5\n5 6\n4 6\n",
+    "expected": "2 2 0 1\n",
+    "desc": "Hai thành phần liên thông riêng biệt không có đỉnh cô lập"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "7 6\n1 2\n1 3\n1 4\n2 3\n5 6\n7 7\n",
+    "expected": "3 1 0 0\n",
+    "desc": "Đồ thị 7 đỉnh có cấu trúc bánh xe kết hợp khuyên"
+  }
+]

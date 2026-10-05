@@ -1,0 +1,90 @@
+---
+title: "Chương 21: Duyệt Đồ Thị Cơ Bản BFS & DFS"
+description: "Duyệt theo chiều sâu DFS, duyệt theo chiều rộng BFS, tìm thành phần liên thông và kiểm tra đồ thị hai phía Bipartite."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh21 from './tests/ch21.json';
+
+# Chương 21: Duyệt Đồ Thị Cơ Bản BFS & DFS
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Duyệt Đồ Thị, Liên Thông & Đồ Thị Hai Phía**  
+> *Từ nguyên học:* Duyệt theo chiều sâu (DFS) và duyệt theo chiều rộng (BFS) được phát triển vào thế kỷ 19 để giải mê cung (thuật toán Trémaux) và chính thức hóa bởi Edward F. Moore (1959) trong bài toán tìm đường ngắn nhất.  
+> *Mô hình trực giác:* Duyệt đồ thị là hành vi khám phá toàn bộ không gian đỉnh và cạnh một cách có hệ thống. DFS sử dụng cơ chế Ngăn xếp (Stack/Recursion) để đi sâu nhất có thể dọc theo một nhánh trước khi quay lui. BFS sử dụng Hàng đợi (Queue) để lan truyền đồng tâm theo từng tầng sóng, đảm bảo tìm ra đường đi có ít cạnh nhất trên đồ thị không trọng số.
+
+---
+
+### 1.1 So Sánh Bản Chất: DFS Đối Đầu BFS
+
+- **DFS (Depth-First Search):** Dùng ngăn xếp (Call Stack), khám phá đến tận cùng một nhánh rồi quay lui. Phù hợp cho kiểm tra liên thông, chu trình, sắp xếp tô-pô.
+- **BFS (Breadth-First Search):** Dùng hàng đợi (`std::queue`), lan tỏa theo từng mức sóng khoảng cách. Phù hợp cho tìm đường đi ngắn nhất trên đồ thị không trọng số.
+
+---
+
+### 1.2 Đồ Thị Hai Phía (Bipartite Graph) & Tô 2 Màu
+
+Một đồ thị là hai phía nếu tập đỉnh có thể chia thành hai tập rời rạc $V_1, V_2$ sao cho mọi cạnh chỉ nối giữa một đỉnh thuộc $V_1$ và một đỉnh thuộc $V_2$.
+
+**Định lý König:** Một đồ thị là đồ thị hai phía khi và chỉ khi **không chứa chu trình có độ dài lẻ**.
+
+Kỹ thuật tô màu 0 và 1 bằng BFS:
+```cpp
+if (color[v] == -1) {
+    color[v] = 1 - color[u];
+    q.push(v);
+} else if (color[v] == color[u]) {
+    is_bipartite = false; // Phát hiện chu trình lẻ
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đồ Thị 6 Đỉnh 2 Thành Phần
+
+Đồ thị gồm các cạnh $(1, 2), (2, 3), (3, 1)$ (thành phần 1) và $(4, 5), (5, 6)$ (thành phần 2).
+
+| Bước | Đỉnh $u$ | Hành động / Màu | Hàng đợi `queue` | Trạng thái Bipartite |
+| :---: | :---: | :--- | :---: | :--- |
+| 1 | 1 | Khởi tạo thành phần 1, $\text{color}[1]=0$ | `[1]` | Hợp lệ |
+| 2 | 1 | Pop 1 $\implies$ duyệt 2, 3 ($\text{color}=1$) | `[2, 3]` | Tô màu đối nghịch |
+| 3 | 2 | Pop 2 $\implies$ duyệt 3: $\text{color}[3] == \text{color}[2] == 1$! | `[3]` | **Xung đột màu: Chu trình lẻ $C_3$!** |
+| 4 | 4 | Khởi tạo thành phần 2, $\text{color}[4]=0$ | `[4]` | $\text{is\_bipartite} = \text{false}$ |
+| 5 | 4 | Pop 4 $\implies$ duyệt 5 ($\text{color}=1$) | `[5]` | - |
+| 6 | 5 | Pop 5 $\implies$ duyệt 6 ($\text{color}=0$) | `[6]` | - |
+| **Kết thúc** | - | **2 thành phần, $\text{max\_size} = 3$** | rỗng | **$\text{is\_bipartite} = 0$** |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Thành Phần Liên Thông & Đồ Thị Hai Phía
+
+**Đề bài:** Cho một đồ thị vô hướng gồm $N$ đỉnh (được đánh số từ $1$ đến $N$) và $M$ cạnh ($1 \le N \le 30, 0 \le M \le 100$).
+Đồ thị có thể không liên thông và có thể chứa nhiều thành phần độc lập.
+
+Em hãy sử dụng thuật toán duyệt đồ thị (BFS hoặc DFS) để tính toán:
+1. Tổng số lượng thành phần liên thông của đồ thị (`comp_count`).
+2. Kích thước (số lượng đỉnh) của thành phần liên thông lớn nhất (`max_comp_size`).
+3. Kiểm tra xem toàn bộ đồ thị có phải là đồ thị hai phía (Bipartite Graph) hay không (`is_bipartite`: in ra 1 nếu là đồ thị hai phía, 0 nếu không).
+
+### Ví Dụ Mẫu
+```text
+Input:
+6 5
+1 2
+2 3
+3 1
+4 5
+5 6
+
+Output:
+2 3 0
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh21} title="Chương 21: 10 Test Bàn Tay - BFS & DFS Cơ Bản" />

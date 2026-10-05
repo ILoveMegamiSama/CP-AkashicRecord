@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4 7\n2 3\n3 4\n4 5\n5 6\n",
+    "expected": "9 7\n",
+    "desc": "Balo mẫu 4 đồ vật sức chứa 7"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3 4\n1 2\n2 3\n3 4\n",
+    "expected": "6 4\n",
+    "desc": "Balo 3 vật chọn cặp tối ưu đạt giá trị 6"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "3 8\n3 30\n4 50\n5 60\n",
+    "expected": "90 8\n",
+    "desc": "Balo 3 vật giá trị cao đạt 90 tại trọng lượng 8"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 10\n15 100\n",
+    "expected": "0 0\n",
+    "desc": "Đồ vật vượt quá sức chứa balo"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "1 5\n5 20\n",
+    "expected": "20 5\n",
+    "desc": "Đồ vật duy nhất vừa vặn sức chứa"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3 1\n2 10\n3 20\n4 30\n",
+    "expected": "0 0\n",
+    "desc": "Sức chứa tối thiểu W=1 nhỏ hơn mọi đồ vật"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "4 10\n5 10\n5 10\n5 10\n5 10\n",
+    "expected": "20 10\n",
+    "desc": "Các đồ vật có cùng trọng lượng và giá trị"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "3 10\n2 50\n8 1\n10 50\n",
+    "expected": "51 10\n",
+    "desc": "Vật nhẹ giá trị cao kết hợp vật nặng giá trị thấp"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5 10\n2 6\n2 10\n3 12\n4 16\n5 22\n",
+    "expected": "44 10\n",
+    "desc": "Thử thách tính nhẩm balo 5 vật sức chứa 10"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "6 12\n1 2\n3 8\n4 10\n5 15\n7 20\n2 5\n",
+    "expected": "35 12\n",
+    "desc": "Thử thách tính nhẩm balo 6 vật sức chứa 12"
+  }
+]
