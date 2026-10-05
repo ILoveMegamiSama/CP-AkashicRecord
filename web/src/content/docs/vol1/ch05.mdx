@@ -1,0 +1,85 @@
+---
+title: "Chương 5: Địa Chỉ Ô Nhớ, Bản Chất Con Trỏ & Toán Tử &, *"
+description: "Toán tử lấy địa chỉ, bản chất con trỏ trong bộ nhớ RAM, số học con trỏ và đẳng thức nền tảng a[i] == *(a + i)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh05 from './tests/ch05.json';
+
+# Chương 5: Địa Chỉ Ô Nhớ, Bản Chất Con Trỏ & Toán Tử &, *
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Con Trỏ (Pointer)**  
+> *Từ nguyên học:* Harold Lawson phát minh năm 1964 trong ngôn ngữ PL/I.  
+> *Mô hình trực giác:* Hãy hình dung mỗi ngôi nhà trên phố có một "Số nhà" (Địa chỉ ô nhớ) và bên trong chứa "Đồ đạc" (Dữ liệu). Con trỏ không phải là ngôi nhà; con trỏ là mẩu giấy ghi lại con số "Số nhà" đó. Khi cầm mẩu giấy, bạn có thể tìm đến ngôi nhà tương ứng để xem hoặc sửa đổi đồ đạc bên trong.
+
+### 1.1 Toán Tử Lấy Địa Chỉ `&` & Giải Tham Chiếu `*`
+
+- `&x`: Trả về địa chỉ ô nhớ vật lý của biến `x` trong RAM.
+- `int* ptr = &x;`: Con trỏ `ptr` lưu địa chỉ của `x`.
+- `*ptr = 100;`: Đi theo địa chỉ đang lưu trong `ptr` để tiếp cận ô nhớ gốc và ghi đè giá trị 100 vào đó.
+
+### 1.2 Đẳng Thức Nền Tảng $a[i] \equiv *(a + i)$
+
+Trong C/C++, tên của mảng tĩnh `a` tự động suy biến thành con trỏ hằng trỏ vào phần tử đầu tiên:
+$$a \equiv \&a[0]$$
+Do đó, cú pháp `a[i]` thực chất chỉ là cách viết ngắn gọn của việc dời con trỏ đi $i$ phần tử rồi giải tham chiếu:
+$$a[i] \equiv *(a + i)$$
+
+---
+
+## 2. Mổ Xẻ Cú Pháp C++14: Khởi Tạo & Truy Xuất Con Trỏ
+
+```cpp
+int* ptr = a;
+int first_val = *ptr;
+int next_val = *(ptr + 1);
+```
+
+| Cú pháp | Cơ chế ngữ nghĩa |
+| :--- | :--- |
+| `int* ptr = a;` | `ptr` trỏ vào địa chỉ đầu tiên của mảng `a` (`&a[0]`). |
+| `*ptr` | Đọc giá trị tại ô nhớ đầu tiên (`a[0]`). |
+| `ptr + 1` | Nhảy địa chỉ con trỏ tiến lên 1 bước ($+ 4$ bytes đối với kiểu `int`). |
+| `*(ptr + 1)` | Giải tham chiếu ô nhớ mới để lấy giá trị phần tử thứ hai (`a[1]`). |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Mô Hình Mũi Tên Con Trỏ
+
+Giả sử mảng `int a[3] = {10, 20, 30}` bắt đầu từ địa chỉ `0x100`:
+
+| Biểu thức con trỏ | Địa chỉ thực tế | Giá trị giải tham chiếu | Thao tác tương đương |
+| :---: | :---: | :---: | :---: |
+| `ptr` | `0x100` | 10 | `a[0]` |
+| `ptr + 1` | `0x104` | 20 | `a[1]` |
+| `ptr + 2` | `0x108` | 30 | `a[2]` |
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Con Trỏ Tìm Cực Trị & Độ Lệch
+
+**Đề bài:** Cho mảng số nguyên $A$ gồm $N$ phần tử ($1 \le N \le 8$). Sử dụng con trỏ thuần túy `*(ptr + i)` (không dùng cú pháp `[]`):
+1. Tìm giá trị nhỏ nhất `min_val` và chỉ số đầu tiên `min_idx`.
+2. Tìm giá trị lớn nhất `max_val` và chỉ số đầu tiên `max_idx`.
+3. Tính độ lệch chỉ số: $\text{offset} = \text{max\_idx} - \text{min\_idx}$.
+
+- **Input:** Dòng 1 chứa $N$. Dòng 2 chứa $N$ số nguyên.
+- **Output:** In ra 3 số nguyên `min_val max_val offset` cách nhau một khoảng trắng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+10 20 30
+
+Output:
+10 30 2
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh05} title="Chương 5: 10 Test Bàn Tay - Con Trỏ & Ô Nhớ" />

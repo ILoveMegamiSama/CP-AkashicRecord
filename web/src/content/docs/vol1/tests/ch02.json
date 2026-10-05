@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "input": "3 4 50\n",
+    "expected": "SAFE 12\n",
+    "actual": "SAFE 12\n",
+    "status": "AC",
+    "execution_time_ms": 1.77,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 50
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 12
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "5 6 20\n",
+    "expected": "OVERFLOW 30\n",
+    "actual": "OVERFLOW 30\n",
+    "status": "AC",
+    "execution_time_ms": 1.98,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 20
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 30
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 30
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod exceeds threshold: OVERFLOW"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "2 10 20\n",
+    "expected": "SAFE 20\n",
+    "actual": "SAFE 20\n",
+    "status": "AC",
+    "execution_time_ms": 1.42,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 20
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 20
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "0 100 50\n",
+    "expected": "SAFE 0\n",
+    "actual": "SAFE 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.78,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 50
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "10 0 0\n",
+    "expected": "SAFE 0\n",
+    "actual": "SAFE 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.73,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "-5 6 35\n",
+    "expected": "SAFE -30\n",
+    "actual": "SAFE -30\n",
+    "status": "AC",
+    "execution_time_ms": 1.45,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": -5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 35
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": -30
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 30
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "-5 6 25\n",
+    "expected": "OVERFLOW -30\n",
+    "actual": "OVERFLOW -30\n",
+    "status": "AC",
+    "execution_time_ms": 1.45,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": -5
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": -30
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 30
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod exceeds threshold: OVERFLOW"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "-4 -7 25\n",
+    "expected": "OVERFLOW 28\n",
+    "actual": "OVERFLOW 28\n",
+    "status": "AC",
+    "execution_time_ms": 1.74,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": -4
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": -7
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 25
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 28
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod exceeds threshold: OVERFLOW"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "12 8 100\n",
+    "expected": "SAFE 96\n",
+    "actual": "SAFE 96\n",
+    "status": "AC",
+    "execution_time_ms": 1.14,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 100
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": 96
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 96
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod within threshold: SAFE"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "-15 7 100\n",
+    "expected": "OVERFLOW -105\n",
+    "actual": "OVERFLOW -105\n",
+    "status": "AC",
+    "execution_time_ms": 1.47,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs a, b, threshold"
+      },
+      {
+        "type": "var",
+        "name": "a",
+        "val": -15
+      },
+      {
+        "type": "var",
+        "name": "b",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "threshold",
+        "val": 100
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Compute static_cast<long long>(a) * b"
+      },
+      {
+        "type": "var",
+        "name": "prod",
+        "val": -105
+      },
+      {
+        "type": "var",
+        "name": "abs_prod",
+        "val": 105
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "abs_prod exceeds threshold: OVERFLOW"
+      }
+    ]
+  }
+]

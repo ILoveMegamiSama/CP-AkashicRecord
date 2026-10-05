@@ -1,0 +1,1257 @@
+[
+  {
+    "id": 1,
+    "input": "1\n",
+    "expected": "0 1\n",
+    "actual": "0 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.53,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "2\n",
+    "expected": "1 2\n",
+    "actual": "1 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.74,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "4\n",
+    "expected": "2 4\n",
+    "actual": "2 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.49,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "8\n",
+    "expected": "3 8\n",
+    "actual": "3 8\n",
+    "status": "AC",
+    "execution_time_ms": 1.53,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 8
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "3\n",
+    "expected": "7 16\n",
+    "actual": "7 16\n",
+    "status": "AC",
+    "execution_time_ms": 1.53,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "5\n",
+    "expected": "5 16\n",
+    "actual": "5 16\n",
+    "status": "AC",
+    "execution_time_ms": 1.82,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "6\n",
+    "expected": "8 16\n",
+    "actual": "8 16\n",
+    "status": "AC",
+    "execution_time_ms": 1.82,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "7\n",
+    "expected": "16 52\n",
+    "actual": "16 52\n",
+    "status": "AC",
+    "execution_time_ms": 1.96,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 22
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 22
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 22
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 34
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 34
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 17
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 34
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 52
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 26
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "9\n",
+    "expected": "19 52\n",
+    "actual": "19 52\n",
+    "status": "AC",
+    "execution_time_ms": 1.64,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 9
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 9
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 28
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 14
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 22
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 11
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 28
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 34
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 34
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 17
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 34
+      },
+      {
+        "type": "step",
+        "step": 8,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 52
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 9,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 26
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 10,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 11,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 12,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 13,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 14,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 15,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 16,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 17,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 18,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      },
+      {
+        "type": "step",
+        "step": 19,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 52
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "10\n",
+    "expected": "6 16\n",
+    "actual": "6 16\n",
+    "status": "AC",
+    "execution_time_ms": 2.29,
+    "traces": [
+      {
+        "type": "step",
+        "step": 0,
+        "msg": "Initial state"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Collatz iteration"
+      },
+      {
+        "type": "var",
+        "name": "current",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "max_val",
+        "val": 16
+      }
+    ]
+  }
+]

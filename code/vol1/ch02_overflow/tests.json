@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "3 4 50\n",
+    "expected": "SAFE 12\n",
+    "desc": "Tích 12 nằm an toàn dưới ngưỡng 50"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "5 6 20\n",
+    "expected": "OVERFLOW 30\n",
+    "desc": "Tích 30 vượt ngưỡng 20"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "2 10 20\n",
+    "expected": "SAFE 20\n",
+    "desc": "Tích 20 đúng bằng ngưỡng 20"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "0 100 50\n",
+    "expected": "SAFE 0\n",
+    "desc": "Nhân với 0 luôn bằng 0"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "10 0 0\n",
+    "expected": "SAFE 0\n",
+    "desc": "Ngưỡng 0 và tích bằng 0"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "-5 6 35\n",
+    "expected": "SAFE -30\n",
+    "desc": "Tích âm có giá trị tuyệt đối 30 dưới ngưỡng 35"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "-5 6 25\n",
+    "expected": "OVERFLOW -30\n",
+    "desc": "Tích âm có giá trị tuyệt đối 30 vượt ngưỡng 25"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "-4 -7 25\n",
+    "expected": "OVERFLOW 28\n",
+    "desc": "Hai số âm nhân nhau ra dương 28 vượt ngưỡng 25"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "12 8 100\n",
+    "expected": "SAFE 96\n",
+    "desc": "Tính nhẩm 12 x 8 = 96 <= 100"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "-15 7 100\n",
+    "expected": "OVERFLOW -105\n",
+    "desc": "Tính nhẩm |-105| > 100"
+  }
+]

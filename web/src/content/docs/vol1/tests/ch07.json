@@ -1,0 +1,637 @@
+[
+  {
+    "id": 1,
+    "input": "2\n1 2 3\n2 1 1\n",
+    "expected": "2 1\n",
+    "actual": "2 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.83,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 5
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "3\n1 0 5\n2 1 2\n3 0 1\n",
+    "expected": "3 2 1\n",
+    "actual": "3 2 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.47,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 5
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "2\n1 3 0\n2 0 3\n",
+    "expected": "2 1\n",
+    "actual": "2 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.17,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1\n99 0 0\n",
+    "expected": "99\n",
+    "actual": "99\n",
+    "status": "AC",
+    "execution_time_ms": 1.74,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 99
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "2\n1 0 0\n2 0 0\n",
+    "expected": "1 2\n",
+    "actual": "1 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.98,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "3\n1 -2 0\n2 2 0\n3 0 2\n",
+    "expected": "1 3 2\n",
+    "actual": "1 3 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.6,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "4\n1 1 1\n2 -1 -1\n3 -1 1\n4 1 -1\n",
+    "expected": "2 3 1 4\n",
+    "actual": "2 3 1 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.32,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "3\n10 0 4\n20 2 2\n30 -4 0\n",
+    "expected": "30 10 20\n",
+    "actual": "30 10 20\n",
+    "status": "AC",
+    "execution_time_ms": 1.4,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 30
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 20
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "5\n1 3 3\n2 1 1\n3 2 2\n4 0 2\n5 1 0\n",
+    "expected": "5 4 2 3 1\n",
+    "actual": "5 4 2 3 1\n",
+    "status": "AC",
+    "execution_time_ms": 2.02,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 7,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "4\n4 5 5\n3 -2 -3\n2 0 1\n1 -1 0\n",
+    "expected": "1 2 3 4\n",
+    "actual": "1 2 3 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.68,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Loaded points"
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Sorted points"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 4,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 5,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 6,
+        "msg": "Output point"
+      },
+      {
+        "type": "var",
+        "name": "id",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dist",
+        "val": 10
+      }
+    ]
+  }
+]

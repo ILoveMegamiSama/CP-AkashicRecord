@@ -1,0 +1,96 @@
+---
+title: "Bài Tập Tích Hợp Tập 1: Quản Lý Hồ Sơ Thí Sinh"
+description: "Bài toán thực chiến tích hợp toàn diện kiến thức Tập 1: Mảng + Con trỏ + Struct + Phân tích độ phức tạp thời gian."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsIntegrated from './tests/integrated.json';
+
+# Bài Tập Tích Hợp Tập 1: Quản Lý Hồ Sơ Thí Sinh
+
+## 1. Bối Cảnh Thực Tế & Kiến Trúc Tích Hợp
+
+> **Sắp Xếp Con Trỏ (Pointer-based Sorting)**  
+> *Mô hình trực giác:* Thay vì di chuyển những chiếc tủ cồng kềnh (sao chép toàn bộ khối dữ liệu struct lớn gây nghẽn băng thông bộ nhớ), ta chỉ hoán đổi vị trí của các mẩu nhãn dán ghi số phòng (hoán đổi con trỏ địa chỉ 8-byte). Dữ liệu gốc vẫn nằm yên trên thanh RAM, nhưng thứ tự truy xuất đã được sắp xếp hoàn hảo.
+
+Hệ thống quản lý kỳ thi Olympic cần xử lý danh sách $N$ thí sinh ($1 \le N \le 8$). Mỗi thí sinh được biểu diễn bởi:
+```cpp
+struct Student {
+    int id;    // Số báo danh
+    int score; // Điểm số bài thi
+    int age;   // Tuổi thí sinh
+};
+```
+
+### Kiến Trúc Tích Hợp Toàn Diện
+1. **Mảng Dữ Liệu (Chương 4):** Lưu trữ trong mảng tĩnh `Student arr[16]`.
+2. **Mảng Con Trỏ (Chương 5):** Khởi tạo `Student* ptrs[16]` và gán `ptrs[i] = &arr[i]`.
+3. **So Sánh Đa Tiêu Chí (Chương 7):**
+   - Điểm số cao hơn xếp trước.
+   - Bằng điểm: ít tuổi hơn xếp trước.
+   - Bằng tuổi: `id` nhỏ hơn xếp trước.
+4. **Độ Phức Tạp Thuật Toán (Chương 8):**
+   - Sắp xếp bằng Selection Sort trên mảng con trỏ.
+   - Tổng số phép so sánh thực hiện luôn bằng:
+     $$C(N) = \frac{N(N - 1)}{2} \in O(N^2)$$
+
+---
+
+## 2. Mổ Xẻ Cú Pháp: Hoán Đổi Con Trỏ Thay Vì Struct
+
+```cpp
+Student* temp = ptrs[i];
+ptrs[i] = ptrs[best];
+ptrs[best] = temp;
+```
+
+| Dòng lệnh | Cơ chế ngữ nghĩa |
+| :--- | :--- |
+| `Student* temp = ptrs[i];` | Lưu địa chỉ của đối tượng thứ $i$ vào biến con trỏ tạm thời 8-byte. |
+| `ptrs[i] = ptrs[best];` | Gán địa chỉ đối tượng tối ưu nhất cho vị trí thứ $i$. |
+| `ptrs[best] = temp;` | Hoàn tất đổi chỗ 2 con trỏ mà không phải sao chép bất kỳ byte dữ liệu nào của `Student`! |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Với $N = 3$ Thí Sinh
+
+- Thí sinh 1 ($S_1$): `id = 1, score = 70, age = 16`
+- Thí sinh 2 ($S_2$): `id = 2, score = 95, age = 15`
+- Thí sinh 3 ($S_3$): `id = 3, score = 85, age = 17`
+
+| Vòng lặp $i$ | Phép so sánh thực hiện | Con trỏ tốt nhất (`best`) | Mảng con trỏ sau bước $i$ |
+| :---: | :--- | :---: | :---: |
+| $i = 0$ | $(ptrs[1], ptrs[0]): 95 > 70 \implies best = 1$<br/>$(ptrs[2], ptrs[1]): 85 < 95$ | $best = 1$ (id=2) | `[id=2, id=1, id=3]` |
+| $i = 1$ | $(ptrs[2], ptrs[1]): 85 > 70 \implies best = 2$ | $best = 2$ (id=3) | `[id=2, id=3, id=1]` |
+| **Tổng kết** | Tổng số phép so sánh: $2 + 1 = \mathbf{3}$ | **Top: id=2 (95 điểm)** | `[2, 3, 1]` |
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Quản Lý Hồ Sơ Thí Sinh
+
+**Đề bài:** Cho danh sách $N$ thí sinh ($1 \le N \le 8$). Mỗi thí sinh gồm 3 thông tin `id score age`.
+1. Đọc dữ liệu vào mảng `Student arr[N]` và khởi tạo mảng con trỏ `Student* ptrs[N]`.
+2. Sắp xếp mảng con trỏ theo tiêu chí: Điểm cao xếp trước; cùng điểm thì ít tuổi hơn xếp trước; cùng tuổi thì `id` nhỏ hơn xếp trước. Đếm tổng số phép so sánh cặp thí sinh đã thực hiện trong thuật toán Selection Sort.
+3. In ra danh sách `id` sau khi sắp xếp trên dòng 1. Dòng 2 in: `top_id top_score total_comparisons`.
+
+- **Input:** Dòng 1 chứa $N$. $N$ dòng tiếp theo mỗi dòng chứa `id score age`.
+- **Output:** Dòng 1 gồm $N$ mã số `id`. Dòng 2 gồm `top_id top_score total_comparisons`.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+1 70 16
+2 95 15
+3 85 17
+
+Output:
+2 3 1
+2 95 3
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsIntegrated} title="Bài Tập Tích Hợp 1: 10 Test Bàn Tay - Quản Lý Hồ Sơ Thí Sinh" />

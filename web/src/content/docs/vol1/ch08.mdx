@@ -1,0 +1,88 @@
+---
+title: "Chương 8: Phân Tích Độ Phức Tạp Thuật Toán Trên Giấy"
+description: "Ký hiệu Big-O, bản chất tiệm cận chặn trên, quy tắc 1s ~ 10^8 phép tính và kỹ thuật đếm thao tác vòng lặp trên giấy."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh08 from './tests/ch08.json';
+
+# Chương 8: Phân Tích Độ Phức Tạp Thuật Toán Trên Giấy
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Ký Hiệu Big-O (Asymptotic Upper Bound)**  
+> *Từ nguyên học:* Paul Bachmann giới thiệu năm 1894, Donald Knuth phổ biến trong khoa học máy tính năm 1976.  
+> *Mô hình trực giác:* Chiếc thước đo tốc độ phản ánh xu hướng bùng nổ thời gian khi kích thước dữ liệu $N \to \infty$. Big-O lược bỏ các hằng số nhỏ để tập trung vào bậc tăng trưởng áp đảo nhất.
+
+### 1.1 Quy Tắc $1\text{s} \approx 10^8$ Phép Tính Trong CP
+
+| Giới hạn $N$ | Độ phức tạp mục tiêu | Thuật toán phù hợp |
+| :--- | :--- | :--- |
+| $N \le 10$ | $O(N!)$ | Quay lui hoán vị |
+| $N \le 20$ | $O(2^N)$ | Quay lui nhị phân, Bitmask DP |
+| $N \le 500$ | $O(N^3)$ | Floyd-Warshall, nhân ma trận |
+| $N \le 5\,000$ | $O(N^2)$ | Hai vòng lặp lồng, DP 2 chiều |
+| $N \le 10^5 \dots 10^6$ | $O(N \log N)$ hoặc $O(N)$ | Sắp xếp, Hai con trỏ, Cây phân đoạn |
+| $N \le 10^{18}$ | $O(\log N)$ hoặc $O(1)$ | Lũy thừa nhị phân, Euclid GCD |
+
+---
+
+## 2. Kỹ Thuật Đếm Thao Tác Hai Vòng Lặp Lồng Nhau
+
+Đoạn mã duyệt mọi cặp $(i, j)$ với $0 \le i < j < N$:
+```cpp
+int ops = 0;
+for (int i = 0; i < N; ++i) {
+    for (int j = i + 1; j < N; ++j) {
+        ops++;
+    }
+}
+```
+
+Tổng số phép tính:
+$$T(N) = \sum_{i=0}^{N-1} (N - 1 - i) = \frac{N(N - 1)}{2} = \frac{N^2}{2} - \frac{N}{2} \in O(N^2)$$
+
+### Ước Lượng Thời Gian Khi $N = 100\,000 = 10^5$:
+$$T(10^5) = \frac{10^5 \times (10^5 - 1)}{2} \approx 5 \times 10^9 \text{ ops}$$
+Thời gian thực thi ước tính:
+$$\frac{5 \times 10^9}{10^8} = 50\text{s} \implies \text{TLE!}$$
+Vượt xa giới hạn 1.0 giây của máy chấm. Thuật toán $O(N^2)$ không khả thi, cần tìm thuật toán $O(N \log N)$!
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Mảng $[3, 2, 1]$
+
+Với $N = 3$, $A = [3, 2, 1]$:
+- Cặp $(0, 1)$: $A[0] = 3 > A[1] = 2 \implies$ Nghịch thế 1
+- Cặp $(0, 2)$: $A[0] = 3 > A[2] = 1 \implies$ Nghịch thế 2
+- Cặp $(1, 2)$: $A[1] = 2 > A[2] = 1 \implies$ Nghịch thế 3
+
+Tổng số cặp so sánh: **3**, Số nghịch thế: **3**.
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Đếm Thao Tác Vòng Lặp
+
+**Đề bài:** Cho mảng $A$ gồm $N$ số nguyên ($1 \le N \le 8$).
+1. Đếm chính xác số cặp so sánh `ops = N * (N - 1) / 2`.
+2. Đếm số cặp nghịch thế `inv` ($A[i] > A[j]$ với $i < j$).
+3. Ước lượng thời gian chạy nếu $N = 10^5$ theo quy tắc $10^8$ phép tính/giây (làm tròn lý thuyết là $50$ giây).
+
+- **Input:** Dòng 1 chứa $N$. Dòng 2 chứa $N$ số nguyên.
+- **Output:** In ra 3 số nguyên `ops inv 50` cách nhau dấu cách.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+3 2 1
+
+Output:
+3 3 50
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh08} title="Chương 8: 10 Test Bàn Tay - Phân Tích Độ Phức Tạp" />

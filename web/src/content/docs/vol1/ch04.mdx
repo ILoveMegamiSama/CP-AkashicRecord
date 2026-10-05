@@ -1,0 +1,90 @@
+---
+title: "Chương 4: Mảng 1D, 2D & Chuỗi std::string Cơ Bản"
+description: "Bản chất ô nhớ liên tiếp của mảng, chỉ số 0-based, bảng mã ASCII và kỹ thuật xử lý chuỗi đối xứng (Palindrome)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh04 from './tests/ch04.json';
+
+# Chương 4: Mảng 1D, 2D & Chuỗi std::string Cơ Bản
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Chỉ Số 0-Based (Zero-based Indexing)**  
+> *Từ nguyên học:* Xuất hiện từ ngôn ngữ BCPL và C (thập niên 1960-1970).  
+> *Mô hình trực giác:* Chỉ số $i$ của mảng không đại diện cho "thứ tự đếm", mà là "khoảng cách dời" (offset) tính từ địa chỉ ô nhớ gốc của mảng trên thanh RAM. Phần tử đầu tiên có độ dời bằng 0, do đó có chỉ số 0.
+
+### 1.1 Bản Chất Ô Nhớ Liên Tiếp Của Mảng
+
+Địa chỉ của phần tử $a[i]$:
+$$\text{Address}(a[i]) = \text{Base} + i \times \text{sizeof}(T)$$
+Nhờ tính chất liên tiếp, việc truy xuất $a[i]$ chỉ mất thời gian tức thì $O(1)$.
+
+### 1.2 Bảng Mã ASCII Cần Nhớ
+
+- Ký tự số `'0'` đến `'9'`: Mã ASCII $48 \dots 57$. Chuyển đổi số: `val = c - '0'`.
+- Chữ hoa `'A'` đến `'Z'`: Mã ASCII $65 \dots 90$.
+- Chữ thường `'a'` đến `'z'`: Mã ASCII $97 \dots 122$.
+- Hiệu số chữ hoa - chữ thường: `'a' - 'A' = 32`.
+
+---
+
+## 2. Mổ Xẻ Cú Pháp C++14: Kiểm Tra Đối Xứng (Palindrome)
+
+```cpp
+bool is_pal = true;
+int len = static_cast<int>(s.size());
+for (int i = 0; i < len / 2; ++i) {
+    if (s[i] != s[len - 1 - i]) {
+        is_pal = false;
+        break;
+    }
+}
+```
+
+| Dòng lệnh | Cơ chế ngữ nghĩa |
+| :--- | :--- |
+| `i < len / 2` | Duyệt nửa đầu chuỗi, so khớp cặp phần tử đối xứng ở hai đầu. |
+| `s[i]` | Ký tự thứ $i$ tính từ đầu chuỗi. |
+| `s[len - 1 - i]` | Ký tự đối xứng tương ứng tính từ cuối chuỗi. |
+| `break;` | Ngắt vòng lặp ngay khi phát hiện cặp không khớp, tiết kiệm thời gian. |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Chuỗi "radar"
+
+Với $S = \text{"radar"}$ ($len = 5$):
+
+| Bước | Chỉ số $i$ | $s[i]$ | Đối xứng ($4 - i$) | $s[4 - i]$ | So khớp |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 0 | `'r'` | 4 | `'r'` | Bằng nhau |
+| 2 | 1 | `'a'` | 3 | `'a'` | Bằng nhau |
+| **Kết luận** | - | - | - | - | **Đối xứng (YES)** |
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Thống Kê Mảng & Chuỗi Đối Xứng
+
+**Đề bài:** Cho mảng $A$ gồm $N$ số nguyên ($1 \le N \le 8$) và một chuỗi ký tự $S$.
+1. Tính trung bình cộng chính xác của mảng $A$. Đếm số lượng phần tử có giá trị lớn hơn trung bình cộng.
+2. Kiểm tra chuỗi $S$ có phải chuỗi đối xứng hay không.
+
+- **Input:** Dòng 1 chứa $N$. Dòng 2 chứa $N$ số nguyên. Dòng 3 chứa chuỗi $S$.
+- **Output:** Số lượng phần tử lớn hơn trung bình cộng và nhãn `YES` hoặc `NO` cách nhau dấu cách.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+1 2 3
+aba
+
+Output:
+1 YES
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh04} title="Chương 4: 10 Test Bàn Tay - Mảng & Chuỗi" />

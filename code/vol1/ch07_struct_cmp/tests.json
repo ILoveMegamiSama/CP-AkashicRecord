@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "2\n1 2 3\n2 1 1\n",
+    "expected": "2 1\n",
+    "desc": "Điểm 2 có Manhattan 2 < điểm 1 có Manhattan 5"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3\n1 0 5\n2 1 2\n3 0 1\n",
+    "expected": "3 2 1\n",
+    "desc": "Khoảng cách Manhattan tăng dần: 1, 3, 5"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "2\n1 3 0\n2 0 3\n",
+    "expected": "2 1\n",
+    "desc": "Cùng Manhattan = 3, điểm 2 có hoành độ x=0 < x=3"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1\n99 0 0\n",
+    "expected": "99\n",
+    "desc": "Mảng 1 điểm duy nhất"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "2\n1 0 0\n2 0 0\n",
+    "expected": "1 2\n",
+    "desc": "Trùng tọa độ hoàn toàn, so sánh theo id"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3\n1 -2 0\n2 2 0\n3 0 2\n",
+    "expected": "1 3 2\n",
+    "desc": "Cùng Manhattan = 2, so sánh theo hoành độ: -2 < 0 < 2"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "4\n1 1 1\n2 -1 -1\n3 -1 1\n4 1 -1\n",
+    "expected": "2 3 1 4\n",
+    "desc": "Cùng Manhattan = 2, x=-1 (id 2, 3) đứng trước x=1 (id 1, 4)"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "3\n10 0 4\n20 2 2\n30 -4 0\n",
+    "expected": "30 10 20\n",
+    "desc": "Cùng khoảng cách 4, hoành độ: -4 (id 30), 0 (id 10), 2 (id 20)"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5\n1 3 3\n2 1 1\n3 2 2\n4 0 2\n5 1 0\n",
+    "expected": "5 4 2 3 1\n",
+    "desc": "5 điểm hỗn hợp: Manhattan 1 (id 5), Manhattan 2 (id 4 x=0, id 2 x=1), Manhattan 4 (id 3), Manhattan 6 (id 1)"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "4\n4 5 5\n3 -2 -3\n2 0 1\n1 -1 0\n",
+    "expected": "1 2 3 4\n",
+    "desc": "Thứ tự sắp xếp theo Manhattan: 1 (d=1, x=-1), 2 (d=1, x=0), 3 (d=5), 4 (d=10)"
+  }
+]

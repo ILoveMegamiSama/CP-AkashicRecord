@@ -1,0 +1,95 @@
+---
+title: "Chương 1: Máy Tính, Bộ Nhớ RAM, CPU & Bản Chất Thuật Toán"
+description: "Mô hình dải ô nhớ đánh số từ 0, biến số là nhãn dán ô nhớ, và chu trình thực thi của CPU."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh01 from './tests/ch01.json';
+
+# Chương 1: Máy Tính, Bộ Nhớ RAM, CPU & Bản Chất Thuật Toán
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Thuật toán (Algorithm)**  
+> *Từ nguyên học:* Bắt nguồn từ tên nhà toán học Ba Tư thế kỷ 9 Muhammad ibn Musa al-Khwarizmi.  
+> *Mô hình trực giác:* Một chuỗi hữu hạn các chỉ thị logic tất định, có thể mô phỏng từng bước trên giấy mà không cần phỏng đoán.
+
+### 1.1 Kiến Trúc Von Neumann & Chu Trình CPU
+
+Mọi máy tính hiện đại đều vận hành dựa trên kiến trúc Von Neumann với hai thành phần cốt lõi:
+1. **CPU (Central Processing Unit):** Bộ xử lý trung tâm, thực thi các lệnh số học (+, -, *, /) và lệnh rẽ nhánh. CPU sở hữu các ngăn chứa siêu tốc độ gọi là thanh ghi (*Registers*).
+2. **RAM (Random Access Memory):** Bộ nhớ truy xuất ngẫu nhiên, đóng vai trò như một dải ô nhớ nhị phân dài vô tận.
+
+Chu trình xử lý của CPU gồm 3 pha liên tục:
+$$\text{Fetch} \longrightarrow \text{Decode} \longrightarrow \text{Execute}$$
+
+### 1.2 Bản Chất Biến Số: Nhãn Dán Lên Ô Nhớ Vật Lý
+
+Khi ta viết câu lệnh:
+```cpp
+int a = 5;
+```
+Trình biên dịch thực hiện:
+- Xin hệ điều hành cấp phát một vùng nhớ 4 bytes liên tiếp trên RAM.
+- Gắn nhãn tên `a` vào địa chỉ ô nhớ đầu tiên của vùng này.
+- Ghi giá trị nhị phân của số 5 vào các byte đó.
+
+Biến số không phải là chiếc hộp kỳ bí; biến đơn thuần là một cái tên đại diện cho một địa chỉ ô nhớ vật lý trong RAM.
+
+---
+
+## 2. Mổ Xẻ Cú Pháp C++14: Hoán Đổi Biến
+
+```cpp
+int a = 5;
+int b = 7;
+int temp = a;
+a = b;
+b = temp;
+```
+
+| Cú pháp | Cơ chế ngữ nghĩa |
+| :--- | :--- |
+| `int temp = a;` | Đọc giá trị từ ô nhớ `a` (5) và sao chép vào ô nhớ tạm thời `temp`. |
+| `a = b;` | Đọc giá trị từ ô nhớ `b` (7) và ghi đè vào ô nhớ `a` (giá trị cũ bị xóa). |
+| `b = temp;` | Đọc giá trị từ ô nhớ `temp` (5) và ghi đè vào ô nhớ `b`, hoàn tất hoán đổi. |
+
+---
+
+## 3. Chạy Bàn Trên Giấy (Hand-Trace Walkthrough)
+
+Bảng theo dõi trạng thái các ô nhớ RAM qua từng dòng lệnh:
+
+| Bước | Dòng lệnh thực thi | Ô nhớ `a` | Ô nhớ `b` | Ô nhớ `temp` |
+| :---: | :--- | :---: | :---: | :---: |
+| 0 | Khởi tạo ban đầu | 3 | 5 | (chưa tạo) |
+| 1 | `int temp = a;` | 3 | 5 | 3 |
+| 2 | `a = b;` | 5 | 5 | 3 |
+| 3 | `b = temp;` | 5 | 3 | 3 |
+| **Kết quả** | Hoàn tất hoán đổi | **5** | **3** | **3** |
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Hoán Đổi Ô Nhớ RAM
+
+**Đề bài:** Cho hai số nguyên $A, B$ nạp vào hai biến ban đầu `a` và `b`. Em hãy thực hiện thuật toán hoán đổi thông qua biến trung gian `temp`, đồng thời tính tổng $S = A + B$.
+
+- **Input:** Hai số nguyên $A, B$ trên cùng một dòng ($-100 \le A, B \le 100$).
+- **Output:** In ra 3 số nguyên $A', B', S$ cách nhau một khoảng trắng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3 5
+
+Output:
+5 3 8
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh01} title="Chương 1: 10 Test Bàn Tay - Hoán Đổi Ô Nhớ RAM" />

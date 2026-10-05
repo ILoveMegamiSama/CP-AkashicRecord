@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "1\n",
+    "expected": "0 1\n",
+    "desc": "N = 1 đã thỏa mãn điều kiện dừng, 0 bước"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "2\n",
+    "expected": "1 2\n",
+    "desc": "N = 2 chẵn chia đôi về 1, 1 bước"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4\n",
+    "expected": "2 4\n",
+    "desc": "N = 4 chia đôi 2 lần về 1, 2 bước"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "8\n",
+    "expected": "3 8\n",
+    "desc": "Lũy thừa của 2: 8 -> 4 -> 2 -> 1, 3 bước"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "3\n",
+    "expected": "7 16\n",
+    "desc": "Số lẻ nhỏ: 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "5\n",
+    "expected": "5 16\n",
+    "desc": "5 -> 16 -> 8 -> 4 -> 2 -> 1"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "6\n",
+    "expected": "8 16\n",
+    "desc": "6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "7\n",
+    "expected": "16 52\n",
+    "desc": "Số lẻ đạt đỉnh 52 sau 16 bước"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "9\n",
+    "expected": "19 52\n",
+    "desc": "9 -> 28 -> 14 -> 7, 19 bước đạt đỉnh 52"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "10\n",
+    "expected": "6 16\n",
+    "desc": "10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1"
+  }
+]

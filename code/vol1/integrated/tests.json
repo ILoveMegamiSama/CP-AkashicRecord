@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "2\n1 90 15\n2 80 16\n",
+    "expected": "1 2\n1 90 1\n",
+    "desc": "Điểm 90 > 80, 1 phép so sánh"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3\n1 70 16\n2 95 15\n3 85 17\n",
+    "expected": "2 3 1\n2 95 3\n",
+    "desc": "Thứ tự điểm 95, 85, 70 ứng với id 2, 3, 1; 3 phép so sánh"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "2\n1 85 16\n2 85 15\n",
+    "expected": "2 1\n2 85 1\n",
+    "desc": "Bằng điểm 85, thí sinh 2 trẻ hơn (15 < 16) xếp trước"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1\n42 100 18\n",
+    "expected": "42\n42 100 0\n",
+    "desc": "1 thí sinh duy nhất, 0 phép so sánh"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "2\n1 80 15\n2 80 15\n",
+    "expected": "1 2\n1 80 1\n",
+    "desc": "Cùng điểm cùng tuổi, ưu tiên id nhỏ hơn"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3\n10 50 14\n20 50 14\n30 50 14\n",
+    "expected": "10 20 30\n10 50 3\n",
+    "desc": "3 thí sinh cùng điểm và tuổi, sắp xếp theo thứ tự id ban đầu"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "4\n1 90 17\n2 90 16\n3 95 18\n4 95 15\n",
+    "expected": "4 3 2 1\n4 95 6\n",
+    "desc": "Điểm 95: id 4 (15t) rồi id 3 (18t); Điểm 90: id 2 (16t) rồi id 1 (17t); 6 phép so sánh"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "3\n1 60 19\n2 70 18\n3 60 17\n",
+    "expected": "2 3 1\n2 70 3\n",
+    "desc": "Điểm 70 (id 2), điểm 60 tuổi 17 (id 3) rồi tuổi 19 (id 1)"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5\n1 50 15\n2 80 16\n3 65 14\n4 90 17\n5 80 15\n",
+    "expected": "4 5 2 3 1\n4 90 10\n",
+    "desc": "N=5 có 10 phép so sánh; sắp xếp: 90 (4), 80-15t (5), 80-16t (2), 65 (3), 50 (1)"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "4\n10 100 20\n20 100 18\n30 100 19\n40 100 18\n",
+    "expected": "20 40 30 10\n20 100 6\n",
+    "desc": "Cùng điểm 100; tuổi 18: id 20 rồi 40; tuổi 19: id 30; tuổi 20: id 10"
+  }
+]

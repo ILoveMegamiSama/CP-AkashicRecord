@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "3\n10 20 30\n",
+    "expected": "10 30 2\n",
+    "desc": "Min ở chỉ số 0, Max ở chỉ số 2, độ lệch 2"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "3\n30 20 10\n",
+    "expected": "10 30 -2\n",
+    "desc": "Min ở chỉ số 2, Max ở chỉ số 0, độ lệch -2"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "4\n5 1 9 3\n",
+    "expected": "1 9 1\n",
+    "desc": "Min=1 ở 1, Max=9 ở 2, độ lệch 2 - 1 = 1"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1\n42\n",
+    "expected": "42 42 0\n",
+    "desc": "Mảng 1 phần tử, độ lệch 0"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "2\n7 7\n",
+    "expected": "7 7 0\n",
+    "desc": "Hai phần tử bằng nhau, cùng lưu vị trí 0"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "2\n-10 10\n",
+    "expected": "-10 10 1\n",
+    "desc": "Phần tử âm và dương, độ lệch 1"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "5\n-8 -3 -15 0 -2\n",
+    "expected": "-15 0 1\n",
+    "desc": "Min=-15 ở vị trí 2, Max=0 ở vị trí 3, độ lệch 3 - 2 = 1"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "4\n4 2 2 4\n",
+    "expected": "2 4 -1\n",
+    "desc": "Min đầu tiên ở 1, Max đầu tiên ở 0, độ lệch 0 - 1 = -1"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "6\n12 5 28 3 19 28\n",
+    "expected": "3 28 -1\n",
+    "desc": "Min=3 ở 3, Max=28 đầu tiên ở 2, độ lệch 2 - 3 = -1"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "5\n-5 -2 -9 -1 -4\n",
+    "expected": "-9 -1 1\n",
+    "desc": "Toàn số âm: Min=-9 ở 2, Max=-1 ở 3, độ lệch 3 - 2 = 1"
+  }
+]

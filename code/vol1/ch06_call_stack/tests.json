@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "12 8\n",
+    "expected": "4 3\n",
+    "desc": "gcd(12,8) qua 3 khung ngăn xếp: (12,8) -> (8,4) -> (4,0)"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "10 5\n",
+    "expected": "5 2\n",
+    "desc": "gcd(10,5) chia hết ngay: (10,5) -> (5,0), 2 khung"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "7 7\n",
+    "expected": "7 2\n",
+    "desc": "Hai số bằng nhau: (7,7) -> (7,0), 2 khung"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "13 0\n",
+    "expected": "13 1\n",
+    "desc": "B bằng 0 chạm ngay điểm dừng base case, 1 khung"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "1 1\n",
+    "expected": "1 2\n",
+    "desc": "Hai số đơn vị: (1,1) -> (1,0), 2 khung"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "1 25\n",
+    "expected": "1 3\n",
+    "desc": "A < B hoán vị qua dư: (1,25) -> (25,1) -> (1,0), 3 khung"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "18 12\n",
+    "expected": "6 3\n",
+    "desc": "gcd(18,12) -> (12,6) -> (6,0), 3 khung"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "21 14\n",
+    "expected": "7 3\n",
+    "desc": "gcd(21,14) -> (14,7) -> (7,0), 3 khung"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "34 21\n",
+    "expected": "1 8\n",
+    "desc": "Dãy Fibonacci liên tiếp: 34 và 21 đòi hỏi 8 khung ngăn xếp"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "48 18\n",
+    "expected": "6 4\n",
+    "desc": "gcd(48,18) -> (18,12) -> (12,6) -> (6,0), 4 khung"
+  }
+]

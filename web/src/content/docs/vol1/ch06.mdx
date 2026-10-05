@@ -1,0 +1,85 @@
+---
+title: "Chương 6: Hàm, Tham Chiếu, Tham Trị & Ngăn Xếp Gọi Hàm (Call Stack)"
+description: "Phân biệt truyền giá trị vs truyền tham chiếu (&), cơ chế cấp phát Stack Frame và mô phỏng đệ quy trên Call Stack."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh06 from './tests/ch06.json';
+
+# Chương 6: Hàm, Tham Chiếu, Tham Trị & Ngăn Xếp Gọi Hàm (Call Stack)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Ngăn Xếp Gọi Hàm (Call Stack)**  
+> *Từ nguyên học:* Klaus Samelson và Friedrich L. Bauer đề xuất năm 1957.  
+> *Mô hình trực giác:* Chồng đĩa trong quán ăn. Mỗi lần một hàm được gọi, một chiếc đĩa mới (Stack Frame) được đặt lên đỉnh chồng đĩa. Khung này chứa toàn bộ biến cục bộ và tham số của hàm. Khi hàm hoàn thành và trả về kết quả, chiếc đĩa bị nhấc ra để quay về khung bên dưới.
+
+### 1.1 Tham Trị (Pass-by-Value) vs Tham Chiếu (Pass-by-Reference)
+
+| Đặc tính | Tham trị (`int x`) | Tham chiếu (`int& x`) |
+| :--- | :--- | :--- |
+| **Cơ chế ô nhớ** | Sao chép giá trị sang ô nhớ mới độc lập. | Không tạo ô nhớ mới; tạo bí danh (alias) trỏ thẳng vào biến gốc. |
+| **Tác động biến gốc** | Mọi thay đổi trong hàm không ảnh hưởng biến gốc. | Mọi thay đổi trong hàm làm biến đổi trực tiếp biến gốc. |
+| **Hiệu năng** | Tốn công sao chép nếu đối tượng lớn. | Tức thì ($O(1)$) vì chỉ truyền địa chỉ. |
+
+---
+
+## 2. Mổ Xẻ Cú Pháp C++14: Hoán Đổi Bằng Tham Chiếu
+
+```cpp
+void swap(int& a, int& b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+```
+
+| Cú pháp | Cơ chế ngữ nghĩa |
+| :--- | :--- |
+| `int& a, int& b` | Nhận bí danh tham chiếu của 2 biến truyền vào. Không nhân bản dữ liệu. |
+| `int temp = a;` | Lưu trữ giá trị của biến gốc thứ nhất vào biến tạm thời cục bộ. |
+| `a = b;` | Ghi đè giá trị của biến thứ hai vào ô nhớ của biến thứ nhất. |
+| `b = temp;` | Ghi đè giá trị tạm vào ô nhớ của biến thứ hai, hoàn tất hoán đổi. |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Khung Ngăn Xếp Đệ Quy $gcd(12, 8)$
+
+| Bước | Khung ngăn xếp đỉnh | Tham số $a$ | Tham số $b$ | Độ sâu `depth` | Hành động |
+| :---: | :--- | :---: | :---: | :---: | :--- |
+| 1 | `gcd(12, 8)` | 12 | 8 | 1 | Push khung 1 |
+| 2 | `gcd(8, 4)` | 8 | 4 | 2 | Push khung 2 |
+| 3 | `gcd(4, 0)` | 4 | 0 | 3 | Push khung 3, Base Case! |
+| 4 | Pop khung 3 | 4 | 0 | 3 | Return 4 về khung 2 |
+| 5 | Pop khung 2 | 8 | 4 | 2 | Return 4 về khung 1 |
+| 6 | Pop khung 1 | 12 | 8 | 1 | Return 4 về `main()` |
+
+Độ sâu tối đa đạt được: **3**.
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Call Stack & Đệ Quy Euclid
+
+**Đề bài:** Cài đặt hàm đệ quy tìm ước số chung lớn nhất Euclid:
+`int gcd(int a, int b, int depth, int& max_depth)`
+- `depth`: tham trị đếm độ sâu khung hiện tại (bắt đầu từ 1).
+- `max_depth`: tham chiếu `int&` cập nhật độ sâu lớn nhất của Call Stack.
+- Nếu $b = 0$, trả về $a$; ngược lại gọi đệ quy `gcd(b, a % b, depth + 1, max_depth)`.
+
+- **Input:** Hai số nguyên $A, B$ ($1 \le A, B \le 100$).
+- **Output:** Hai số nguyên `gcd_result max_depth` cách nhau một khoảng trắng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+12 8
+
+Output:
+4 3
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh06} title="Chương 6: 10 Test Bàn Tay - Call Stack & Đệ Quy" />

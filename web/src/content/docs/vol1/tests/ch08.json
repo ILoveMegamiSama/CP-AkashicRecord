@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "input": "2\n1 2\n",
+    "expected": "1 0 50\n",
+    "actual": "1 0 50\n",
+    "status": "AC",
+    "execution_time_ms": 1.65,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "2\n2 1\n",
+    "expected": "1 1 50\n",
+    "actual": "1 1 50\n",
+    "status": "AC",
+    "execution_time_ms": 1.26,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "3\n1 2 3\n",
+    "expected": "3 0 50\n",
+    "actual": "3 0 50\n",
+    "status": "AC",
+    "execution_time_ms": 3.26,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1\n5\n",
+    "expected": "0 0 50\n",
+    "actual": "0 0 50\n",
+    "status": "AC",
+    "execution_time_ms": 4.54,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "3\n3 2 1\n",
+    "expected": "3 3 50\n",
+    "actual": "3 3 50\n",
+    "status": "AC",
+    "execution_time_ms": 3.23,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "3\n2 2 2\n",
+    "expected": "3 0 50\n",
+    "actual": "3 0 50\n",
+    "status": "AC",
+    "execution_time_ms": 2.3,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "4\n4 3 2 1\n",
+    "expected": "6 6 50\n",
+    "actual": "6 6 50\n",
+    "status": "AC",
+    "execution_time_ms": 2.03,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 6
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "4\n1 3 2 4\n",
+    "expected": "6 1 50\n",
+    "actual": "6 1 50\n",
+    "status": "AC",
+    "execution_time_ms": 2.12,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "5\n2 4 1 3 5\n",
+    "expected": "10 3 50\n",
+    "actual": "10 3 50\n",
+    "status": "AC",
+    "execution_time_ms": 4.49,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "5\n5 1 2 3 4\n",
+    "expected": "10 4 50\n",
+    "actual": "10 4 50\n",
+    "status": "AC",
+    "execution_time_ms": 4.51,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Counting complete"
+      },
+      {
+        "type": "var",
+        "name": "ops",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "inv",
+        "val": 4
+      }
+    ]
+  }
+]

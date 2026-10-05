@@ -1,0 +1,82 @@
+---
+title: "Chương 7: Kiểu Dữ Liệu Tự Định Nghĩa (struct) & Cú Pháp operator<"
+description: "Đóng gói dữ liệu với struct, mổ xẻ tường tận cú pháp bool operator<(const Edge& other) const và quy tắc so sánh đa tiêu chí."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh07 from './tests/ch07.json';
+
+# Chương 7: Kiểu Dữ Liệu Tự Định Nghĩa (struct) & Cú Pháp `operator<`
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Cấu Trúc Tự Định Nghĩa (Struct)**  
+> *Từ nguyên học:* Xuất phát từ "Structure" trong tiếng Anh, đưa vào ngôn ngữ C từ năm 1972.  
+> *Mô hình trực giác:* "Chiếc túi" gom nhóm nhiều thông tin thuộc các kiểu khác nhau (số nguyên, số thực, chuỗi) lại thành một thực thể trọn vẹn mang ý nghĩa logic trong bài toán (tọa độ điểm, cạnh đồ thị, thông tin thí sinh).
+
+### 1.1 Khai Báo Struct Trong C++14
+
+```cpp
+struct Point {
+    int id;
+    int x;
+    int y;
+};
+```
+
+---
+
+## 2. Mổ Xẻ Tận Gốc Cú Pháp `bool operator<(const Edge& other) const`
+
+```cpp
+bool operator<(const Edge& other) const {
+    return weight < other.weight;
+}
+```
+
+| Cú pháp | Giải nghĩa & Tầm quan trọng bắt buộc |
+| :--- | :--- |
+| `bool` | Kiểu trả về: `true` nếu đối tượng hiện tại đứng trước `other`, ngược lại `false`. |
+| `operator<` | Tên hàm đặc biệt định nghĩa hành vi của phép so sánh nhỏ hơn. |
+| `const Edge& other` | **1. `Edge&`:** Nhận tham chiếu tránh copy struct lớn.<br/>**2. `const` đầu:** Khóa `other` ở chế độ chỉ đọc, bảo đảm hàm so sánh không sửa đổi dữ liệu của `other`. |
+| `const` (cuối hàm) | **Khóa đối tượng gọi hàm (`*this`) ở chế độ chỉ đọc.**<br/>Đây là điều kiện **BẮT BUỘC** trong C++: các thuật toán thư viện chuẩn như `std::sort`, `std::priority_queue`, `std::set` đều so sánh trên các tham chiếu hằng (`const Edge&`). Nếu thiếu `const` đuôi, trình biên dịch sẽ báo lỗi gãy compile ngay lập tức! |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: So Sánh Đa Tiêu Chí Điểm
+
+Quy tắc so sánh tọa độ:
+1. Manhattan $D = |x| + |y|$ nhỏ hơn đứng trước.
+2. Cùng khoảng cách: hoành độ $x$ nhỏ hơn đứng trước.
+3. Cùng cả khoảng cách và hoành độ: `id` nhỏ hơn đứng trước.
+
+So sánh $P_1(id=1, x=2, y=3)$ và $P_2(id=2, x=1, y=1)$:
+- $D_1 = |2| + |3| = 5$
+- $D_2 = |1| + |1| = 2$
+- Vì $D_2 < D_1 \implies P_2$ đứng trước $P_1$.
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Sắp Xếp Tọa Độ Điểm
+
+**Đề bài:** Cho $N$ điểm trên mặt phẳng ($1 \le N \le 8$). Mỗi điểm gồm `id x y`. Sắp xếp các điểm theo quy tắc so sánh đa tiêu chí và in ra danh sách `id` sau sắp xếp.
+
+- **Input:** Dòng 1 chứa $N$. $N$ dòng tiếp theo mỗi dòng chứa `id x y`.
+- **Output:** Dãy mã số `id` cách nhau dấu cách trên một dòng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+2
+1 2 3
+2 1 1
+
+Output:
+2 1
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh07} title="Chương 7: 10 Test Bàn Tay - Sắp Xếp Struct Point" />

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "3\n1 2 3\naba\n",
+    "expected": "1 YES\n",
+    "desc": "Mảng [1,2,3] avg=2.0 có 1 số > 2; chuỗi aba đối xứng"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "4\n2 4 6 8\nnoon\n",
+    "expected": "2 YES\n",
+    "desc": "Mảng [2,4,6,8] avg=5.0 có 2 số > 5; chuỗi noon đối xứng"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "3\n5 5 5\ncat\n",
+    "expected": "0 NO\n",
+    "desc": "Các phần tử bằng nhau nên không có số nào > avg; cat không đối xứng"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1\n10\nz\n",
+    "expected": "0 YES\n",
+    "desc": "Mảng 1 phần tử và chuỗi 1 ký tự luôn đối xứng"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "2\n1 9\nno\n",
+    "expected": "1 NO\n",
+    "desc": "Mảng 2 phần tử và chuỗi 2 ký tự khác nhau"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "2\n4 4\ngg\n",
+    "expected": "0 YES\n",
+    "desc": "Mảng 2 phần tử bằng nhau và chuỗi gg đối xứng"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "5\n-10 0 10 20 30\nracecar\n",
+    "expected": "2 YES\n",
+    "desc": "Có số âm, avg=10.0, phần tử > 10 là 20 và 30; racecar đối xứng"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "4\n-5 -5 -5 -1\nabba\n",
+    "expected": "1 YES\n",
+    "desc": "Số âm, sum=-16, avg=-4.0, số -1 > -4; abba đối xứng"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "5\n1 3 5 7 9\nradar\n",
+    "expected": "2 YES\n",
+    "desc": "Cấp số cộng lẻ avg=5.0; radar đối xứng"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "6\n2 2 2 8 8 8\nlevel\n",
+    "expected": "3 YES\n",
+    "desc": "Tổng 30 chia 6 = 5.0, có 3 số 8 > 5; level đối xứng"
+  }
+]

@@ -1,0 +1,90 @@
+---
+title: "Chương 3: Biến, Biểu Thức, Ép Kiểu & Luồng Điều Khiển"
+description: "Toán tử chia nguyên, chia dư, cấu trúc rẽ nhánh, vòng lặp và kỹ thuật lập bảng biến thiên biến số trên giấy."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh03 from './tests/ch03.json';
+
+# Chương 3: Biến, Biểu Thức, Ép Kiểu & Luồng Điều Khiển
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Bất Biến Vòng Lặp (Loop Invariant)**  
+> *Từ nguyên học:* Đề xuất bởi Tony Hoare năm 1969 trong hệ logic chứng minh tính đúng đắn của thuật toán.  
+> *Mô hình trực giác:* Một tính chất logic luôn đúng trước mỗi bước lặp, được bảo toàn qua từng bước lặp, và đảm bảo kết quả cuối cùng đúng đắn khi vòng lặp dừng lại.
+
+### 1.1 Phép Chia Nguyên `/` & Chia Dư `%`
+
+- Phép chia nguyên $7 / 2 = 3$, $-7 / 2 = -3$ (cắt cụt về phía số 0).
+- Phép chia dư $7 \% 3 = 1$, $-7 \% 3 = -1$ (cùng dấu với số bị chia).
+
+### 1.2 Ép Kiểu `static_cast`
+```cpp
+double avg = static_cast<double>(sum) / n;
+```
+Kiểm tra an toàn kiểu tại thời điểm biên dịch, ngăn ngừa lỗi ép kiểu ngầm định.
+
+---
+
+## 2. Mổ Xẻ Cú Pháp C++14: Cấu Trúc Vòng Lặp
+
+```cpp
+for (int i = 1; i <= n; ++i) {
+    sum += i;
+}
+```
+
+| Thành phần | Vai trò thực thi |
+| :--- | :--- |
+| `int i = 1;` | Khởi tạo biến đếm, thực thi duy nhất 1 lần khi bắt đầu vòng lặp. |
+| `i <= n;` | Điều kiện lặp, kiểm tra TRƯỚC mỗi lần thực thi thân vòng lặp. |
+| `++i` | Bước nhảy, thực thi SAU KHI thân vòng lặp kết thúc mỗi bước. |
+| `{ sum += i; }` | Thân vòng lặp thực hiện công việc tính toán. |
+
+---
+
+## 3. Chạy Bàn Trên Giấy: Bảng Biến Thiên Dãy Collatz
+
+Quy tắc Collatz với số nguyên dương $N$:
+- $N$ chẵn: $N \leftarrow N / 2$
+- $N$ lẻ: $N \leftarrow 3N + 1$
+
+Bảng biến thiên bắt đầu từ $N = 3$:
+
+| Bước | $N$ hiện tại | Chẵn / Lẻ | Biến đổi | $N$ kế tiếp | Max đạt được |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0 | 3 | Lẻ | $3 \times 3 + 1$ | 10 | 10 |
+| 1 | 10 | Chẵn | $10 / 2$ | 5 | 10 |
+| 2 | 5 | Lẻ | $3 \times 5 + 1$ | 16 | 16 |
+| 3 | 16 | Chẵn | $16 / 2$ | 8 | 16 |
+| 4 | 8 | Chẵn | $8 / 2$ | 4 | 16 |
+| 5 | 4 | Chẵn | $4 / 2$ | 2 | 16 |
+| 6 | 2 | Chẵn | $2 / 2$ | 1 | 16 |
+| **Dừng** | 1 | - | Chạm $N=1$ | - | **16** |
+
+Tổng số bước: **7**, Giá trị cực đại: **16**.
+
+---
+
+## 4. Bài Tập Tiêu Chuẩn: Bảng Biến Thiên Dãy Collatz
+
+**Đề bài:** Cho một số nguyên dương $N$ ($1 \le N \le 30$). Thực hiện biến đổi Collatz cho đến khi $N = 1$. Hãy đếm số bước lặp `steps` và tìm giá trị lớn nhất `max_val` mà $N$ đạt được trong quá trình này.
+
+- **Input:** Một số nguyên dương $N$.
+- **Output:** Hai số nguyên `steps max_val` cách nhau một khoảng trắng.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+
+Output:
+7 16
+```
+
+---
+
+## 5. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+<InteractiveChecker tests={testsCh03} title="Chương 3: 10 Test Bàn Tay - Bảng Biến Thiên Collatz" />
