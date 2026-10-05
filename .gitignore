@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.o
+*.out
+*.bin
+.pytest_cache/
+node_modules/
+dist/
+.astro/
+test_output.pdf
