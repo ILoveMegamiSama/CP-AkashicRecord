@@ -5,7 +5,8 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cp-akashic.local',
+  site: 'https://ilovemegamisama.github.io',
+  base: process.env.GITHUB_ACTIONS ? '/CP-AkashicRecord' : '/',
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
@@ -44,7 +45,7 @@ export default defineConfig({
         },
       ],
       social: {
-        github: 'https://github.com',
+        github: 'https://github.com/ILoveMegamiSama/CP-AkashicRecord',
       },
     }),
   ],
