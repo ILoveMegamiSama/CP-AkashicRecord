@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "4 1 5\n2 3 4 1\n10 20 30 40\n",
+    "expected": "2 3 20\n",
+    "desc": "Đồ thị chu trình 4 đỉnh, nhảy K=5 bước"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "5 1 3\n2 3 4 5 5\n1 2 3 4 5\n",
+    "expected": "4 2 4\n",
+    "desc": "Đồ thị đường thẳng dẫn tới vòng lặp bản thân, K=3 bước"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "3 2 7\n2 3 1\n100 200 300\n",
+    "expected": "3 2 300\n",
+    "desc": "Chu trình 3 đỉnh nhảy K=7 bước"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "4 2 0\n2 3 4 1\n10 20 30 40\n",
+    "expected": "2 2 20\n",
+    "desc": "Không nhảy bước nào: K=0"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "1 1 1000000\n1\n99\n",
+    "expected": "1 1 99\n",
+    "desc": "Chỉ có 1 đỉnh tự lặp, K rất lớn 1000000"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "3 1 1\n3 1 2\n7 8 9\n",
+    "expected": "3 1 9\n",
+    "desc": "Nhảy đúng K=1 bước"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "6 1 10\n2 3 4 5 6 4\n5 10 15 20 25 30\n",
+    "expected": "5 6 25\n",
+    "desc": "Đồ thị hình số 6 (cây gậy có vòng chu trình ở đuôi), K=10 bước"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "4 1 1000000000\n2 1 4 3\n11 22 33 44\n",
+    "expected": "1 1 11\n",
+    "desc": "Các đỉnh trỏ chéo đối xứng, K=1000000000"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "7 3 6\n3 4 5 6 7 1 2\n7 6 5 4 3 2 1\n",
+    "expected": "1 2 7\n",
+    "desc": "Thử thách nhẩm đồ thị hoán vị 7 đỉnh, K=6 bước"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "8 1 8\n2 4 1 3 6 8 5 7\n12 24 36 48 60 72 84 96\n",
+    "expected": "1 1 12\n",
+    "desc": "Thử thách nhẩm đồ thị 8 đỉnh với bước nhảy lũy thừa 2: K=8 bước"
+  }
+]

@@ -1,0 +1,79 @@
+---
+title: "Bài Tập Tích Hợp Toàn Diện V1"
+description: "Hệ thống phối hợp Euler Tour + Fenwick Tree cập nhật cây con động kết hợp Binary Lifting LCA."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsIntegrated from './tests/integrated.json';
+
+# Bài Tập Tích Hợp Toàn Diện V1: Hệ Thống Cây Vương Quốc
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Hệ Thống Phối Hợp Kỹ Thuật Nâng Cao V1**  
+> *Từ nguyên học:* Đỉnh cao của lập trình thi đấu hiện đại là khả năng kết hợp nhuần nhuyễn nhiều cấu trúc dữ liệu và giải thuật trong cùng một hệ thống thống nhất.  
+> *Mô hình trực giác:* Một bài toán cây phức tạp với cập nhật động tài nguyên và truy vấn đường đi không thể giải quyết bằng một kỹ thuật đơn lẻ. Bằng cách kết hợp Euler Tour (để tuyến tính hóa không gian cây con), Cây Fenwick (để cập nhật điểm và truy vấn tổng đoạn trong $O(\log N)$), cùng với Binary Lifting LCA (để định tuyến ngã ba và đo khoảng cách đường đi trong $O(\log N)$), ta kiến tạo một hệ thống vận hành với độ phức tạp tối ưu tuyệt đối.
+
+---
+
+### 1.1 Kiến Trúc Ba Tầng
+
+1. **Tầng 1: Tuyến tính hóa không gian cây con qua Euler Tour:**
+   Ánh xạ cây con của đỉnh $u$ thành đoạn $[tin[u], tout[u]]$ trên mảng 1 chiều.
+2. **Tầng 2: Quản lý động tài nguyên với Fenwick Tree:**
+   Khởi tạo Cây Fenwick trên mảng trải phẳng $F[tin[u]] = V_u$. Khi tiếp tế $X$ cho thành phố $P$, gọi `bit.add(tin[P], X)`. Truy vấn tổng tài nguyên nhánh $Q$ bằng `bit.range_sum(tin[Q], tout[Q])`.
+3. **Tầng 3: Định tuyến quân sự với Binary Lifting LCA:**
+   Bảng tổ tiên `up[k][u]` hỗ trợ tìm ngã ba giao nhau $\text{LCA}(U, V)$ và tính khoảng cách hành quân:
+   $$\text{dist}(U, V) = \text{depth}[U] + \text{depth}[V] - 2 \cdot \text{depth}[\text{LCA}(U, V)]$$
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Cây 5 Đỉnh Gốc 1
+
+Cây: $(1, 2), (1, 3), (2, 4), (2, 5)$. Giá trị ban đầu: $V = [10, 20, 30, 40, 50]$.  
+Truy vấn: Tiếp tế $X = 10$ cho $P = 3$; tính tổng cây con $Q = 2$; tìm LCA và khoảng cách giữa $U = 4$ và $V = 5$.
+
+| Thao tác | Dữ liệu liên quan | Tính toán | Kết quả |
+| :---: | :---: | :---: | :---: |
+| DFS Euler Tour | Gốc 1 | $tin: [1, 2, 5, 3, 4]; tout: [5, 4, 5, 3, 4]$ | Đoạn cây con $Q=2$: $[2, 4]$ |
+| Cập nhật Fenwick | $P = 3, X = 10$ | `bit.add(tin[3]=5, 10)` $\to V_3 = 40$ | Tổng toàn cây = $150 + 10 = 160$ |
+| Truy vấn cây con $Q$ | $Q = 2$ ($[2, 4]$) | $V_2 + V_4 + V_5 = 20 + 40 + 50$ | **$S_Q = 110$** |
+| LCA & Khoảng cách | $U = 4, V = 5$ | $\text{depth}[4]=3, \text{depth}[5]=3, \text{LCA}=2$ | **$\text{LCA}=2, \text{dist}=2$** |
+
+Kết quả: `160 110 2 2`.
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Hệ Thống Cây Vương Quốc
+
+**Đề bài:** Cho cây vương quốc $N$ thành phố gốc tại 1 ($1 \le N \le 30$). Trọng số ban đầu $V_1, \dots, V_N$.
+Hệ thống nhận lệnh điều phối gồm $P, X, Q, U, V$:
+- Tiếp tế thêm $X$ lương thực cho thành phố $P$.
+- Tính tổng lương thực toàn vương quốc $S_{root}$.
+- Tính tổng lương thực nhánh $Q$: $S_Q$.
+- Tìm thành phố ngã ba $\text{LCA}(U, V)$ và khoảng cách hành quân $\text{dist}(U, V)$.
+
+In ra trên một dòng 4 số nguyên cách nhau bởi khoảng trắng:
+`S_root S_Q LCA_UV dist_UV`
+
+### Ví Dụ Mẫu
+```text
+Input:
+5 3 10 2 4 5
+10 20 30 40 50
+1 2
+1 3
+2 4
+2 5
+
+Output:
+160 110 2 2
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsIntegrated} title="Bài Tập Tích Hợp Tập 4: Hệ Thống Cây Vương Quốc" />

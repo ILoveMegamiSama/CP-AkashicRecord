@@ -1,0 +1,95 @@
+---
+title: "Chương 27: Tổ Tiên Chung Gần Nhất (Lowest Common Ancestor - LCA)"
+description: "Thuật toán LCA trên cây qua Binary Lifting, cân bằng độ sâu, nhảy đồng thời và tính khoảng cách giữa 2 đỉnh."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh27 from './tests/ch27.json';
+
+# Chương 27: Tổ Tiên Chung Gần Nhất (Lowest Common Ancestor - LCA)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Tổ Tiên Chung Gần Nhất (LCA) Trên Cây**  
+> *Từ nguyên học:* Bài toán LCA được Aho, Hopcroft và Ullman chính thức đặt ra năm 1973 và phát triển rực rỡ qua công trình của Harel & Tarjan (1984), Bender & Farach-Colton (2000).  
+> *Mô hình trực giác:* Trên một cái cây có gốc, khi hai người đứng ở hai đỉnh bất kỳ $u$ và $v$ cùng nhìn ngược lên cội nguồn (gốc cây), các nhánh cội nguồn của họ cuối cùng sẽ giao nhau tại một nhánh chung đầu tiên. Đỉnh giao nhau đó chính là Tổ tiên chung gần nhất $\text{LCA}(u, v)$. LCA là "ngã ba đường" phân định ranh giới giữa hai nhánh và là chìa khóa vàng để tính khoảng cách giữa mọi cặp đỉnh trên cây.
+
+---
+
+### 1.1 Hai Giai Đoạn Tìm LCA Trong $O(\log N)$
+
+1. **Giai đoạn 1: Cân bằng độ sâu:**
+   Nâng đỉnh sâu hơn lên độ cao của đỉnh nông hơn bằng cách phân tích nhị phân hiệu độ sâu $\Delta = \text{depth}[u] - \text{depth}[v]$. Nếu sau khi nâng mà $u = v$, kết luận ngay $\text{LCA} = v$.
+2. **Giai đoạn 2: Cùng nhảy lên ngã ba:**
+   Duyệt $k$ từ $\text{MAX\_LOG} - 1$ về 0. Nếu $up[k][u] \ne up[k][v]$, cùng nâng cả hai đỉnh $u = up[k][u], v = up[k][v]$. Sau vòng lặp, $\text{LCA} = up[0][u]$.
+
+---
+
+### 1.2 Khoảng Cách Giữa Hai Đỉnh Trên Cây
+
+$$\text{dist}(u, v) = \text{depth}[u] + \text{depth}[v] - 2 \cdot \text{depth}[\text{LCA}(u, v)]$$
+
+---
+
+### 1.3 Cài Đặt C++14
+
+```cpp
+int get_lca(int u, int v) {
+    if (depth[u] < depth[v]) std::swap(u, v);
+    int diff = depth[u] - depth[v];
+    for (int k = 0; k < MAX_LOG; ++k) {
+        if ((diff >> k) & 1) u = up[k][u];
+    }
+    if (u == v) return u;
+    for (int k = MAX_LOG - 1; k >= 0; --k) {
+        if (up[k][u] != up[k][v]) {
+            u = up[k][u];
+            v = up[k][v];
+        }
+    }
+    return up[0][u];
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Cây 5 Đỉnh Gốc 1
+
+Cạnh: $(1, 2), (1, 3), (2, 4), (2, 5)$.
+Độ sâu: $\text{depth}[1]=1, \text{depth}[2]=2, \text{depth}[3]=2, \text{depth}[4]=3, \text{depth}[5]=3$.
+
+| Cặp $(u, v)$ | $\text{depth}[u], \text{depth}[v]$ | Cân bằng độ sâu | Nhảy đồng thời | LCA | Khoảng cách |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| $(4, 5)$ | 3, 3 | Cùng $\text{depth}=3$ | $up[0][4] = 2 == up[0][5] = 2$ | 2 | $3 + 3 - 2(2) = 2$ |
+| $(4, 3)$ | 3, 2 | $u = up[0][4] = 2$ | $up[0][2] = 1 == up[0][3] = 1$ | 1 | $3 + 2 - 2(1) = 3$ |
+| $(1, 5)$ | 1, 3 | $v = up[1][5] = 1 == u$ | Dừng ngay ($u == v$) | 1 | $1 + 3 - 2(1) = 2$ |
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: LCA Trên Cây
+
+**Đề bài:** Cho cây $N$ đỉnh gốc 1 ($1 \le N \le 30$). Quy ước $\text{depth}[1] = 1$.
+Cho truy vấn cặp đỉnh $(u, v)$.
+In ra trên một dòng 3 số nguyên cách nhau bởi khoảng trắng:
+`lca dist depth_lca`
+
+### Ví Dụ Mẫu
+```text
+Input:
+5 4 5
+1 2
+1 3
+2 4
+2 5
+
+Output:
+2 2 2
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh27} title="Chương 27: 10 Test Bàn Tay - Tổ Tiên Chung Gần Nhất (LCA)" />

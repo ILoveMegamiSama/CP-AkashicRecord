@@ -1,0 +1,89 @@
+---
+title: "Chương 28: Cây Chỉ Số Nhị Phân (Fenwick Tree / BIT)"
+description: "Thao tác lowbit, cập nhật điểm và truy vấn tổng tiền tố O(log N), ứng dụng đếm số cặp nghịch thế."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh28 from './tests/ch28.json';
+
+# Chương 28: Cây Chỉ Số Nhị Phân (Fenwick Tree / BIT)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Cây Chỉ Số Nhị Phân (Binary Indexed Tree / Fenwick Tree)**  
+> *Từ nguyên học:* Được Peter Fenwick công bố năm 1994 nhằm mục đích nén dữ liệu, cấu trúc cây chỉ số nhị phân nhanh chóng trở thành một trong những cấu trúc dữ liệu tinh giản và hiệu quả nhất của lập trình thi đấu.  
+> *Mô hình trực giác:* Thay vì lưu toàn bộ tổng cộng dồn (chỉ truy vấn nhanh $O(1)$ nhưng cập nhật cực chậm $O(N)$), hoặc lưu mảng thô (cập nhật $O(1)$ nhưng tính tổng $O(N)$), Cây Fenwick phân chia mảng thành các đoạn lũy thừa của 2. Mỗi ô nhớ $i$ chịu trách nhiệm quản lý đúng một đoạn có độ dài bằng bit 1 nhỏ nhất của $i$ (`lowbit(i) = i & -i`). Cả thao tác cập nhật điểm lẫn tính tổng đoạn đều đạt tốc độ kinh ngạc $O(\log N)$ với chỉ 3 dòng mã.
+
+---
+
+### 1.1 Phép Toán Lowbit: `i & (-i)`
+
+Dưới hệ biểu diễn số bù 2, phép toán `i & (-i)` cô lập bit 1 nhỏ nhất:
+- `lowbit(6) = 6 & (-6) = 2` ($110_2 \to 010_2$)
+- `lowbit(12) = 12 & (-12) = 4` ($1100_2 \to 0100_2$)
+
+---
+
+### 1.2 Hai Thao Tác Cốt Lõi
+
+```cpp
+void add(int idx, long long delta) {
+    for (; idx <= n; idx += idx & (-idx)) {
+        tree[idx] += delta;
+    }
+}
+
+long long query(int idx) {
+    long long res = 0;
+    for (; idx > 0; idx -= idx & (-idx)) {
+        res += tree[idx];
+    }
+    return res;
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đếm Nghịch Thế Trên Mảng $A = [3, 1, 2, 5, 4]$
+
+| Phần tử $A[i]$ | Rank | Số phần tử lớn hơn đã gặp | Tổng nghịch thế dồn | Cập nhật Fenwick |
+| :---: | :---: | :---: | :---: | :--- |
+| $A[1] = 3$ | 3 | $query(5) - query(3) = 0$ | 0 | `add(3, 1)` |
+| $A[2] = 1$ | 1 | $query(5) - query(1) = 1$ | 1 (cặp $(3, 1)$) | `add(1, 1)` |
+| $A[3] = 2$ | 2 | $query(5) - query(2) = 1$ | 2 (thêm $(3, 2)$) | `add(2, 1)` |
+| $A[4] = 5$ | 5 | $query(5) - query(5) = 0$ | 2 | `add(5, 1)` |
+| $A[5] = 4$ | 4 | $query(5) - query(4) = 1$ | **3 (thêm $(5, 4)$)** | `add(4, 1)` |
+
+Tổng nghịch thế: 3. Tổng đoạn $[2, 4]$ ban đầu: $1 + 2 + 5 = 8$.
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: BIT Cập Nhật Điểm & Đếm Nghịch Thế
+
+**Đề bài:** Cho mảng $N$ phần tử ($1 \le N \le 30$).
+Thao tác:
+1. Đếm số cặp nghịch thế trong mảng ban đầu (`inv`).
+2. Tính tổng đoạn ban đầu $[L, R]$: $S_1 = \sum_{i=L}^R A_i$.
+3. Cập nhật điểm: cộng $V$ vào vị trí $P$ ($A_P \leftarrow A_P + V$).
+4. Tính tổng đoạn $[L, R]$ sau cập nhật: $S_2$.
+
+In ra trên một dòng 3 số nguyên cách nhau bởi khoảng trắng:
+`inv S1 S2`
+
+### Ví Dụ Mẫu
+```text
+Input:
+5 3 5 2 4
+3 1 2 5 4
+
+Output:
+3 8 13
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh28} title="Chương 28: 10 Test Bàn Tay - Cây Chỉ Số Nhị Phân" />

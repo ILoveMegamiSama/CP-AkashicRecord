@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "abacaba\naba\n1 7\n",
+    "expected": "2 1 1\n",
+    "desc": "Tìm chuỗi mẫu đơn giản trong văn bản"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "racecar\ncar\n1 7\n",
+    "expected": "1 5 1\n",
+    "desc": "Chuỗi palindrome hoàn chỉnh"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "banana\napple\n2 6\n",
+    "expected": "0 -1 1\n",
+    "desc": "Không xuất hiện mẫu, kiểm tra đoạn con đối xứng"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "a\na\n1 1\n",
+    "expected": "1 1 1\n",
+    "desc": "Chuỗi chỉ 1 ký tự, mẫu 1 ký tự trùng"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "abc\nabcde\n1 3\n",
+    "expected": "0 -1 0\n",
+    "desc": "Mẫu dài hơn chuỗi văn bản"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "abcdef\ncd\n3 3\n",
+    "expected": "1 3 1\n",
+    "desc": "Đoạn con kiểm tra độ dài 1 luôn là palindrome"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "aaaaaa\naa\n1 6\n",
+    "expected": "5 1 1\n",
+    "desc": "Chuỗi lặp lại liên tục, mẫu gối nhau"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "noonnight\nnight\n1 4\n",
+    "expected": "1 5 1\n",
+    "desc": "Đoạn con dài chẵn đối xứng"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "radarad\nrad\n1 5\n",
+    "expected": "2 1 1\n",
+    "desc": "Thử thách nhẩm chuỗi 7 ký tự xen kẽ"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "abcabcba\nabc\n3 6\n",
+    "expected": "2 1 0\n",
+    "desc": "Thử thách nhẩm chuỗi 8 ký tự với nhiều vị trí khớp"
+  }
+]

@@ -1,0 +1,85 @@
+---
+title: "Chương 29: Thuật Toán Băm Xâu (Polynomial Rolling Hashing)"
+description: "Cơ số Base, Modulo, trích xuất mã băm đoạn con O(1), thuật toán Rabin-Karp và kiểm tra Palindrome."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh29 from './tests/ch29.json';
+
+# Chương 29: Thuật Toán Băm Xâu (Polynomial Rolling Hashing)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Thuật Toán Băm Xâu Đa Thức (Polynomial Rolling Hash)**  
+> *Từ nguyên học:* Được Michael Rabin và Richard Karp công bố năm 1987, kỹ thuật băm xâu lăn (Rolling Hash) đã đưa bài toán tìm kiếm mẫu chuỗi về các phép số học modulo kỳ diệu.  
+> *Mô hình trực giác:* Một chuỗi ký tự bản chất là một số nguyên cực lớn được viết trong hệ cơ số $\text{BASE}$. Bằng cách lấy đồng dư với một số nguyên tố $\text{MOD}$ đủ lớn, ta thu gọn chuỗi có độ dài tùy ý thành một số nguyên duy nhất (mã băm). Nhờ nguyên lý tiền tố, mã băm của bất kỳ đoạn con $[L, R]$ nào cũng được tính trong $O(1)$ bằng đúng một phép trừ và nhân lũy thừa, mở ra khả năng so sánh chuỗi tương đương tốc độ của phép so sánh số nguyên.
+
+---
+
+### 1.1 Hàm Băm Tiền Tố & Mã Băm Đoạn Con Trong $O(1)$
+
+$$H[i] = (H[i-1] \cdot \text{BASE} + S[i]) \pmod{\text{MOD}}$$
+
+Mã băm đoạn con $S[L \dots R]$:
+$$\text{hash}(L, R) = (H[R] - H[L-1] \cdot \text{BASE}^{R - L + 1}) \pmod{\text{MOD}}$$
+
+Trong C++:
+```cpp
+long long get_hash(int l, int r) {
+    long long res = (h[r] - h[l - 1] * power[r - l + 1]) % MOD;
+    if (res < 0) res += MOD;
+    return res;
+}
+```
+
+---
+
+### 1.2 Rabin-Karp & Palindrome
+
+- **Rabin-Karp:** Trượt cửa sổ độ dài $|P|$ trên chuỗi $S$, so sánh mã băm trong $O(1)$ để đếm và tìm vị trí xuất hiện.
+- **Palindrome:** So sánh mã băm xuôi và mã băm ngược của đoạn $[L, R]$ trong $O(1)$.
+
+---
+
+## 2. Chạy Bàn Trên Giấy: $S = \text{"abacaba"}, P = \text{"aba"}$
+
+Mã băm của mẫu $P = \text{"aba"}$: $1 \cdot 31^2 + 2 \cdot 31 + 1 = 1024$.
+
+| Vị trí $i$ | Đoạn con $S[i..i+2]$ | Mã băm trích xuất | So khớp với 1024 | Kết luận |
+| :---: | :---: | :---: | :---: | :--- |
+| 1 | aba | 1024 | Khớp ($1024 == 1024$) | Xuất hiện lần 1 tại $pos = 1$ |
+| 2 | bac | 1986 | Không khớp | - |
+| 3 | aca | 1055 | Không khớp | - |
+| 4 | cab | 2947 | Không khớp | - |
+| 5 | aba | 1024 | Khớp ($1024 == 1024$) | **Xuất hiện lần 2 tại $pos = 5$** |
+
+Đoạn $[1, 7]$ là $\text{"abacaba"}$ có băm xuôi bằng băm ngược $\implies$ là Palindrome!
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Băm Chuỗi Đa Thức
+
+**Đề bài:** Cho chuỗi văn bản $S$, chuỗi mẫu $P$, và truy vấn đoạn $[L, R]$ (1-indexed).
+Sử dụng $\text{BASE} = 31, \text{MOD} = 10^9 + 7$.
+In ra trên một dòng 3 giá trị cách nhau bởi khoảng trắng:
+`occ_count first_pos is_pal`
+trong đó `first_pos` là vị trí đầu tiên xuất hiện (hoặc -1 nếu không có), và `is_pal` bằng 1 nếu $S[L \dots R]$ là palindrome, ngược lại 0.
+
+### Ví Dụ Mẫu
+```text
+Input:
+abacaba
+aba
+1 7
+
+Output:
+2 1 1
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh29} title="Chương 29: 10 Test Bàn Tay - Thuật Toán Băm Xâu" />

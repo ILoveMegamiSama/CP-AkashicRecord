@@ -1,25 +1,35 @@
 ---
-title: "Tập 4: Chuyên Đề Đỉnh Cao & Bài Tập Tuyển Chọn"
-description: "Cấu trúc dữ liệu nâng cao Fenwick tree, Segment tree, Lazy propagation, Hình học tính toán và bài thi cấp tỉnh/quốc gia."
+title: "Tập 4: Cấu Trúc Dữ Liệu & Thuật Toán Nâng Cao V1"
+description: "Kỹ thuật trải phẳng cây Euler Tour, Nhảy nhị phân Binary Lifting, LCA, Cây Fenwick BIT, Băm chuỗi đa thức Rolling Hash, và Quy hoạch động mặt nạ trạng thái Bitmask DP."
 ---
 
-# Tập 4: Chuyên Đề Đỉnh Cao & Bài Tập Tuyển Chọn
+# Tập 4: Cấu Trúc Dữ Liệu & Thuật Toán Nâng Cao V1
 
 Chào mừng bạn đến với Tập 4 của bộ chuyên khảo **Akashic Record - Lập Trình Thi Đấu C++14**.
 
+[Tải Sách Bản In A4 Hoàn Chỉnh (PDF)](/pdf/vol4.pdf)
+
+---
+
 ## Mục Tiêu Chuyên Khảo
 
-Tập 4 hoàn thiện bức tranh năng lực thuật toán với các chuyên đề thi đấu nâng cao:
-- Cây chỉ số nhị phân Fenwick Tree (Binary Indexed Tree): Point Update - Range Query.
-- Cây phân đoạn cơ bản Segment Tree: Truy vấn đoạn và cập nhật điểm.
-- Kỹ thuật Cập nhật lười (Lazy Propagation) trên Cây phân đoạn.
-- Cây tiền tố (Trie) cho xâu ký tự và số nguyên (XOR Trie).
-- Tổ hợp & Đại số nâng cao trong Tin học: Tam giác Pascal, Lucas, Chỉnh hợp/Tổ hợp modulo.
-- Hình học tính toán cơ bản: Tích có hướng (Cross product), Kiểm tra điểm thuộc đoạn, Giao điểm.
-- Bao lồi (Convex Hull): Thuật toán Graham Scan và Monotone Chain.
-- Phương pháp luyện đề và tâm lý thi đấu Olympic Tin học.
+Tập 4 mở rộng và nâng cao năng lực tư duy giải thuật với các cấu trúc dữ liệu và kỹ thuật then chốt trong các kỳ thi học sinh giỏi cấp tỉnh, quốc gia và Olympic tin học:
+- **Kỹ thuật Trải phẳng Cây (Euler Tour on Tree):** Quản lý thời gian vào `tin` và ra `tout`, chuyển cây con 2D thành đoạn 1D liên tiếp, kiểm tra quan hệ tổ tiên trong $O(1)$.
+- **Kỹ thuật Nhảy Nhị Phân (Binary Lifting):** Tìm $f^{(K)}(x)$ trên đồ thị hàm trong $O(\log K)$ qua bảng lũy thừa 2, phân tích bit nhị phân của số bước nhảy.
+- **Tổ Tiên Chung Gần Nhất (LCA on Tree):** Xây dựng bảng tổ tiên nhị phân, cân bằng độ sâu, nhảy đồng thời và tính khoảng cách trên cây.
+- **Cây Chỉ Số Nhị Phân (Fenwick Tree / BIT):** Phép toán `lowbit(i) = i & (-i)`, cập nhật điểm và truy vấn tổng đoạn trong $O(\log N)$, ứng dụng đếm số cặp nghịch thế.
+- **Thuật Toán Băm Xâu (Polynomial Rolling Hashing):** Cơ số BASE, modulo, trích xuất mã băm đoạn con trong $O(1)$, thuật toán so khớp mẫu Rabin-Karp và kiểm tra Palindrome.
+- **Thao Tác Bit & Quy Hoạch Động Trạng Thái Mặt Nạ (Bitmask DP):** Thao tác bit, `__builtin_popcount`, bài toán Người du lịch TSP và đường đi Hamilton.
+- **Bài Tập Tích Hợp Toàn Diện V1:** Kết hợp Euler Tour + Fenwick Tree + Binary Lifting LCA trong hệ thống điều phối cây vương quốc.
+
+---
 
 ## Danh Mục Chương
 
-- **Chương 27 - 35:** Chuyên đề cấu trúc dữ liệu nâng cao & Hình học.
-- **Bài Tập Tích Hợp Tập 4:** Các đề thi chọn đội tuyển HSG và tuyển tập OLP.
+1. [**Chương 25:** Kỹ Thuật Trải Phẳng Cây (Euler Tour on Tree: Thứ Tự Duyệt & Tổng Cây Con)](./ch25/)
+2. [**Chương 26:** Kỹ Thuật Nhảy Nhị Phân (Binary Lifting Trên Đồ Thị Hàm Trong $O(\log K)$)](./ch26/)
+3. [**Chương 27:** Tổ Tiên Chung Gần Nhất (Lowest Common Ancestor - LCA Trên Cây)](./ch27/)
+4. [**Chương 28:** Cây Chỉ Số Nhị Phân (Fenwick Tree / BIT: Cập Nhật Điểm & Đếm Nghịch Thế)](./ch28/)
+5. [**Chương 29:** Thuật Toán Băm Xâu (Polynomial Rolling Hash, Rabin-Karp & Palindrome)](./ch29/)
+6. [**Chương 30:** Thao Tác Bit & Quy Hoạch Động Trạng Thái Mặt Nạ (Bitmask DP - TSP)](./ch30/)
+7. [**Bài Tập Tích Hợp Toàn Diện V1:** Hệ Thống Cây Vương Quốc (Euler Tour + Fenwick + LCA)](./integrated/)

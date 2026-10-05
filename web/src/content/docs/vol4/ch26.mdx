@@ -1,0 +1,85 @@
+---
+title: "Chương 26: Kỹ Thuật Nhảy Nhị Phân (Binary Lifting)"
+description: "Binary lifting trên đồ thị hàm và dãy số, bảng thưa lũy thừa 2, tìm f^(K)(x) trong O(log K) bước."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh26 from './tests/ch26.json';
+
+# Chương 26: Kỹ Thuật Nhảy Nhị Phân (Binary Lifting)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Kỹ Thuật Nhảy Nhị Phân & Đồ Thị Hàm**  
+> *Từ nguyên học:* Kỹ thuật nhân đôi khoảng cách (Doubling) bắt nguồn từ các thuật toán tính lũy thừa ma trận và tìm kiếm nhị phân, sau đó được tổng quát hóa thành Binary Lifting để duyệt cấu trúc đồ thị hàm và cây.  
+> *Mô hình trực giác:* Thay vì bước từng bước đơn lẻ $O(K)$ lặp đi lặp lại rất chậm chạp, ta chuẩn bị sẵn các bước nhảy có kích thước là lũy thừa của 2: bước 1, bước 2, bước 4, bước 8, bước 16... Do mọi số nguyên $K$ đều có thể phân tích duy nhất thành tổng các lũy thừa của 2 dưới hệ nhị phân, ta chỉ cần tối đa $\log_2(K)$ cú nhảy để chạm tới đích chính xác tuyệt đối.
+
+---
+
+### 1.1 Xây Dựng Bảng Nhảy Nhị Phân `up[j][x]`
+
+- `up[0][x] = nxt[x]`: Bước nhảy $2^0 = 1$ bước.
+- Công thức truy hồi nhân đôi (Doubling):
+$$up[j][x] = up[j-1][up[j-1][x]]$$
+
+Tiền xử lý trong thời gian $O(N \log K)$.
+
+---
+
+### 1.2 Thuật Toán Nhảy Trong $O(\log K)$
+
+Duyệt qua các bit $j$ của số bước nhảy $K$:
+```cpp
+int cur = s;
+for (int j = 0; j < 30; ++j) {
+    if ((k >> j) & 1) {
+        cur = up[j][cur];
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đồ Thị 4 Đỉnh Với $f = [2, 3, 4, 1]$
+
+Mảng $f = [2, 3, 4, 1]$ là chu trình 4 đỉnh $1 \to 2 \to 3 \to 4 \to 1$.
+
+| Lũy thừa $2^j$ | Độ dài bước | $x = 1$ | $x = 2$ | $x = 3$ | $x = 4$ | Công thức |
+| :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| $j = 0$ | 1 bước | 2 | 3 | 4 | 1 | $up[0][x] = f(x)$ |
+| $j = 1$ | 2 bước | 3 | 4 | 1 | 2 | $up[1][x] = up[0][up[0][x]]$ |
+| $j = 2$ | 4 bước | 1 | 2 | 3 | 4 | $up[2][x] = up[1][up[1][x]]$ |
+
+Muốn tìm $f^{(5)}(1)$ với $K = 5 = 4 + 1$:
+- Nhảy $2^0 = 1$ bước: từ 1 sang 2.
+- Nhảy $2^2 = 4$ bước: từ 2 sang 2.
+Kết quả dừng tại đỉnh 2!
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Nhảy Trên Đồ Thị Hàm
+
+**Đề bài:** Cho đồ thị hàm gồm $N$ đỉnh ($1 \le N \le 30$). Mỗi đỉnh $i$ có con trỏ $nxt[i]$ và trọng số $A[i]$.
+Cho đỉnh xuất phát $S$ và số bước nhảy $K$ ($0 \le K \le 10^9$).
+In ra trên một dòng 3 số nguyên cách nhau bởi khoảng trắng:
+`dest mid A[dest]`
+trong đó $dest = f^{(K)}(S)$ và $mid = f^{(\lfloor K / 2 \rfloor)}(S)$.
+
+### Ví Dụ Mẫu
+```text
+Input:
+4 1 5
+2 3 4 1
+10 20 30 40
+
+Output:
+2 3 20
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh26} title="Chương 26: 10 Test Bàn Tay - Kỹ Thuật Nhảy Nhị Phân" />

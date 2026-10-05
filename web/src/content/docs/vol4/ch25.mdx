@@ -1,0 +1,98 @@
+---
+title: "Chương 25: Kỹ Thuật Trải Phẳng Cây (Euler Tour on Tree)"
+description: "DFS Euler tour, thời điểm vào tin và thời điểm ra tout, chuyển cây con thành đoạn liên tiếp và kiểm tra tổ tiên O(1)."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh25 from './tests/ch25.json';
+
+# Chương 25: Kỹ Thuật Trải Phẳng Cây (Euler Tour on Tree)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Kỹ Thuật Trải Phẳng Cây & Thứ Tự Euler Tour**  
+> *Từ nguyên học:* Xuất phát từ chu trình Euler trên đồ thị, kỹ thuật Euler Tour trên cây được Robert Tarjan và các nhà khoa học máy tính ứng dụng để chuyển đổi cấu trúc phân cấp phức tạp thành mảng tuyến tính một chiều.  
+> *Mô hình trực giác:* Cây là cấu trúc dữ liệu phân nhánh 2D khó xử lý đồng thời nhiều nút con. Khi áp dụng phép duyệt DFS và ghi nhận thời điểm bước vào `tin[u]` cùng thời điểm rời khỏi `tout[u]`, toàn bộ cây con của đỉnh $u$ sẽ được "gói gọn" hoàn hảo vào một đoạn chỉ số liên tiếp $[tin[u], tout[u]]$. Mọi thao tác trên cây con lập tức quy về thao tác trên đoạn của mảng 1D.
+
+---
+
+### 1.1 Cốt Lõi Thuật Toán: Mảng Thời Gian `tin` và `tout`
+
+Khi duyệt DFS cây có gốc (mặc định gốc 1), ta duy trì một bộ đếm thời gian toàn cục `timer = 0`:
+1. **Thời điểm vào (`tin[u]`):** Ngay khi hàm DFS bắt đầu thăm đỉnh $u$, ta tăng `timer` lên 1 và lưu `tin[u] = ++timer`.
+2. **Duyệt con:** Lần lượt gọi đệ quy DFS thăm tất cả các đỉnh con trực tiếp $v$ của $u$ (bỏ qua đỉnh cha $p$).
+3. **Thời điểm ra (`tout[u]`):** Sau khi toàn bộ các nhánh con của $u$ đã được duyệt xong xuôi, ta chốt mốc thời gian `tout[u] = timer`.
+
+Đoạn chỉ số của cây con: $[tin[u], tout[u]]$ liên tục trên mảng 1D. Kích thước cây con:
+$$\text{subtree\_size}[u] = tout[u] - tin[u] + 1$$
+
+---
+
+### 1.2 Kiểm Tra Quan Hệ Tổ Tiên Trong $O(1)$
+
+Đỉnh $u$ là tổ tiên của đỉnh $v$ (kể cả $u = v$) khi và chỉ khi:
+$$tin[u] \le tin[v] \quad \text{và} \quad tout[u] \ge tout[v]$$
+
+---
+
+### 1.3 Cài Đặt C++14
+
+```cpp
+void dfs(int u, int p) {
+    tin[u] = ++timer_cnt;
+    for (int v : adj[u]) {
+        if (v != p) {
+            dfs(v, u);
+        }
+    }
+    tout[u] = timer_cnt;
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Cây 4 Đỉnh Với Cạnh $(1, 2), (1, 3), (2, 4)$
+
+Trọng số $W = [10, 20, 30, 40]$. Cây có gốc tại 1.
+
+| Đỉnh $u$ | `tin[u]` | `tout[u]` | Đoạn $[tin, tout]$ | Cây con gồm | Tổng trọng số cây con |
+| :---: | :---: | :---: | :---: | :--- | :---: |
+| 1 | 1 | 4 | $[1, 4]$ | $\{1, 2, 4, 3\}$ | $10 + 20 + 40 + 30 = 100$ |
+| 2 | 2 | 3 | $[2, 3]$ | $\{2, 4\}$ | $20 + 40 = 60$ |
+| 4 | 3 | 3 | $[3, 3]$ | $\{4\}$ | 40 |
+| 3 | 4 | 4 | $[4, 4]$ | $\{3\}$ | 30 |
+
+Mảng trải phẳng: $F = [W_1=10, W_2=20, W_4=40, W_3=30]$. Cây con đỉnh 2 nằm trên đoạn $[2, 3]$, tổng bằng 60.
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: Trải Phẳng Cây & Tổng Cây Con
+
+**Đề bài:** Cho cây $N$ đỉnh có gốc tại 1 ($1 \le N \le 30$). Trọng số các đỉnh là $W_1, W_2, \dots, W_N$.
+Danh sách kề được sắp xếp tăng dần khi duyệt DFS.
+Cho đỉnh truy vấn $u_1$ và cặp đỉnh $(u_2, v_2)$.
+
+In ra trên một dòng 4 số nguyên cách nhau bởi khoảng trắng:
+`tin[u1] tout[u1] sum_u1 is_anc`
+trong đó `is_anc` bằng 1 nếu $u_2$ là tổ tiên của $v_2$, ngược lại in 0.
+
+### Ví Dụ Mẫu
+```text
+Input:
+4 2 1 4
+10 20 30 40
+1 2
+1 3
+2 4
+
+Output:
+2 3 60 1
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh25} title="Chương 25: 10 Test Bàn Tay - Kỹ Thuật Trải Phẳng Cây" />

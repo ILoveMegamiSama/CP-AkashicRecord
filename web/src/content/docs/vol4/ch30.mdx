@@ -1,0 +1,90 @@
+---
+title: "Chương 30: Thao Tác Bit & Quy Hoạch Động Trạng Thái Mặt Nạ (Bitmask DP)"
+description: "Phép toán bit, popcount, duyệt tập con, bài toán Người du lịch TSP và đường đi Hamilton ngắn nhất."
+---
+
+import InteractiveChecker from '../../../components/InteractiveChecker.astro';
+import testsCh30 from './tests/ch30.json';
+
+# Chương 30: Thao Tác Bit & Quy Hoạch Động Mặt Nạ (Bitmask DP)
+
+## 1. Thuật Ngữ & Trực Giác Khoa Học
+
+> **Thao Tác Bit & Quy Hoạch Động Trạng Thái Mặt Nạ (Bitmask DP)**  
+> *Từ nguyên học:* Được Michael Held và Richard Karp phát triển năm 1962 trong thuật toán Bellman-Held-Karp giải bài toán Người du lịch TSP thời gian hàm mũ $O(2^N \cdot N^2)$.  
+> *Mô hình trực giác:* Một tập hợp con các phần tử có thể được mã hóa hoàn hảo thành một chuỗi nhị phân (Mặt nạ - Bitmask): bit thứ $i$ bằng 1 nghĩa là phần tử $i$ có mặt trong tập, bằng 0 nghĩa là vắng mặt. Bằng cách dùng một số nguyên biểu diễn trạng thái tập hợp, ta có thể áp dụng Quy hoạch động để duyệt qua toàn bộ $2^N$ tập con với tốc độ phần cứng của thanh ghi CPU.
+
+---
+
+### 1.1 Thao Tác Cốt Lõi Trên Bit
+
+- **Kiểm tra bit thứ $i$:** `(mask >> i) & 1`
+- **Bật bit thứ $i$:** `mask | (1 << i)`
+- **Tắt bit thứ $i$:** `mask & ~(1 << i)`
+- **Đếm số phần tử trong tập:** `__builtin_popcount(mask)`
+
+---
+
+### 1.2 Bài Toán Người Du Lịch (TSP)
+
+- Trạng thái: $dp[\text{mask}][u]$ là chi phí nhỏ nhất để thăm tập các đỉnh trong `mask`, hiện đang tại đỉnh $u$.
+- Khởi tạo: $dp[1][0] = 0$.
+- Chuyển trạng thái:
+```cpp
+for (int mask = 1; mask < (1 << n); ++mask) {
+    for (int u = 0; u < n; ++u) {
+        if (dp[mask][u] >= INF) continue;
+        for (int v = 0; v < n; ++v) {
+            if (!((mask >> v) & 1)) {
+                int next_mask = mask | (1 << v);
+                dp[next_mask][v] = std::min(dp[next_mask][v], dp[mask][u] + cost[u][v]);
+            }
+        }
+    }
+}
+```
+
+---
+
+## 2. Chạy Bàn Trên Giấy: Đồ Thị 3 Đỉnh $N = 3$
+
+Ma trận chi phí:
+$$C = \begin{pmatrix} 0 & 10 & 20 \\ 10 & 0 & 15 \\ 20 & 15 & 0 \end{pmatrix}$$
+
+| `mask` | Các đỉnh đã thăm | Đỉnh hiện tại $u$ | $dp[\text{mask}][u]$ | Chuyển tiếp khả dĩ |
+| :---: | :---: | :---: | :---: | :--- |
+| 1 (001) | $\{0\}$ | 0 | 0 | $v=1 \to dp[3][1]=10; v=2 \to dp[5][2]=20$ |
+| 3 (011) | $\{0, 1\}$ | 1 | 10 | $v=2 \to dp[7][2] = 10 + 15 = 25$ |
+| 5 (101) | $\{0, 2\}$ | 2 | 20 | $v=1 \to dp[7][1] = 20 + 15 = 35$ |
+| 7 (111) | $\{0, 1, 2\}$ | 2 | 25 | Đường đi $0 \to 1 \to 2$, về 0: $25 + 20 = 45$ |
+
+Kết quả: $\text{min\_path} = 25$, $\text{min\_tsp} = 45$.
+
+---
+
+## 3. Bài Tập Tiêu Chuẩn: TSP & Đường Đi Hamilton
+
+**Đề bài:** Cho đồ thị có hướng gồm $N$ đỉnh ($2 \le N \le 8$) với ma trận trọng số $C[N][N]$ ($0 \le C[u][v] \le 100$).
+In ra trên một dòng 2 số nguyên cách nhau bởi khoảng trắng:
+`min_path min_tsp`
+trong đó `min_path` là chi phí đường đi Hamilton mở từ đỉnh 0 qua tất cả các đỉnh, và `min_tsp` là chi phí chu trình TSP đóng quay về 0.
+
+### Ví Dụ Mẫu
+```text
+Input:
+3
+0 10 20
+10 0 15
+20 15 0
+
+Output:
+25 45
+```
+
+---
+
+## 4. Thử Thách 10 Test Bàn Tay (Interactive Checker)
+
+Hãy tính nhẩm kết quả trên giấy, sau đó điền kết quả vào ô bên dưới để kiểm tra tính chính xác và xem bảng vết thực thi chi tiết:
+
+<InteractiveChecker tests={testsCh30} title="Chương 30: 10 Test Bàn Tay - Quy Hoạch Động Mặt Nạ (Bitmask DP)" />

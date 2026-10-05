@@ -1,0 +1,986 @@
+[
+  {
+    "id": 1,
+    "input": "5 3 10 2 4 5\n10 20 30 40 50\n1 2\n1 3\n2 4\n2 5\n",
+    "expected": "160 110 2 2\n",
+    "actual": "160 110 2 2\n",
+    "status": "AC",
+    "execution_time_ms": 2.27,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          5,
+          4,
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 160
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 110
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "4 1 5 3 1 4\n5 10 15 20\n1 2\n2 3\n3 4\n",
+    "expected": "55 35 1 3\n",
+    "actual": "55 35 1 3\n",
+    "status": "AC",
+    "execution_time_ms": 1.44,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 4
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 55
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 35
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "5 4 100 4 2 5\n1 2 3 4 5\n1 2\n1 3\n1 4\n1 5\n",
+    "expected": "115 104 1 2\n",
+    "actual": "115 104 1 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.52,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 100
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          5,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 115
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 104
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "1 1 50 1 1 1\n100\n",
+    "expected": "150 150 1 0\n",
+    "actual": "150 150 1 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.88,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 50
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          1
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 150
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 150
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "2 2 0 2 1 2\n30 40\n1 2\n",
+    "expected": "70 40 1 1\n",
+    "actual": "70 40 1 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.57,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 0
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 70
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "3 2 15 2 2 2\n10 20 30\n1 2\n1 3\n",
+    "expected": "75 35 2 0\n",
+    "actual": "75 35 2 0\n",
+    "status": "AC",
+    "execution_time_ms": 1.88,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 2
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          3,
+          2,
+          3
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 75
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 35
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 0
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "6 3 -20 3 4 6\n50 40 30 20 10 5\n1 2\n1 3\n2 4\n2 5\n3 6\n",
+    "expected": "135 15 1 4\n",
+    "actual": "135 15 1 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.6,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": -20
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          6,
+          4,
+          6,
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 135
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 15
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "6 5 10 2 3 6\n1 1 1 1 1 1\n1 2\n1 3\n2 4\n2 5\n3 6\n",
+    "expected": "16 13 3 1\n",
+    "actual": "16 13 3 1\n",
+    "status": "AC",
+    "execution_time_ms": 1.93,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 10
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          6,
+          4,
+          6,
+          3,
+          4,
+          6
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 13
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "7 4 12 3 6 7\n1 2 3 4 5 6 7\n1 2\n1 3\n2 4\n2 5\n3 6\n3 7\n",
+    "expected": "40 16 3 2\n",
+    "actual": "40 16 3 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.6,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 12
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          7,
+          4,
+          7,
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 40
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 16
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 2
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "8 6 25 4 7 8\n10 20 30 40 50 60 70 80\n1 2\n1 3\n2 4\n2 5\n3 6\n4 7\n4 8\n",
+    "expected": "385 190 4 2\n",
+    "actual": "385 190 4 2\n",
+    "status": "AC",
+    "execution_time_ms": 1.8,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs and tree structure"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "p",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "x",
+        "val": 25
+      },
+      {
+        "type": "var",
+        "name": "q",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "u_query",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "v_query",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Euler tour and binary lifting table constructed"
+      },
+      {
+        "type": "array",
+        "name": "tin",
+        "values": [
+          0,
+          1,
+          2,
+          7,
+          3,
+          6,
+          8,
+          4,
+          5
+        ]
+      },
+      {
+        "type": "array",
+        "name": "tout",
+        "values": [
+          0,
+          8,
+          6,
+          8,
+          5,
+          6,
+          8,
+          4,
+          5
+        ]
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Subtree sums and LCA query computed"
+      },
+      {
+        "type": "var",
+        "name": "s_root",
+        "val": 385
+      },
+      {
+        "type": "var",
+        "name": "s_q",
+        "val": 190
+      },
+      {
+        "type": "var",
+        "name": "lca_node",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "dist_uv",
+        "val": 2
+      }
+    ]
+  }
+]

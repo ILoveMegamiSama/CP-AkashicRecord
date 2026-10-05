@@ -1,0 +1,552 @@
+[
+  {
+    "id": 1,
+    "input": "4 1 5\n2 3 4 1\n10 20 30 40\n",
+    "expected": "2 3 20\n",
+    "actual": "2 3 20\n",
+    "status": "AC",
+    "execution_time_ms": 2.0,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 5
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 20
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "5 1 3\n2 3 4 5 5\n1 2 3 4 5\n",
+    "expected": "4 2 4\n",
+    "actual": "4 2 4\n",
+    "status": "AC",
+    "execution_time_ms": 1.79,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 3
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 4
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "3 2 7\n2 3 1\n100 200 300\n",
+    "expected": "3 2 300\n",
+    "actual": "3 2 300\n",
+    "status": "AC",
+    "execution_time_ms": 1.48,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 7
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 300
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "4 2 0\n2 3 4 1\n10 20 30 40\n",
+    "expected": "2 2 20\n",
+    "actual": "2 2 20\n",
+    "status": "AC",
+    "execution_time_ms": 1.7,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 0
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 20
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "input": "1 1 1000000\n1\n99\n",
+    "expected": "1 1 99\n",
+    "actual": "1 1 99\n",
+    "status": "AC",
+    "execution_time_ms": 1.63,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1000000
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 99
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "input": "3 1 1\n3 1 2\n7 8 9\n",
+    "expected": "3 1 9\n",
+    "actual": "3 1 9\n",
+    "status": "AC",
+    "execution_time_ms": 1.42,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 9
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "input": "6 1 10\n2 3 4 5 6 4\n5 10 15 20 25 30\n",
+    "expected": "5 6 25\n",
+    "actual": "5 6 25\n",
+    "status": "AC",
+    "execution_time_ms": 1.98,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 10
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 5
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 6
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 25
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "input": "4 1 1000000000\n2 1 4 3\n11 22 33 44\n",
+    "expected": "1 1 11\n",
+    "actual": "1 1 11\n",
+    "status": "AC",
+    "execution_time_ms": 1.32,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 4
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 1000000000
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 11
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "input": "7 3 6\n3 4 5 6 7 1 2\n7 6 5 4 3 2 1\n",
+    "expected": "1 2 7\n",
+    "actual": "1 2 7\n",
+    "status": "AC",
+    "execution_time_ms": 1.14,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 7
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 3
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 6
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 2
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 7
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "input": "8 1 8\n2 4 1 3 6 8 5 7\n12 24 36 48 60 72 84 96\n",
+    "expected": "1 1 12\n",
+    "actual": "1 1 12\n",
+    "status": "AC",
+    "execution_time_ms": 1.48,
+    "traces": [
+      {
+        "type": "step",
+        "step": 1,
+        "msg": "Read inputs n, s, k"
+      },
+      {
+        "type": "var",
+        "name": "n",
+        "val": 8
+      },
+      {
+        "type": "var",
+        "name": "s",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "k",
+        "val": 8
+      },
+      {
+        "type": "step",
+        "step": 2,
+        "msg": "Construct binary lifting table"
+      },
+      {
+        "type": "step",
+        "step": 3,
+        "msg": "Binary lifting jumps completed"
+      },
+      {
+        "type": "var",
+        "name": "dest",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "mid",
+        "val": 1
+      },
+      {
+        "type": "var",
+        "name": "a_dest",
+        "val": 12
+      }
+    ]
+  }
+]

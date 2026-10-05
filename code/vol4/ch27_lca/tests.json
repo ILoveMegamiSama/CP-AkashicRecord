@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "group": "Warm-up",
+    "input": "5 4 5\n1 2\n1 3\n2 4\n2 5\n",
+    "expected": "2 2 2\n",
+    "desc": "Cây 5 đỉnh, LCA của 2 đỉnh cùng tầng khác nhánh"
+  },
+  {
+    "id": 2,
+    "group": "Warm-up",
+    "input": "5 1 5\n1 2\n2 3\n3 4\n4 5\n",
+    "expected": "1 4 1\n",
+    "desc": "Cây 5 đỉnh, quan hệ tổ tiên - con cháu trực hệ"
+  },
+  {
+    "id": 3,
+    "group": "Warm-up",
+    "input": "6 4 6\n1 2\n1 3\n2 4\n3 5\n5 6\n",
+    "expected": "1 5 1\n",
+    "desc": "Cây 6 đỉnh, LCA của 2 lá ở 2 nhánh đối diện qua gốc 1"
+  },
+  {
+    "id": 4,
+    "group": "Edge case",
+    "input": "1 1 1\n",
+    "expected": "1 0 1\n",
+    "desc": "Cây chỉ có 1 đỉnh duy nhất, LCA của chính nó"
+  },
+  {
+    "id": 5,
+    "group": "Edge case",
+    "input": "2 1 2\n1 2\n",
+    "expected": "1 1 1\n",
+    "desc": "Cây 2 đỉnh, LCA của gốc và con trực tiếp"
+  },
+  {
+    "id": 6,
+    "group": "Edge case",
+    "input": "4 3 3\n1 2\n2 3\n3 4\n",
+    "expected": "3 0 3\n",
+    "desc": "Truy vấn hai đỉnh trùng nhau u=v trên cây 4 đỉnh"
+  },
+  {
+    "id": 7,
+    "group": "Trick case",
+    "input": "6 2 6\n1 2\n1 3\n1 4\n1 5\n1 6\n",
+    "expected": "1 2 1\n",
+    "desc": "Cây hình sao, LCA của hai cánh sao luôn là gốc 1"
+  },
+  {
+    "id": 8,
+    "group": "Trick case",
+    "input": "6 1 6\n1 2\n2 3\n3 4\n4 5\n5 6\n",
+    "expected": "1 5 1\n",
+    "desc": "Cây chuỗi dài 6 đỉnh, khoảng cách tối đa"
+  },
+  {
+    "id": 9,
+    "group": "Mental challenge",
+    "input": "7 4 7\n1 2\n1 3\n2 4\n2 5\n3 6\n3 7\n",
+    "expected": "1 4 1\n",
+    "desc": "Thử thách nhẩm cây nhị phân hoàn hảo 7 đỉnh"
+  },
+  {
+    "id": 10,
+    "group": "Mental challenge",
+    "input": "8 7 8\n1 2\n1 3\n2 4\n2 5\n5 6\n6 7\n3 8\n",
+    "expected": "1 6 1\n",
+    "desc": "Thử thách nhẩm cây 8 đỉnh bất đối xứng"
+  }
+]
